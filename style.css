@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #f9f9f6;
+    color: #2f4f2f;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+header {
+    background-color: #2e5e3e;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+.category-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.category-grid a {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+.category-grid img {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.video-gallery {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.video-thumb {
+    position: relative;
+    width: 300px;
+}
+
+.video-thumb img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.video-thumb .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 0.9rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.video-thumb:hover img {
+    opacity: 0.3;
+}
+
+.video-thumb:hover .overlay {
+    opacity: 1;
+}
+
+footer {
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #2f4f2f;
+}
+
+input {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-transform: none;
+}
