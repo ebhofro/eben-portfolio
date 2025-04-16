@@ -63,6 +63,18 @@ main {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* ——— HOME PAGE THUMBNAIL STYLES ——— */
+
+.category-grid a img {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.category-grid a:hover img {
+  transform: scale(1.05);
+}
+
 .video-gallery {
     display: flex;
     gap: 2rem;
