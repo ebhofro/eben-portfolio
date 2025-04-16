@@ -1,0 +1,42 @@
+body {
+    background-color: #f9f9f6;
+    color: #2f4f2f;
+    font-family: 'Futura PT', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.category-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.video-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.video-link img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.video-link h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
