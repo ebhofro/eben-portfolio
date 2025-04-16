@@ -40,10 +40,29 @@ footer {
     color: #666;
 }
 .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     gap: 2rem;
-    margin-top: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+}
+
+.grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.grid::-webkit-scrollbar-thumb {
+    background-color: #2f4f2f; /* forest green */
+    border-radius: 4px;
+}
+
+
+.thumb {
+    flex: 0 0 auto;
+    width: 300px;
+    scroll-snap-align: start;
+}
+
 }
 
 .thumb img {
