@@ -48,25 +48,16 @@ footer {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-bottom: 1rem;
+    justify-content: flex-start;  /* Ensure items align left */
+    align-items: stretch;  /* Stretch items to prevent overlap */
 }
-
-.grid::-webkit-scrollbar {
-    height: 8px;
-}
-
-.grid::-webkit-scrollbar-thumb {
-    background-color: #2f4f2f; /* forest green */
-    border-radius: 4px;
-}
-
 
 .thumb {
     flex: 0 0 auto;
-    width: 300px;
+    width: 300px;  /* Adjust width as needed */
     scroll-snap-align: start;
 }
 
-}
 
 .thumb img {
     width: 100%;
