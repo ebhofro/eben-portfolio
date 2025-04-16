@@ -10,29 +10,38 @@
     <header>
         <h1>Natural Micro Short Films</h1>
     </header>
-   <main>
+  <main>
     <h2>My Natural Micro-Short Films</h2>
 
-    <div class="video">
-        <h3>A golden ferry ride to Arran island</h3>
-        <iframe width="100%" height="400" src="https://www.youtube.com/embed/TK-xTVmz0_g" 
-                title="A golden ferry ride to Arran island" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
-    </div>
-
-    <div class="video">
-        <h3>The enchanted forest up the Frenni</h3>
-        <iframe width="100%" height="400" src="https://www.youtube.com/embed/SlCPKbZmgfY" 
-                title="The enchanted forest up the Frenni" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
+    <div class="grid">
+        <div class="thumb">
+            <a href="https://www.youtube.com/watch?v=TK-xTVmz0_g" class="glightbox" data-type="video" data-title="A golden ferry ride to Arran island">
+                <img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="A golden ferry ride to Arran island">
+                <p>A golden ferry ride to Arran island</p>
+            </a>
+        </div>
+        <div class="thumb">
+            <a href="https://www.youtube.com/watch?v=SlCPKbZmgfY" class="glightbox" data-type="video" data-title="The enchanted forest up the Frenni">
+                <img src="https://img.youtube.com/vi/SlCPKbZmgfY/hqdefault.jpg" alt="The enchanted forest up the Frenni">
+                <p>The enchanted forest up the Frenni</p>
+            </a>
+        </div>
+        <div class="thumb">
+            <div class="empty-thumb"></div>
+        </div>
     </div>
 </main>
     <footer>
         <p>Contact: [ebhofro@gmail.com]</p>
     </footer>
+    <!-- GLightbox JS & CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+<script>
+    const lightbox = GLightbox({
+        selector: '.glightbox'
+    });
+</script>
 </body>
 </html>
