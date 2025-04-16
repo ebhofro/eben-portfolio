@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Natural Micro-Short Films</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>NATURAL MICRO-SHORT FILMS</h1>
+    </header>
+
+    <main>
+        <div class="video-gallery">
+            <div class="video-thumb">
+                <a href="https://www.youtube.com/watch?v=TK-xTVmz0_g" class="glightbox" data-type="video">
+                    <img src="https://img.youtube.com/vi/TK-xTVmz0_g/0.jpg" alt="A golden ferry ride to Arran island">
+                    <div class="overlay">
+                        <span>A GOLDEN FERRY RIDE TO ARRAN ISLAND</span>
+                    </div>
+                </a>
+            </div>
+            <div class="video-thumb">
+                <a href="https://www.youtube.com/watch?v=SlCPKbZmgfY" class="glightbox" data-type="video">
+                    <img src="https://img.youtube.com/vi/SlCPKbZmgfY/0.jpg" alt="The enchanted forest up the Frenni">
+                    <div class="overlay">
+                        <span>THE ENCHANTED FOREST UP THE FRENNI</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        const lightbox = GLightbox({
+            selector: '.glightbox'
+        });
+    </script>
+</body>
+</html>
