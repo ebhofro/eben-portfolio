@@ -47,10 +47,14 @@ main {
 .video-thumb {
     position: relative;
     width: 300px;
+    height: auto;
+    overflow: hidden; /* This is key to crop any excess overlay */
+    border-radius: 10px;
 }
 
 .video-thumb img {
     width: 100%;
+    height: auto;
     border-radius: 10px;
     display: block;
     transition: opacity 0.3s ease;
@@ -71,8 +75,9 @@ main {
     opacity: 0;
     transition: opacity 0.3s ease;
     font-size: 0.9rem;
-    padding: 1rem;
     text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .video-thumb:hover img {
