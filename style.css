@@ -160,6 +160,17 @@ main {
     opacity: 1;
 }
 
+/* 🎇 Add glow effect when hovering */
+.video-thumb:hover {
+  box-shadow: 0 0 20px #255634;
+}
+
+/* 🎇 Add glow effect when hovering */
+.video-thumb:hover {
+  box-shadow: 0 0 20px #255634;
+}
+
+
 .image-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
