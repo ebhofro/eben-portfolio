@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CREATIVE EDITING VIDEOS | Eben Holmes-Frodsham</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -17,17 +18,24 @@
 
 
     <main>
-        <div class="video-gallery">
-  <div class="video-thumb" data-aos="fade-up">
-    <a href="https://youtu.be/NlCne_3IVy0" class="glightbox" data-type="video">
-      <img src="https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg" alt="Summoning">
-      <div class="overlay">
-        <span>YOUR VIDEO TITLE</span>
+        <div class="video-thumb">
+  <a href="https://youtu.be/NlCne_3IVy0" class="glightbox" data-type="video">
+    <img src="https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg" alt="Your Video Title">
+    <div clhttps://youtu.be/NlCne_3IVy0ass="overlay"><span>YOUR VIDEO TITLE</span></div>
+  </a>
+</div>
+
       </div>
     </a>
   </div>
 </div>
 
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  const lightbox = GLightbox({
+    selector: '.glightbox'
+  });
+</script>
 </body>
 </html>
