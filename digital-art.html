@@ -5,6 +5,7 @@
   <title>Digital Art | Eben Holmes‑Frodsham</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 </head>
 <body>
   <header>
@@ -14,12 +15,22 @@
     </nav>
     <h1>DIGITAL ART</h1>
   </header>
- <main>
-  <section class="image-gallery">
-    <img src="beachroanna1web.jpg" alt="Digital Artwork 1">
-    <img src="roanna2website.jpg" alt="Digital Artwork 2">
-    <img src="digital3.jpg" alt="Digital Artwork 3">
-  </section>
-</main>
+
+  <main>
+    <section class="art-grid">
+      <a href="roanna1website.jpg" class="glightbox"><img src="art1.jpg" alt="Art 1"></a>
+      <a href="beachroanna1web.jpg" class="glightbox"><img src="art2.jpg" alt="Art 2"></a>
+      <a href="art3.jpg" class="glightbox"><img src="art3.jpg" alt="Art 3"></a>
+      <a href="art4.jpg" class="glightbox"><img src="art4.jpg" alt="Art 4"></a>
+      <!-- Add more images as needed -->
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({
+      selector: '.glightbox'
+    });
+  </script>
 </body>
 </html>
