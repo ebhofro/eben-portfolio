@@ -41,20 +41,14 @@ main-nav {
 
 .hero-mountains {
   position: absolute;
-  bottom: 0;
+  bottom: -10px; /* slightly overlap outside the banner for style */
   left: 50%;
-  transform: translateX(-50%) scale(0.5);
-  opacity: 0.5;
+  transform: translateX(-50%) scale(0.7);
+  opacity: 0.6;
   z-index: 1;
   pointer-events: none;
-}
-
-
-   
-.hero-banner img {
-  width: 100%;
-  object-fit: cover;
-  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .hero-text {
@@ -190,12 +184,6 @@ main {
 .video-thumb:hover {
   box-shadow: 0 0 20px #255634;
 }
-
-/* 🎇 Add glow effect when hovering */
-.video-thumb:hover {
-  box-shadow: 0 0 20px #255634;
-}
-
 
 .image-gallery {
   display: grid;
