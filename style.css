@@ -167,6 +167,29 @@ input {
     padding: 0.5rem;
     margin-top: 0.5rem;
     border: 1px solid #ccc;
+
+}
+
+   .art-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.art-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.art-grid a:hover img {
+  transform: scale(1.05);
+}
+
     border-radius: 5px;
     text-transform: none;
 }
