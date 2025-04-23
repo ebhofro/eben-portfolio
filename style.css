@@ -42,12 +42,13 @@ main-nav {
 .hero-mountains {
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.5);
+  opacity: 0.5;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.9;
 }
+
 
    
 .hero-banner img {
