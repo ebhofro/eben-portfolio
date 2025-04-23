@@ -30,7 +30,8 @@ main-nav {
   pointer-events: none;
   opacity: 0.9;
 
-
+}
+   
 .hero-banner img {
   width: 100%;
   object-fit: cover;
