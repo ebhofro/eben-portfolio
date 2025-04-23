@@ -9,6 +9,12 @@ main-nav {
     gap: 1rem;
 }
 
+.glightbox-container {
+  box-shadow: 0 0 60px #255634;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 .hero-banner {
   position: relative;
   max-height: 300px;
