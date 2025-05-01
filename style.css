@@ -104,11 +104,14 @@ body {
 
 .sidebar-banner {
   width: 100%;
-  height: auto;
-  display: block;
-  margin: 0; /* ✅ remove any bottom/top margin */
-  padding: 0;
+  height: 300px; /* Adjust based on your image height */
+  background-image: url('sidebarmk1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  flex-shrink: 0;
 }
+
 
 .sidebar ul {
   list-style: none;
