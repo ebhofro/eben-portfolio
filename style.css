@@ -99,14 +99,22 @@ body {
 
 .sidebar {
   position: fixed;
-  top: 0;
   left: 0;
   width: 300px;
-  height: 100vh; /* ✅ Always fills full screen height */
+  height: 100vh;
   background-color: #255634;
   z-index: 999;
-  display: flex;
-  flex-direction: column;
+  transition: top 0.3s ease;
+}
+
+/* When banner is showing */
+.sidebar.push-down {
+  top: 280px; /* pushed down to match banner height */
+}
+
+/* Default position (when banner hidden) */
+.sidebar:not(.push-down) {
+  top: 0;
 }
 
 .sidebar-content {
