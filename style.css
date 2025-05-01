@@ -70,17 +70,18 @@ main-nav {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  height: 80px;
-  background-color: #255634;
-  color: #fdfdf9;
-  text-align: center;
-  line-height: 80px;
-  font-size: 1.25rem;
-  font-weight: bold;
-  z-index: 1000; /* sit on top of sidebar */
+  width: 100%;
+  height: auto;
+  z-index: 1000;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+.top-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 .top-banner.hide {
   transform: translateY(-100%);
@@ -178,7 +179,7 @@ body {
 
 main {
   margin-left: 300px; /* for your sidebar */
-  padding-top: 100px; /* leaves space for top banner */
+  padding-top: 280px; /* leaves space for top banner */
   padding-right: 2rem;
   padding-left: 2rem;
 }
