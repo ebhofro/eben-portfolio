@@ -119,9 +119,13 @@ body {
 }
 
 .sidebar ul {
+  position: relative;
+  z-index: 1;
   list-style: none;
-  padding: 0;
+  padding: 4rem 0 0; /* adds space below banner image */
   margin: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .sidebar ul li {
@@ -129,16 +133,17 @@ body {
 }
 
 .sidebar ul li a {
-  color: #fdfdf9;
+  color: #fdfdf9; /* your creamy white */
   text-decoration: none;
   font-weight: bold;
   padding: 0.5rem 1rem;
   display: block;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .sidebar ul li a:hover {
-  background-color: #1e4228;
+  background-color: #1e4228; /* your hover green */
+  color: #ffcb47; /* optional: your highlight colour */
 }
 
 /* === MAIN CONTENT ADJUSTMENT TO ACCOUNT FOR SIDEBAR === */
