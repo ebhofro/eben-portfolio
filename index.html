@@ -101,5 +101,16 @@
     const lightbox = GLightbox({ selector: '.glightbox' });
     AOS.init({ duration: 600, once: true });
   </script>
+
+  <script>
+  window.addEventListener('scroll', () => {
+    const img = document.querySelector('.sidebar-banner-img');
+    if (img) {
+      const scrollTop = window.scrollY;
+      img.style.transform = `translateY(${scrollTop * 0.2}px)`;
+    }
+  });
+</script>
+
 </body>
 </html>
