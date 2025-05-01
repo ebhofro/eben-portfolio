@@ -90,19 +90,24 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 300px;
+  width: 300px; /* or 200px if that's what you're using */
   height: 100vh;
   background-color: #255634;
-  padding-top: 2rem;
   box-shadow: 2px 0 10px rgba(0,0,0,0.1);
   z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0; /* ✅ remove any top padding */
+  margin: 0;
 }
 
 .sidebar-banner {
   width: 100%;
   height: auto;
   display: block;
-  margin-bottom: 1rem;
+  margin: 0; /* ✅ remove any bottom/top margin */
+  padding: 0;
 }
 
 .sidebar ul {
