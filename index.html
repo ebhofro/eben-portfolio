@@ -132,7 +132,20 @@
   });
 </script>
 
+<script>
+  const banner = document.getElementById("topBanner");
 
+  window.addEventListener("scroll", function () {
+    const scrollTop = window.scrollY;
+
+    if (scrollTop < 100) {
+      banner.classList.remove("hide");
+    } else {
+      banner.classList.add("hide");
+    }
+  });
+</script>
+  
 
 </body>
 </html>
