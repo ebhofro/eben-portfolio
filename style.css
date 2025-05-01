@@ -54,18 +54,6 @@ main-nav {
   height: auto;
 }
 
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 2rem;
-  text-align: center;
-  letter-spacing: 2px;
-  z-index: 2;
-}
-
 .top-banner {
   position: relative; /* not fixed, since it's part of the flow */
   width: 100%;
