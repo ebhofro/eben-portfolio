@@ -87,61 +87,36 @@ body {
 }
 
 .sidebar {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 300px;
   height: 100vh;
-  overflow: hidden;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+  z-index: 100;
   padding: 0;
   margin: 0;
 }
 
-
-
-.sidebar-banner {
-  width: 100%;
-  height: 1868px; /* Adjust based on your image height */
-  background-image: url('sidebarmk1.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  flex-shrink: 0;
-}
-
 .sidebar-banner-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100vh; /* shows one screen’s worth at a time */
-  overflow: hidden;
-  position: relative;
+  z-index: 0;
 }
 
 .sidebar-banner-img {
   width: 100%;
   height: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: block;
   transform: translateY(0);
   transition: transform 0.1s linear;
 }
-
-.sidebar::before {
-  content: "";
-  position: absolute;
-  top: 0; 
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('sidebarmk1.jpg');
-  background-size: cover;
-  background-position: top center;
-  background-attachment: fixed;
-  z-index: 0;
-  opacity: 1;
-}
-
 
 .sidebar ul {
   list-style: none;
