@@ -99,18 +99,18 @@ body {
 
 .sidebar {
   position: fixed;
-  top: 280px;
+  top: 0;
   left: 0;
   width: 300px;
-  height: calc(100vh - 280px);
-  background-color: transparent;
+  height: 100vh; /* ✅ Always fills full screen height */
+  background-color: #255634;
+  z-index: 999;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-  z-index: 100;
-  padding: 0;
-  margin: 0;
+}
+
+.sidebar-content {
+  margin-top: 280px; /* ✅ Pushes nav down to match banner height */
 }
 
 .sidebar-banner-wrapper {
