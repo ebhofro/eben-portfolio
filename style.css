@@ -156,10 +156,10 @@ body {
 }
 
 .sidebar ul li a {
-  font-family: 'Rubik Iso', cursive;
-  font-size: 0.95rem; /* 👈 slightly smaller */
+  font-family: 'Geo', sans-serif;
+  font-size: 1rem;
   text-transform: uppercase;
-  font-weight: normal;
+  font-weight: bold;
   color: #fdfdf9;
   text-decoration: none;
   padding: 0.5rem 1rem;
