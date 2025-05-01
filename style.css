@@ -67,28 +67,26 @@ main-nav {
 }
 
 .top-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative; /* not fixed, since it's part of the flow */
   width: 100%;
-  height: auto;
+  height: 280px;
   z-index: 1000;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
-.top-banner-img {
+.top-banner img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
 }
-
 
 .top-banner.hide {
   transform: translateY(-100%);
   opacity: 0;
 }
-
-
 
 .main-nav a {
     color: #f9f9f6;
@@ -168,8 +166,6 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-
-
 .sidebar ul li a:hover {
   background-color: #1e4228; /* your hover green */
   color: #ffcb47; /* optional: your highlight colour */
@@ -183,7 +179,6 @@ main {
   padding-right: 2rem;
   padding-left: 2rem;
 }
-
 
 .category-grid {
     display: flex;
