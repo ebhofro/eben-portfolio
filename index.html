@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eben Holmes-Frodsham Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="sidebar">
+    <div class="logo">EBEN</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#natural">Natural Shorts</a></li>
+      <li><a href="#editing">Creative Editing</a></li>
+      <li><a href="#concerts">Concerts</a></li>
+      <li><a href="#uni">Uni Work</a></li>
+      <li><a href="#designs">Designs</a></li>
+      <li><a href="#photography">Photography</a></li>
+      <li><a href="#digital">Digital Art</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="home" data-aos="fade-up">
+      <h1>EBEN HOLMES-FRODSHAM</h1>
+      <p>Creative video editor and filmmaker. Welcome to my portfolio.</p>
+    </section>
+
+    <section id="natural" data-aos="fade-up">
+      <h2>Natural Micro-Short Films</h2>
+      <div class="video-gallery">
+        <div class="video-thumb">
+          <a href="https://www.youtube.com/watch?v=TK-xTVmz0_g" class="glightbox" data-type="video">
+            <img src="https://img.youtube.com/vi/TK-xTVmz0_g/0.jpg" alt="A golden ferry ride to Arran island">
+            <div class="overlay"><span>A GOLDEN FERRY RIDE TO ARRAN ISLAND</span></div>
+          </a>
+        </div>
+        <div class="video-thumb">
+          <a href="https://www.youtube.com/watch?v=SlCPKbZmgfY" class="glightbox" data-type="video">
+            <img src="https://img.youtube.com/vi/SlCPKbZmgfY/0.jpg" alt="The enchanted forest up the Frenni">
+            <div class="overlay"><span>THE ENCHANTED FOREST UP THE FRENNI</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="editing" data-aos="fade-up">
+      <h2>Creative Editing Videos</h2>
+      <p>Coming soon...</p>
+    </section>
+
+    <section id="concerts" data-aos="fade-up">
+      <h2>Concert Videography and Photography</h2>
+      <p>Coming soon...</p>
+    </section>
+
+    <section id="uni" data-aos="fade-up">
+      <h2>University and School Work</h2>
+      <p>Coming soon...</p>
+    </section>
+
+    <section id="designs" data-aos="fade-up">
+      <h2>Designs</h2>
+      <p>Coming soon...</p>
+    </section>
+
+    <section id="photography" data-aos="fade-up">
+      <h2>Photography</h2>
+      <div class="image-gallery">
+        <a href="photo1.jpg" class="glightbox"><img src="photo1.jpg" alt="Photo 1"></a>
+        <a href="photo2.jpg" class="glightbox"><img src="photo2.jpg" alt="Photo 2"></a>
+      </div>
+    </section>
+
+    <section id="digital" data-aos="fade-up">
+      <h2>Digital Art</h2>
+      <div class="image-gallery">
+        <a href="art1.jpg" class="glightbox"><img src="art1.jpg" alt="Art 1"></a>
+        <a href="art2.jpg" class="glightbox"><img src="art2.jpg" alt="Art 2"></a>
+      </div>
+    </section>
+
+    <section id="contact" data-aos="fade-up">
+      <h2>Contact</h2>
+      <p>Email: your.email@example.com</p>
+      <p>Instagram | LinkedIn | etc.</p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    const lightbox = GLightbox({ selector: '.glightbox' });
+    AOS.init({ duration: 600, once: true });
+  </script>
+</body>
+</html>
