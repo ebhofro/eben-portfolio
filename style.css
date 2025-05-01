@@ -114,7 +114,7 @@ body {
 
 .sidebar-banner-wrapper {
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* shows one screen’s worth at a time */
   overflow: hidden;
   position: relative;
 }
@@ -128,6 +128,7 @@ body {
   transform: translateY(0);
   transition: transform 0.1s linear;
 }
+
 
 .sidebar ul {
   list-style: none;
