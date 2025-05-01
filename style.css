@@ -118,7 +118,12 @@ body {
 }
 
 .sidebar-content {
-  margin-top: 280px; /* ✅ Pushes nav down to match banner height */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 1rem; /* or 0 if you want links flush */
+  width: 100%;
 }
 
 .sidebar-banner-wrapper {
