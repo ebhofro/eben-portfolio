@@ -107,10 +107,11 @@
     const img = document.querySelector('.sidebar-banner-img');
     if (img) {
       const scrollTop = window.scrollY;
-      img.style.transform = `translateY(${scrollTop * 0.2}px)`;
+      img.style.transform = `translateY(${scrollTop * 0.2}px)`; // ← this moves it DOWN now
     }
   });
 </script>
+
 
 </body>
 </html>
