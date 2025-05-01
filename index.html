@@ -113,28 +113,12 @@
   AOS.init({ duration: 600, once: true });
 </script>
 
-<<script>
+<script>
   window.addEventListener('scroll', () => {
     const img = document.querySelector('.sidebar-banner-img');
     if (img) {
       const scrollTop = window.scrollY;
       img.style.transform = `translateY(-${scrollTop * 0.2}px)`;
-    }
-  });
-</script>
-
-<script>
-  const banner = document.getElementById("topBanner");
-
-  window.addEventListener("scroll", function () {
-    const scrollTop = window.scrollY;
-
-    if (scrollTop < 100) {
-      // You're near the top — show banner again
-      banner.classList.remove("hide");
-    } else {
-      // You're scrolling down past 100px — hide banner
-      banner.classList.add("hide");
     }
   });
 </script>
@@ -167,6 +151,40 @@
   });
 </script>
 
+<script>
+  // Parallax scroll for sidebar image
+  window.addEventListener('scroll', () => {
+    const img = document.querySelector('.sidebar-banner-img');
+    if (img) {
+      const scrollTop = window.scrollY;
+      img.style.transform = `translateY(-${scrollTop * 0.2}px)`;
+    }
+  });
+
+  // Top banner and sidebar shift
+  const banner = document.getElementById("topBanner");
+  const sidebar = document.querySelector(".sidebar");
+
+  window.addEventListener("scroll", function () {
+    const scrollTop = window.scrollY;
+
+    if (scrollTop < 200) {
+      banner.classList.remove("hide");
+      sidebar.classList.add("push-down");
+    } else {
+      banner.classList.add("hide");
+      sidebar.classList.remove("push-down");
+    }
+  });
+
+  // Apply correct state on page load
+  window.addEventListener("DOMContentLoaded", () => {
+    const scrollTop = window.scrollY;
+    if (scrollTop < 200) {
+      sidebar.classList.add("push-down");
+    }
+  });
+</script>
   
 
 </body>
