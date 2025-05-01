@@ -93,24 +93,25 @@
       <p>Email: your.email@example.com</p>
       <p>Instagram | LinkedIn | etc.</p>
     </section>
-  </main>
+ </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    const lightbox = GLightbox({ selector: '.glightbox' });
-    AOS.init({ duration: 600, once: true });
-  </script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  const lightbox = GLightbox({ selector: '.glightbox' });
+  AOS.init({ duration: 600, once: true });
+</script>
 
-  <script>
+<script>
   window.addEventListener('scroll', () => {
     const img = document.querySelector('.sidebar-banner-img');
     if (img) {
       const scrollTop = window.scrollY;
-      img.style.transform = `translateY(${scrollTop * 0.2}px)`; // ← this moves it DOWN now
+      img.style.transform = `translateY(${scrollTop * 0.2}px)`;
     }
   });
 </script>
+
 
 
 </body>
