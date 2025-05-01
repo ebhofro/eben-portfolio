@@ -82,23 +82,51 @@ main-nav {
 }
 
 body {
-    margin: 0;
-    font-family: 'Space Grotesk', sans-serif;
-    background-color: #fefbea;
-    color: #083617;
-    font-size: 14px;
-    text-transform: uppercase;
+  display: flex;
+  scroll-behavior: smooth;
 }
 
-header {
-    background-color: #114221;
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #255634;
+  padding-top: 2rem;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  z-index: 100;
 }
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 1rem 0;
+}
+
+.sidebar ul li a {
+  color: #fdfdf9;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background-color: #1e4228;
+}
+
+/* === MAIN CONTENT ADJUSTMENT TO ACCOUNT FOR SIDEBAR === */
 
 main {
-    padding: 2rem;
+  margin-left: 200px;
+  padding: 2rem;
+  flex: 1;
 }
 
 .category-grid {
