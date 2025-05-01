@@ -127,6 +127,21 @@ body {
   transition: transform 0.1s linear;
 }
 
+.sidebar::before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('sidebarmk1.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  z-index: 0;
+  opacity: 1;
+}
+
 
 .sidebar ul {
   list-style: none;
