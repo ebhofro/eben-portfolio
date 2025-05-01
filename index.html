@@ -141,14 +141,28 @@
 
 <script>
   const banner = document.getElementById("topBanner");
+  const sidebar = document.querySelector(".sidebar");
 
   window.addEventListener("scroll", function () {
     const scrollTop = window.scrollY;
 
-    if (scrollTop === 200) {
+    if (scrollTop < 200) {
       banner.classList.remove("hide");
+      sidebar.classList.add("push-down");
     } else {
       banner.classList.add("hide");
+      sidebar.classList.remove("push-down");
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const scrollTop = window.scrollY;
+    const sidebar = document.querySelector(".sidebar");
+
+    if (scrollTop < 200) {
+      sidebar.classList.add("push-down");
     }
   });
 </script>
