@@ -113,6 +113,21 @@
   });
 </script>
 
+<script>
+  const banner = document.getElementById("topBanner");
+
+  window.addEventListener("scroll", function () {
+    const scrollTop = window.scrollY;
+
+    if (scrollTop < 100) {
+      // You're near the top — show banner again
+      banner.classList.remove("hide");
+    } else {
+      // You're scrolling down past 100px — hide banner
+      banner.classList.add("hide");
+    }
+  });
+</script>
 
 
 
