@@ -141,7 +141,7 @@ body {
   position: relative;
   z-index: 1;
   list-style: none;
-  padding: 5rem 0 2rem; /* 👈 pushes "Home" down */
+  padding: 1rem 0 1rem; /* 👈 pushes "Home" down */
   margin: 0;
   width: 100%;
   text-align: center;
