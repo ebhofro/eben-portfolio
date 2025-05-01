@@ -67,24 +67,26 @@ main-nav {
 }
 
 .top-banner {
-  position: relative;
-  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
   background-color: #255634;
   color: #fdfdf9;
   text-align: center;
-  height: 80px;
   line-height: 80px;
   font-size: 1.25rem;
   font-weight: bold;
-  overflow: hidden;
+  z-index: 1000; /* sit on top of sidebar */
   transition: transform 0.3s ease, opacity 0.3s ease;
-  z-index: 10;
 }
 
 .top-banner.hide {
   transform: translateY(-100%);
   opacity: 0;
 }
+
 
 
 .main-nav a {
@@ -170,10 +172,12 @@ body {
 /* === MAIN CONTENT ADJUSTMENT TO ACCOUNT FOR SIDEBAR === */
 
 main {
-  margin-left: 300px;
-  padding: 2rem;
-  flex: 1;
+  margin-left: 300px; /* for your sidebar */
+  padding-top: 100px; /* leaves space for top banner */
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
+
 
 .category-grid {
     display: flex;
