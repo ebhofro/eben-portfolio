@@ -104,8 +104,8 @@ main-nav {
 }
 
 body {
-  display: flex;
   scroll-behavior: smooth;
+  margin: 0;
 }
 
 .sidebar {
