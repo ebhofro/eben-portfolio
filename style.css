@@ -176,8 +176,8 @@ body {
 /* === MAIN CONTENT ADJUSTMENT TO ACCOUNT FOR SIDEBAR === */
 
 main {
-  margin-left: 300px; /* for your sidebar */
-  padding-top: 410px; /* 280 (top banner) + 130 (scrolling reel) */
+  margin-left: 300px;
+  padding-top: 410px; /* 280 + 130 */
   padding-right: 2rem;
   padding-left: 2rem;
 }
@@ -410,10 +410,6 @@ input {
   transform: scale(1.05);
 }
 
-    border-radius: 5px;
-    text-transform: none;
-}
-
 /* -----------------------------------
    Responsive fixes for MacBook & mobile
 ----------------------------------- */
@@ -492,17 +488,16 @@ input {
 }
 
 .horizontal-reel {
-  position: fixed;
-  top: 280px; /* height of your top banner */
-  left: 300px; /* width of sidebar */
+  position: absolute;         /* not fixed */
+  top: 280px;                 /* right below your top banner */
+  left: 300px;                /* beside sidebar */
   right: 0;
   height: 130px;
   background: #fdfdf9;
   overflow: hidden;
-  z-index: 800;
+  z-index: 500;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-
 
 .horizontal-track {
   display: flex;
