@@ -127,66 +127,43 @@
 <script>
   const banner = document.getElementById("topBanner");
   const sidebar = document.querySelector(".sidebar");
+  const bgReveal = document.querySelector(".banner-reveal-bg"); // for secret image
+  const img = document.querySelector('.sidebar-banner-img');
 
+  // Handle scroll behaviour
   window.addEventListener("scroll", function () {
     const scrollTop = window.scrollY;
 
+    // Show/hide banner and shift sidebar
     if (scrollTop < 200) {
       banner.classList.remove("hide");
       sidebar.classList.add("push-down");
+      if (bgReveal) bgReveal.style.opacity = 0;
     } else {
       banner.classList.add("hide");
       sidebar.classList.remove("push-down");
+      if (bgReveal) bgReveal.style.opacity = 1;
     }
-  });
-</script>
 
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const scrollTop = window.scrollY;
-    const sidebar = document.querySelector(".sidebar");
-
-    if (scrollTop < 200) {
-      sidebar.classList.add("push-down");
-    }
-  });
-</script>
-
-<script>
-  // Parallax scroll for sidebar image
-  window.addEventListener('scroll', () => {
-    const img = document.querySelector('.sidebar-banner-img');
+    // Parallax effect on sidebar image
     if (img) {
-      const scrollTop = window.scrollY;
       img.style.transform = `translateY(-${scrollTop * 0.2}px)`;
     }
   });
 
-  // Top banner and sidebar shift
-  const banner = document.getElementById("topBanner");
-  const sidebar = document.querySelector(".sidebar");
-
-  window.addEventListener("scroll", function () {
-    const scrollTop = window.scrollY;
-
-    if (scrollTop < 200) {
-      banner.classList.remove("hide");
-      sidebar.classList.add("push-down");
-    } else {
-      banner.classList.add("hide");
-      sidebar.classList.remove("push-down");
-    }
-  });
-
-  // Apply correct state on page load
+  // Set sidebar position + background visibility on page load
   window.addEventListener("DOMContentLoaded", () => {
     const scrollTop = window.scrollY;
+
     if (scrollTop < 200) {
       sidebar.classList.add("push-down");
+      if (bgReveal) bgReveal.style.opacity = 0;
+    } else {
+      sidebar.classList.remove("push-down");
+      if (bgReveal) bgReveal.style.opacity = 1;
     }
   });
 </script>
-  
 
 </body>
 </html>
