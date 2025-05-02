@@ -404,13 +404,14 @@ input {
   position: fixed;
   top: 0;
   left: 0;
-  width: 300px; /* matches your sidebar width */
-  height: 280px; /* matches your top banner height */
-  background-image: url('secretimagemk1.jpg'); /* ✅ your image name */
+  width: 300px; /* same as sidebar */
+  height: 280px; /* same as banner */
+  background-image: url('secretimagemk1.jpg'); /* ✅ name matches file */
   background-size: cover;
   background-position: center;
   opacity: 0;
   z-index: 500;
   transition: opacity 0.4s ease;
 }
+
 
