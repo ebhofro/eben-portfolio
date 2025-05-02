@@ -138,7 +138,7 @@
     if (scrollTop < 60) {
       banner.classList.remove("hide");
       sidebar.classList.add("push-down");
-      if (bgReveal) bgReveal.style.opacity = 0;
+      if (bgReveal) bgReveal.style.opacity = 1;
     } else {
       banner.classList.add("hide");
       sidebar.classList.remove("push-down");
@@ -157,7 +157,7 @@
 
     if (scrollTop < 60) {
       sidebar.classList.add("push-down");
-      if (bgReveal) bgReveal.style.opacity = 0;
+      if (bgReveal) bgReveal.style.opacity = 1;
     } else {
       sidebar.classList.remove("push-down");
       if (bgReveal) bgReveal.style.opacity = 1;
