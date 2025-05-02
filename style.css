@@ -300,6 +300,27 @@ main {
   transition: transform 0.3s ease;
 }
 
+.small-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center;
+}
+
+.small-gallery img {
+  max-width: 120px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.small-gallery img:hover {
+  transform: scale(1.05);
+}
+
+
 
 /* ————————————————————
    1. Image Hover Effects
