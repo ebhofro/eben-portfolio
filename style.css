@@ -320,7 +320,35 @@ main {
   transform: scale(1.05);
 }
 
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+}
 
+.photo-grid a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crop to square */
+  transition: object-fit 0.3s ease, transform 0.3s ease;
+  border-radius: 0; /* ✅ no rounded corners */
+}
+
+/* On hover, show full image */
+.photo-grid a:hover img {
+  object-fit: contain;
+  background-color: #000; /* optional backdrop to fill space */
+  transform: scale(1.02);
+}
 
 /* ————————————————————
    1. Image Hover Effects
