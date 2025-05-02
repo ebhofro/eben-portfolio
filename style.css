@@ -336,3 +336,66 @@ input {
     border-radius: 5px;
     text-transform: none;
 }
+
+/* -----------------------------------
+   Responsive fixes for MacBook & mobile
+----------------------------------- */
+@media (max-width: 1024px) {
+  .top-banner {
+    height: 200px;
+  }
+
+  .sidebar.push-down {
+    top: 200px;
+  }
+
+  main {
+    padding-top: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-banner {
+    height: 180px;
+  }
+
+  .sidebar.push-down {
+    top: 180px;
+  }
+
+  main {
+    padding-top: 180px;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+
+  main {
+    margin-left: 0;
+  }
+}
+
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2000;
+  background: #255634;
+  color: #fdfdf9;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
