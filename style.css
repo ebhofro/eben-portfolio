@@ -177,7 +177,7 @@ body {
 
 main {
   margin-left: 300px; /* for your sidebar */
-  padding-top: 280px; /* leaves space for top banner */
+  padding-top: 410px; /* 280 (top banner) + 130 (scrolling reel) */
   padding-right: 2rem;
   padding-left: 2rem;
 }
@@ -493,15 +493,16 @@ input {
 
 .horizontal-reel {
   position: fixed;
-  top: 0;
-  left: 300px; /* shift right to avoid sidebar */
+  top: 280px; /* height of your top banner */
+  left: 300px; /* width of sidebar */
   right: 0;
   height: 130px;
   background: #fdfdf9;
   overflow: hidden;
-  z-index: 800; /* higher than content, lower than top banner if needed */
+  z-index: 800;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 .horizontal-track {
   display: flex;
