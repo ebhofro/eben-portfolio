@@ -135,7 +135,7 @@
     const scrollTop = window.scrollY;
 
     // Show/hide banner and shift sidebar
-    if (scrollTop < 200) {
+    if (scrollTop < 120) {
       banner.classList.remove("hide");
       sidebar.classList.add("push-down");
       if (bgReveal) bgReveal.style.opacity = 0;
@@ -155,7 +155,7 @@
   window.addEventListener("DOMContentLoaded", () => {
     const scrollTop = window.scrollY;
 
-    if (scrollTop < 200) {
+    if (scrollTop < 120) {
       sidebar.classList.add("push-down");
       if (bgReveal) bgReveal.style.opacity = 0;
     } else {
