@@ -302,10 +302,11 @@ main {
 
 .section-banner {
   width: 100%;
-  max-width: 100%;
   height: auto;
   display: block;
-  margin: 2rem 0; /* adds space above and below the banner */
+  margin: 1rem 0; /* smaller top/bottom gap */
+  padding: 0;
+  border: none;
 }
 
 .small-gallery {
