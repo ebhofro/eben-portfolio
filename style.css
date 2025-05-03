@@ -301,16 +301,16 @@ main {
 }
 
 .section-banner {
-  width: 100vw;
-  max-width: none;
+  width: calc(100% + 2rem); /* extend to cover the left padding */
   margin: 1rem 0;
   height: auto;
   max-height: 120px;
   object-fit: cover;
   display: block;
   position: relative;
-  left: -2rem;
+  left: -2rem; /* shift left to hug the sidebar */
 }
+
 
 .small-gallery {
   display: grid;
