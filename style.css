@@ -303,14 +303,14 @@ main {
 }
 
 .section-banner {
-  width: calc(100vw - 300px + 2rem); /* Account for sidebar + shift back for main padding */
+  width: calc(100vw - 300px + 2rem); /* 100vw minus sidebar plus main padding */
   margin: 1rem 0;
   height: auto;
   max-height: 110px;
   object-fit: cover;
   display: block;
   position: relative;
-  left: -2rem; /* Nudges left to touch sidebar */
+  left: -2rem; /* Nudge left to align with sidebar */
 }
 
 .small-gallery {
