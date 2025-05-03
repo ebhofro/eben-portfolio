@@ -303,15 +303,16 @@ main {
 }
 
 .section-banner {
-  width: calc(100% + 2rem); /* extend to cover the left padding */
+  width: calc(100vw - 300px); /* Full viewport width minus sidebar */
   margin: 1rem 0;
   height: auto;
-  max-height: 120px;
+  max-height: 110px; /* slightly thinner */
   object-fit: cover;
   display: block;
   position: relative;
-  left: -2rem; /* shift left to hug the sidebar */
+  left: 0;
 }
+
 
 
 .small-gallery {
