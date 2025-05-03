@@ -301,12 +301,13 @@ main {
 }
 
 .section-banner {
-  width: 100%;
-  height: auto;
   display: block;
-  margin: 1rem 0; /* smaller top/bottom gap */
+  width: calc(100vw - 300px); /* full width minus sidebar */
+  margin: 1rem 0;
   padding: 0;
   border: none;
+  object-fit: cover;
+  max-height: 120px; /* shrink height visually */
 }
 
 .small-gallery {
@@ -540,6 +541,15 @@ input {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .section-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
   }
 }
 
