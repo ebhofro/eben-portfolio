@@ -300,6 +300,14 @@ main {
   transition: transform 0.3s ease;
 }
 
+.section-banner {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem 0; /* adds space above and below the banner */
+}
+
 .small-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
