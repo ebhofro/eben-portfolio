@@ -301,16 +301,16 @@ main {
 }
 
 .section-banner {
-  width: calc(100% + 2rem); /* extend edge-to-edge, ignoring padding */
-  margin-left: -2rem;        /* cancel out the main section padding */
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  width: 100vw;
+  max-width: none;
+  margin: 1rem 0;
   height: auto;
-  max-height: 110px;         /* adjust this to make it thinner */
-  object-fit: contain;
+  max-height: 120px;
+  object-fit: cover;
   display: block;
+  position: relative;
+  left: -2rem;
 }
-
 
 .small-gallery {
   display: grid;
