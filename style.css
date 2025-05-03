@@ -549,10 +549,11 @@ input {
 
 @media (max-width: 768px) {
   .section-banner {
-    width: 100%;
-    height: auto;
-    display: block;
+    width: 100vw;
+    left: 0;
+    max-height: 100px;
     margin: 1rem 0;
   }
 }
+
 
