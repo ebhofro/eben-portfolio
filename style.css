@@ -95,7 +95,9 @@ main-nav {
 body {
   scroll-behavior: smooth;
   margin: 0;
+  overflow-x: hidden; /* ✅ This is the new line */
 }
+
 
 .sidebar {
   position: fixed;
