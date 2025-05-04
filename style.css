@@ -530,7 +530,7 @@ input {
   position: absolute;
   top: 280px;
   left: 300px;
-  width: calc(100% - 300px); /* Ensures it fits screen minus sidebar */
+  right: 0; /* ✅ use this instead of width */
   height: 130px;
   background: #fdfdf9;
   overflow: hidden;
