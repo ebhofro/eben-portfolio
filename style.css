@@ -216,11 +216,12 @@ main {
 }
 
 .video-gallery {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 on desktop */
+  gap: 2rem;
+  padding: 2rem 0;
 }
+
 
 .video-thumb {
     position: relative;
@@ -574,6 +575,12 @@ input {
     max-height: 100px;
     margin: 1rem 0;
   }
+
+@media (max-width: 768px) {
+  .video-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 on mobile */
+  }
+}
 
    @media (max-width: 768px) {
   .banner-reveal-bg {
