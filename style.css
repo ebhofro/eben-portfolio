@@ -522,10 +522,8 @@ input {
 }
 
 .horizontal-reel {
-  position: absolute;         /* not fixed */
-  top: 280px;                 /* right below your top banner */
-  left: 300px;                /* beside sidebar */
-  right: 0;
+  position: relative;
+  margin-left: 300px; /* keep space for sidebar */
   height: 130px;
   background: #fdfdf9;
   overflow: hidden;
