@@ -308,14 +308,15 @@ main {
 }
 
 .section-banner {
-  width: calc(100vw - 300px + 2rem); /* 100vw minus sidebar plus main padding */
+  width: calc(100% - 300px);
+  left: 0;
   margin: 1rem 0;
   height: auto;
   max-height: 110px;
   object-fit: cover;
   display: block;
   position: relative;
-  left: -2rem; /* Nudge left to align with sidebar */
+  
 }
 
 .small-gallery {
@@ -527,15 +528,16 @@ input {
 
 .horizontal-reel {
   position: absolute;
-  top: 280px; /* directly below your top banner */
-  left: 300px; /* offset for the sidebar */
-  right: 0; /* use right instead of width for better control */
+  top: 280px;
+  left: 300px;
+  width: calc(100% - 300px); /* Ensures it fits screen minus sidebar */
   height: 130px;
   background: #fdfdf9;
   overflow: hidden;
   z-index: 500;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 .horizontal-track {
   display: flex;
