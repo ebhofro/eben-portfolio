@@ -651,6 +651,11 @@ input {
   max-width: 100%;
 }
 
+body {
+  overflow-x: hidden !important;
+}
+html {
+  overflow-x: hidden !important;
 }
 
 
