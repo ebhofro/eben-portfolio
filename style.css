@@ -660,9 +660,9 @@ input {
   box-sizing: border-box;
 }
 
-body, html {
-  overflow-x: hidden !important;
-  width: 100vw;
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 
