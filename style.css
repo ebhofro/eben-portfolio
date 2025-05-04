@@ -576,22 +576,31 @@ input {
     margin: 1rem 0;
   }
 
-@media (max-width: 768px) {
   .video-gallery {
-    grid-template-columns: repeat(2, 1fr); /* 2 on mobile */
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
   }
-}
 
-   @media (max-width: 768px) {
+  .video-thumb {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .video-thumb img {
+    width: 100%;
+    height: auto;
+  }
+
   .banner-reveal-bg {
-    height: 180px;      /* Match your top-banner */
-    width: 300px;       /* Match sidebar width */
+    height: 180px;
+    width: 300px;
     background-size: cover;
     background-position: center;
-    opacity: 1;         /* or 0 if you want it invisible */
+    opacity: 1;
   }
 }
 
-}
+
+
+
 
 
