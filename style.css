@@ -308,8 +308,8 @@ main {
 }
 
 .section-banner {
-  width: calc(100% - 300px);
-  left: 0;
+  left: -2rem;
+  width: calc(100vw - 300px + 2rem);
   margin: 1rem 0;
   height: auto;
   max-height: 110px;
