@@ -598,7 +598,7 @@ input {
     top: 0; /* or slightly lower if needed */
   }
 
-/* Show desktop banner by default */
+/* Desktop banner shown by default */
 .desktop-banner {
   display: block;
 }
@@ -606,7 +606,7 @@ input {
   display: none;
 }
 
-/* On mobile, hide desktop and show mobile */
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .desktop-banner {
     display: none;
@@ -614,10 +614,20 @@ input {
 
   .mobile-banner {
     display: block;
-    width: 100%;
+    width: 100vw;
     height: auto;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
+  .top-banner {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
   }
 }
+
 
 
 
