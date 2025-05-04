@@ -308,8 +308,8 @@ main {
 }
 
 .section-banner {
-  left: -2rem;
-  width: calc(100vw - 300px + 2rem);
+  width: calc(100% - 2rem); /* assuming 2rem side padding in <main> */
+  left: 0;
   margin: 1rem 0;
   height: auto;
   max-height: 110px;
