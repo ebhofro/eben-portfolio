@@ -597,6 +597,26 @@ input {
   .sidebar.push-down {
     top: 0; /* or slightly lower if needed */
   }
+
+/* Show desktop banner by default */
+.desktop-banner {
+  display: block;
+}
+.mobile-banner {
+  display: none;
+}
+
+/* On mobile, hide desktop and show mobile */
+@media (max-width: 768px) {
+  .desktop-banner {
+    display: none;
+  }
+
+  .mobile-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }
 
 
