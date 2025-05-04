@@ -522,16 +522,15 @@ input {
 }
 
 .horizontal-reel {
-  position: absolute;
-  top: 280px; /* ✅ place under top banner */
-  margin-left: 300px; /* ✅ offset for sidebar */
+  position: absolute;         /* ✅ Needed to place it correctly below the banner */
+  top: 280px;                 /* ✅ Aligns below your top banner */
+  margin-left: 300px;         /* ✅ Offsets for the sidebar */
   height: 130px;
   background: #fdfdf9;
   overflow: hidden;
   z-index: 500;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-
 
 .horizontal-track {
   display: flex;
@@ -625,16 +624,17 @@ input {
   .sidebar.push-down {
     top: 0;
   }   
+   
   .horizontal-reel {
-    margin-left: 0; /* override the desktop spacing */
-    width: 100vw;
-    height: 100px;
-    top: 0;
-    left: 0;
-    padding: 1rem 0;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
+  position: relative;
+  top: 0;
+  margin-left: 0;
+  width: 100vw;
+  height: 100px;
+  padding: 1rem 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
 
   .horizontal-track {
     gap: 1rem;
