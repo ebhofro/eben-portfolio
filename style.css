@@ -486,6 +486,26 @@ input {
   border-radius: 4px;
 }
 
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+
+  main {
+    margin-left: 0;
+  }
+}
+
+
 .banner-reveal-bg {
   position: fixed;
   top: 0;
