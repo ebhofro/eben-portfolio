@@ -185,59 +185,52 @@
 <script>
   const banner = document.getElementById("topBanner");
   const sidebar = document.querySelector(".sidebar");
-  const bgReveal = document.querySelector(".banner-reveal-bg"); // for secret image
-  const img = document.querySelector('.sidebar-banner-img');
+  const bgReveal = document.querySelector(".banner-reveal-bg");
+  const img = document.querySelector(".sidebar-banner-img");
 
-  // Handle scroll behaviour
+  // Scroll handler
   window.addEventListener("scroll", function () {
     const scrollTop = window.scrollY;
 
-    // Show/hide banner and shift sidebar
     if (scrollTop < 200) {
       banner.classList.remove("hide");
       sidebar.classList.add("push-down");
+      sidebar.style.top = banner.offsetHeight + "px";
       if (bgReveal) bgReveal.style.opacity = 1;
     } else {
       banner.classList.add("hide");
       sidebar.classList.remove("push-down");
+      sidebar.style.top = "0px";
       if (bgReveal) bgReveal.style.opacity = 1;
     }
 
-    // Parallax effect on sidebar image
     if (img) {
       img.style.transform = `translateY(-${scrollTop * 0.2}px)`;
     }
+  });
 
-   window.addEventListener("DOMContentLoaded", () => {
-  const bannerHeight = banner.offsetHeight || 280;
+  // On page load
+  window.addEventListener("DOMContentLoaded", () => {
+    const scrollTop = window.scrollY;
+    const bannerHeight = banner.offsetHeight || 280;
 
-  if (window.scrollY < 200) {
-    sidebar.classList.add("push-down");
-    sidebar.style.top = bannerHeight + "px"; // Ensures it starts at 280px
-  } else {
-    sidebar.classList.remove("push-down");
-    sidebar.style.top = "0px";
-  }
-});
+    if (scrollTop < 200) {
+      sidebar.classList.add("push-down");
+      sidebar.style.top = bannerHeight + "px";
+      if (bgReveal) bgReveal.style.opacity = 1;
+    } else {
+      sidebar.classList.remove("push-down");
+      sidebar.style.top = "0px";
+      if (bgReveal) bgReveal.style.opacity = 1;
+    }
 
+    // Nudge scroll down by 1px to hide phantom scrollbar
+    setTimeout(() => {
+      window.scrollTo(0, 1);
+    }, 0);
+  });
+</script>
 
-  // Set sidebar position + background visibility on page load
- window.addEventListener("DOMContentLoaded", () => {
-  const scrollTop = window.scrollY;
-
-  if (scrollTop < 200) {
-    sidebar.classList.add("push-down");
-    if (bgReveal) bgReveal.style.opacity = 1;
-  } else {
-    sidebar.classList.remove("push-down");
-    if (bgReveal) bgReveal.style.opacity = 1;
-  }
-
-  // 👇 Nudge scroll to remove phantom scrollbar caused by fixed background
-  setTimeout(() => {
-    window.scrollTo(0, 1);
-  }, 0);
-});
 
 
 
