@@ -95,10 +95,7 @@ main-nav {
 body {
   scroll-behavior: smooth;
   margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  overflow-y: auto;   /* allow regular scrolling */
-  position: relative;
+  overflow-x: hidden; /* ✅ This is the new line */
 }
 
 html, body {
@@ -108,7 +105,6 @@ html, body {
 
 .sidebar {
   position: fixed;
-  top: 0;
   left: 0;
   width: 300px;
   height: 100vh;
@@ -119,7 +115,7 @@ html, body {
 
 /* When banner is showing */
 .sidebar.push-down {
-  top: 280px; /* pushed down to match banner height */
+  top: 195px; /* pushed down to match banner height */
 }
 
 /* Default position (when banner hidden) */
@@ -516,24 +512,19 @@ input {
 }
 
 
-..banner-reveal-bg {
-  position: absolute;
+.banner-reveal-bg {
+  position: fixed;
   top: 0;
   left: 0;
   width: 300px;
   height: 280px;
-  background-image: url('secretimagemk1.jpg');
+  background-image: url('secretimagemk1.jpg'); /* ✅ extension must match your actual file */
   background-size: cover;
   background-position: center;
-  z-index: 500;
-  pointer-events: none;
   opacity: 1;
-  will-change: opacity;
-  overflow: hidden;
-  clip-path: inset(0 0 0 0); /* 👈 hard crop */
+  z-index: 500;
+  transition: opacity 0.4s ease;
 }
-
-
 
 .horizontal-reel {
   position: absolute;
@@ -670,9 +661,7 @@ input {
 
 html, body {
   overflow-x: hidden;
-  overflow-y: scroll;
   max-width: 100%;
-  max-height: 100vh;
 }
 
 
