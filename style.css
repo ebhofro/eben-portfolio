@@ -529,13 +529,14 @@ input {
 .horizontal-reel {
   position: absolute;
   top: 280px;
-  left: 300px;
+  left: 0;
+  width: 100vw;
   height: 130px;
+  padding-left: 300px; /* offset sidebar INSIDE the scroll area */
   background: #fdfdf9;
   overflow: hidden;
   z-index: 500;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  width: calc(100vw - 300px); /* 100vw minus sidebar */
   box-sizing: border-box;
 }
 
