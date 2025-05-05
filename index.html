@@ -207,7 +207,19 @@
     if (img) {
       img.style.transform = `translateY(-${scrollTop * 0.2}px)`;
     }
-  });
+
+   window.addEventListener("DOMContentLoaded", () => {
+  const bannerHeight = banner.offsetHeight || 280;
+
+  if (window.scrollY < 200) {
+    sidebar.classList.add("push-down");
+    sidebar.style.top = bannerHeight + "px"; // Ensures it starts at 280px
+  } else {
+    sidebar.classList.remove("push-down");
+    sidebar.style.top = "0px";
+  }
+});
+
 
   // Set sidebar position + background visibility on page load
  window.addEventListener("DOMContentLoaded", () => {
