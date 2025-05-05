@@ -516,8 +516,9 @@ input {
 }
 
 
-.banner-reveal-bg {
+..banner-reveal-bg {
   position: absolute;
+  top: 0;
   left: 0;
   width: 300px;
   height: 280px;
@@ -528,8 +529,9 @@ input {
   pointer-events: none;
   opacity: 1;
   will-change: opacity;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0); /* 👈 hard crop */
 }
-
 
 
 
@@ -670,6 +672,7 @@ html, body {
   overflow-x: hidden;
   overflow-y: scroll;
   max-width: 100%;
+  max-height: 100vh;
 }
 
 
