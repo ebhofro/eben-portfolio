@@ -677,6 +677,16 @@ html, body {
   height: 100%;
 }
 
+body::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: red;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
 
 * {
