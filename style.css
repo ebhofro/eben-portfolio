@@ -531,10 +531,10 @@ input {
 
 /* 1. Reel container */
 .horizontal-reel {
-  position: absolute;
-  top: 280px; /* below top banner */
-  left: 300px; /* beside sidebar */
-  width: calc(100vw - 300px); /* fill screen excluding sidebar */
+  position: fixed; /* changed from absolute so it doesn't affect main flow */
+  top: 280px; /* below banner */
+  left: 300px; /* aligned with sidebar */
+  right: 0; /* ensures it only fills remaining width */
   height: 130px;
   background: #fdfdf9;
   overflow: hidden;
@@ -542,6 +542,7 @@ input {
   box-sizing: border-box;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 /* 2. Scrolling content */
 .horizontal-track {
@@ -552,6 +553,7 @@ input {
   animation: scroll-left 60s linear infinite;
   will-change: transform;
   min-width: 100%;
+  box-sizing: border-box;
 }
 
 /* 3. Image styling */
