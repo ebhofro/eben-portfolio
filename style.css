@@ -183,7 +183,7 @@ html, body {
 
 main {
   margin-left: 300px;
-  padding-top: 250px; /* 280 + 130 */
+  padding-top: 410px; /* 280 + 130 */
   padding-right: 2rem;
   padding-left: 2rem;
 }
@@ -531,10 +531,10 @@ input {
 
 /* 1. Reel container */
 .horizontal-reel {
-  position: fixed; /* changed from absolute so it doesn't affect main flow */
-  top: 280px; /* below banner */
-  left: 300px; /* aligned with sidebar */
-  right: 0; /* ensures it only fills remaining width */
+  position: fixed;
+  top: 280px;
+  left: 300px;
+  width: calc(100vw - 300px);
   height: 130px;
   background: #fdfdf9;
   overflow: hidden;
@@ -542,6 +542,7 @@ input {
   box-sizing: border-box;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 
 /* 2. Scrolling content */
