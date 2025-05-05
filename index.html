@@ -223,6 +223,18 @@
   });
 </script>
 
+<script>
+  // 👇 Suppress phantom scrollbar by nudging scroll 1px on load
+  window.addEventListener("DOMContentLoaded", () => {
+    requestAnimationFrame(() => {
+      if (window.scrollY === 0) {
+        window.scrollTo(0, 1);
+      }
+    });
+  });
+</script>
+
+
 
 </body>
 </html>
