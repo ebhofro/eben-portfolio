@@ -515,10 +515,12 @@ input {
   pointer-events: none;
   opacity: 1;
   will-change: opacity;
-
-  /* 💡 Key lines */
   contain: strict;
   overflow: hidden;
+
+  /* ✅ This will 100% cut it out of layout flow */
+  display: block;
+  isolation: isolate;
 }
 
 
