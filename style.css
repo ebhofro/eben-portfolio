@@ -633,15 +633,18 @@ input {
   }   
    
  .horizontal-reel {
-  position: relative;       /* So it stays in flow under the banner */
-  margin-left: 0;
+  position: fixed;
+  top: 180px; /* adjust based on mobile banner height */
+  left: 0;
   width: 100vw;
   height: 100px;
-  padding: 1rem 0;
-  box-sizing: border-box;
+  background: #fdfdf9;
+  z-index: 500;
   overflow: hidden;
-  top: unset;               /* Override the desktop top position */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
+
 
 .horizontal-track {
   gap: 1rem;
