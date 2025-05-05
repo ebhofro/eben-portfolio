@@ -516,10 +516,11 @@ input {
   opacity: 1;
   will-change: opacity;
 
-  /* ✅ These two lines are crucial */
-  overflow: hidden;
+  /* 💡 Key lines */
   contain: strict;
+  overflow: hidden;
 }
+
 
 
 .horizontal-reel {
@@ -660,7 +661,6 @@ html, body {
   padding: 0;
   overflow-x: hidden;
   max-width: 100%;
-  height: 100%;
   overflow-y: overlay; /* instead of scroll — works in Chromium */
 }
 
