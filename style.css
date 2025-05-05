@@ -524,12 +524,14 @@ input {
   isolation: isolate;
 }
 
-
+body {
+  position: relative;
+}
 
 .horizontal-reel {
   position: fixed;
-  top: 280px;
-  left: 300px;
+  top: 280px; /* below banner */
+  left: 300px; /* beside sidebar */
   width: calc(100vw - 300px);
   height: 130px;
   background: #fdfdf9;
@@ -537,11 +539,9 @@ input {
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  /* ❌ REMOVE this ↓↓↓ */
-  /* pointer-events: none; */
-  outline: 2px solid red; /* for now */
+  pointer-events: none;
+  transform: translateZ(0); /* 🧠 forces hardware acceleration & positioning */
 }
-
 
 
 .horizontal-track {
@@ -551,6 +551,8 @@ input {
   padding: 0 2rem;
   animation: scroll-left 60s linear infinite;
   width: max-content;
+  height: 100%;
+  overflow: hidden;
 }
 
 .horizontal-track img {
