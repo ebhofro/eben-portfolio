@@ -210,18 +210,23 @@
   });
 
   // Set sidebar position + background visibility on page load
-  window.addEventListener("DOMContentLoaded", () => {
-    const scrollTop = window.scrollY;
+ window.addEventListener("DOMContentLoaded", () => {
+  const scrollTop = window.scrollY;
 
-    if (scrollTop < 200) {
-      sidebar.classList.add("push-down");
-      if (bgReveal) bgReveal.style.opacity = 1;
-    } else {
-      sidebar.classList.remove("push-down");
-      if (bgReveal) bgReveal.style.opacity = 1;
-    }
-  });
-</script>
+  if (scrollTop < 200) {
+    sidebar.classList.add("push-down");
+    if (bgReveal) bgReveal.style.opacity = 1;
+  } else {
+    sidebar.classList.remove("push-down");
+    if (bgReveal) bgReveal.style.opacity = 1;
+  }
+
+  // 👇 Nudge scroll to remove phantom scrollbar caused by fixed background
+  setTimeout(() => {
+    window.scrollTo(0, 1);
+  }, 0);
+});
+
 
 
 </body>
