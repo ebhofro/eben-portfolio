@@ -673,8 +673,10 @@ html, body {
 
 
 .banner-reveal-bg {
-  pointer-events: none; /* prevents scroll interaction */
+  pointer-events: none;   /* ✅ prevents it from capturing scroll or hover */
+  overflow: hidden;       /* ✅ ensures it doesn't push layout */
 }
+
 
 
 * {
