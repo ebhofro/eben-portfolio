@@ -536,7 +536,7 @@ input {
 
 
 .horizontal-reel {
-  position: absolute;
+  position: fixed;
   top: 280px;
   left: 300px;
   right: 0;
