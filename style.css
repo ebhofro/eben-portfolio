@@ -173,10 +173,11 @@ main-nav {
 
 main {
   margin-left: 300px;
-  padding-top: 250px; /* 280 + 130 */
+  padding-top: 410px; /* 280px banner + 130px reel */
   padding-right: 2rem;
   padding-left: 2rem;
 }
+
 
 .category-grid {
     display: flex;
