@@ -119,7 +119,7 @@ html, body {
 
 /* When banner is showing */
 .sidebar.push-down {
-  top: 195px; /* pushed down to match banner height */
+  top: 280px; /* pushed down to match banner height */
 }
 
 /* Default position (when banner hidden) */
