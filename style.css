@@ -530,37 +530,34 @@ input {
   position: absolute;
   top: 280px;
   left: 300px;
+  right: 0;
   height: 130px;
   background: #fdfdf9;
   overflow: hidden;
   z-index: 500;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  width: calc(100vw - 300px); /* 100vw minus sidebar */
   box-sizing: border-box;
 }
 
 .horizontal-track {
   display: flex;
-  flex-wrap: nowrap;
+  align-items: center;
   gap: 1.5rem;
-  animation: scroll-left 60s linear infinite;
   padding: 0 2rem;
-  will-change: transform;
-}
-
-.horizontal-track a {
-  flex: 0 0 auto;
+  animation: scroll-left 60s linear infinite;
+  width: max-content;
 }
 
 .horizontal-track img {
   height: 100px;
   width: auto;
-  object-fit: cover;
   max-width: none;
+  object-fit: cover;
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
+
 
 .horizontal-track img:hover {
   transform: scale(1.05);
@@ -663,23 +660,11 @@ input {
 }
 
 html, body {
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
-  overflow-y: auto;       /* ✅ allow vertical scroll only */
-  height: 100%;           /* ✅ ensures consistent scroll calculation */
+  max-width: 100%;
 }
-
-
-.banner-reveal-bg {
-  pointer-events: none;   /* ✅ prevents it from capturing scroll or hover */
-  overflow: hidden;       /* ✅ ensures it doesn't push layout */
-}
-
 
 
 * {
   outline: 1px solid red;
 }
-
