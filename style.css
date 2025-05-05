@@ -95,7 +95,10 @@ main-nav {
 body {
   scroll-behavior: smooth;
   margin: 0;
-  overflow-x: hidden; /* ✅ This is the new line */
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;   /* allow regular scrolling */
+  position: relative;
 }
 
 html, body {
@@ -523,11 +526,11 @@ input {
   background-position: center;
   opacity: 1;
   z-index: 500;
-  transition: opacity 0.4s ease;
-  overflow: hidden;
   pointer-events: none;
-  contain: strict; /* ✅ This is the new line that fixes layout overflow */
+  will-change: opacity;
+  transform: translateZ(0); /* 🧠 KEY LINE — forces GPU to isolate it */
 }
+
 
 
 .horizontal-reel {
