@@ -669,6 +669,7 @@ input {
 
 html, body {
   overflow-x: hidden;
+  overflow-y: scroll;
   max-width: 100%;
 }
 
