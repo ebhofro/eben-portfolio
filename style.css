@@ -634,7 +634,7 @@ input {
    
  .horizontal-reel {
   position: fixed;
-  top: 180px; /* adjust based on mobile banner height */
+  top: 280px; /* adjust based on mobile banner height */
   left: 0;
   width: 100vw;
   height: 100px;
