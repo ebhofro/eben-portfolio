@@ -183,7 +183,7 @@ html, body {
 
 main {
   margin-left: 300px;
-  padding-top: 410px; /* 280 + 130 */
+  padding-top: 250px; /* 280 + 130 */
   padding-right: 2rem;
   padding-left: 2rem;
 }
@@ -518,45 +518,36 @@ input {
   left: 0;
   width: 300px;
   height: 280px;
-  background-image: url('secretimagemk1.jpg');
+  background-image: url('secretimagemk1.jpg'); /* ✅ extension must match your actual file */
   background-size: cover;
   background-position: center;
   opacity: 1;
   z-index: 500;
   transition: opacity 0.4s ease;
-  overflow: hidden;         /* ✅ Prevents content overflow */
-  pointer-events: none;     /* ✅ Just in case it's interfering */
 }
 
-
-/* 1. Reel container */
 .horizontal-reel {
-  position: fixed;
+  position: absolute;
   top: 280px;
   left: 300px;
-  width: calc(100% - 300px);
+  right: 0;
   height: 130px;
   background: #fdfdf9;
   overflow: hidden;
   z-index: 500;
-  box-sizing: border-box;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
-
-/* 2. Scrolling content */
 .horizontal-track {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   padding: 0 2rem;
   animation: scroll-left 60s linear infinite;
-  will-change: transform;
-  min-width: 100%;
-  box-sizing: border-box;
+  width: max-content;
 }
 
-/* 3. Image styling */
 .horizontal-track img {
   height: 100px;
   width: auto;
@@ -567,11 +558,11 @@ input {
   transition: transform 0.3s ease;
 }
 
+
 .horizontal-track img:hover {
   transform: scale(1.05);
 }
 
-/* 4. Animation definition (can be anywhere, but put last for clarity) */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
@@ -580,7 +571,6 @@ input {
     transform: translateX(-50%);
   }
 }
-
 
 
 .desktop-banner {
@@ -642,28 +632,27 @@ input {
   }   
    
  .horizontal-reel {
-    position: fixed;                /* ✅ Stay pinned */
-    top: 180px;                     /* Adjust to match smaller top banner */
-    left: 0;                        /* No sidebar on mobile */
-    width: 100vw;
-    height: 100px;
-    padding: 1rem 0;
-    box-sizing: border-box;
-    overflow: hidden;
-    z-index: 500;
-  }
-
-  .horizontal-track {
-    gap: 1rem;
-    padding: 0 1rem;
-  }
-
-  .horizontal-track img {
-    height: 80px;
-    width: auto;
-    max-width: 100%;
-  }
+  position: relative;       /* So it stays in flow under the banner */
+  margin-left: 0;
+  width: 100vw;
+  height: 100px;
+  padding: 1rem 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  top: unset;               /* Override the desktop top position */
 }
+
+.horizontal-track {
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.horizontal-track img {
+  height: 80px;
+  width: auto;
+  max-width: 100%;
+}
+} /* 👈 CLOSE the @media block here */
 
 /* ✅ GLOBAL OVERRIDES (not inside media block) */
 * {
@@ -671,23 +660,8 @@ input {
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
-  overflow-y: scroll;
   max-width: 100%;
-  height: 100%;
-}
-
-body::after {
-  content: '';
-  display: block;
-  height: 1px;
-  background: red;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 
 
