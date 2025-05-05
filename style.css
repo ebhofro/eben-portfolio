@@ -669,6 +669,11 @@ html, body {
   overflow-x: hidden;
 }
 
+.banner-reveal-bg {
+  pointer-events: none; /* prevents scroll interaction */
+}
+
+
 * {
   outline: 1px solid red;
 }
