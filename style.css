@@ -528,17 +528,20 @@ input {
 
 .horizontal-reel {
   position: fixed;
-  top: 280px;              /* directly under top banner */
-  left: 300px;             /* beside sidebar */
-  width: calc(100vw - 300px); 
+  top: 280px;
+  left: 300px;
+  width: calc(100vw - 300px);
   height: 130px;
   background: #fdfdf9;
   z-index: 500;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  pointer-events: none; /* optional: lets clicks pass through */
+  /* ❌ REMOVE this ↓↓↓ */
+  /* pointer-events: none; */
+  outline: 2px solid red; /* for now */
 }
+
 
 
 .horizontal-track {
