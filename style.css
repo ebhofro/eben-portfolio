@@ -666,7 +666,12 @@ html, body {
   max-width: 100%;
 }
 
-
+body::after {
+  content: '';
+  display: block;
+  height: 1px; /* adds just enough body height to suppress short scroll */
+  visibility: hidden;
+}
 
 * {
   outline: 1px solid red;
