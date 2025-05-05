@@ -95,18 +95,17 @@ main-nav {
 
 .sidebar {
   position: fixed;
+  top: 0;
   left: 0;
   width: 300px;
   height: 100vh;
-  background-color: #255634;
-  z-index: 999;
-  transition: top 0.3s ease;
+  z-index: 10;
 }
 
-/* When banner is showing */
 .sidebar.push-down {
-  top: 195px; /* pushed down to match banner height */
+  top: 280px;
 }
+
 
 /* Default position (when banner hidden) */
 .sidebar:not(.push-down) {
@@ -529,18 +528,14 @@ body {
 }
 
 .horizontal-reel {
-  position: fixed;
-  top: 280px;                    /* below the top banner */
-  left: 300px;                   /* beside sidebar */
-  width: calc(100vw - 300px);   /* fill screen except sidebar */
+  position: relative;
+  margin-left: 300px; /* next to sidebar */
   height: 130px;
   background: #fdfdf9;
-  z-index: 500;
   overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  pointer-events: auto;
-  transform: translateZ(0);     /* ✅ GPU composite, prevents scroll stutter */
-  will-change: transform;       /* ✅ help browser pre-optimize */
+  z-index: 1;
 }
 
 
