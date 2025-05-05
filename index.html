@@ -183,16 +183,36 @@
 </script>
 
 <script>
-  const banner = document.getElementById("topBanner");
-  const sidebar = document.querySelector(".sidebar");
-  const bgReveal = document.querySelector(".banner-reveal-bg"); // for secret image
-  const img = document.querySelector('.sidebar-banner-img');
-
-  // Handle scroll behaviour
-  window.addEventListener("scroll", function () {
+  window.addEventListener("DOMContentLoaded", () => {
+    const banner = document.getElementById("topBanner");
+    const sidebar = document.querySelector(".sidebar");
+    const bgReveal = document.querySelector(".banner-reveal-bg");
+    const img = document.querySelector('.sidebar-banner-img');
     const scrollTop = window.scrollY;
 
-    // Show/hide banner and shift sidebar
+    // Initial sidebar + background reveal
+    if (scrollTop < 200) {
+      sidebar.classList.add("push-down");
+      if (bgReveal) bgReveal.style.opacity = 1;
+    } else {
+      sidebar.classList.remove("push-down");
+      if (bgReveal) bgReveal.style.opacity = 1;
+    }
+
+    // Optional scroll nudge to fix phantom scrollbar
+    if (scrollTop === 0) {
+      window.scrollTo(0, 1);
+    }
+  });
+
+  window.addEventListener("scroll", () => {
+    const banner = document.getElementById("topBanner");
+    const sidebar = document.querySelector(".sidebar");
+    const bgReveal = document.querySelector(".banner-reveal-bg");
+    const img = document.querySelector('.sidebar-banner-img');
+    const scrollTop = window.scrollY;
+
+    // Toggle banner + sidebar position
     if (scrollTop < 200) {
       banner.classList.remove("hide");
       sidebar.classList.add("push-down");
@@ -203,30 +223,9 @@
       if (bgReveal) bgReveal.style.opacity = 1;
     }
 
-    // Parallax effect on sidebar image
+    // Sidebar banner parallax
     if (img) {
       img.style.transform = `translateY(-${scrollTop * 0.2}px)`;
-    }
-  });
-
-  // Set sidebar position + background visibility on page load
-  window.addEventListener("DOMContentLoaded", () => {
-    const scrollTop = window.scrollY;
-
-    if (scrollTop < 200) {
-      sidebar.classList.add("push-down");
-      if (bgReveal) bgReveal.style.opacity = 1;
-    } else {
-      sidebar.classList.remove("push-down");
-      if (bgReveal) bgReveal.style.opacity = 1;
-    }
-  });
-</script>
-
-<script>
-  window.addEventListener("load", () => {
-    if (window.scrollY === 0) {
-      window.scrollTo(0, 1);
     }
   });
 </script>
