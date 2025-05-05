@@ -547,11 +547,11 @@ body {
 .horizontal-track {
   display: flex;
   align-items: center;
+  height: 100%;
   gap: 1.5rem;
   padding: 0 2rem;
   animation: scroll-left 60s linear infinite;
   width: max-content;
-  height: 100%;
   overflow: hidden;
 }
 
