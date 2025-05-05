@@ -511,10 +511,14 @@ input {
   background-image: url('secretimagemk1.jpg');
   background-size: cover;
   background-position: center;
-  z-index: 0; /* Put it behind everything */
+  z-index: 0;
   pointer-events: none;
   opacity: 1;
   will-change: opacity;
+
+  /* ✅ These two lines are crucial */
+  overflow: hidden;
+  contain: strict;
 }
 
 
