@@ -1,7 +1,6 @@
-/* ====== RESET + STRUCTURE ====== */
+/* ====== RESET + BASE ====== */
 * {
   box-sizing: border-box;
-  outline: none;
 }
 html, body {
   margin: 0;
@@ -14,7 +13,7 @@ html, body {
 
 /* ====== BANNERS ====== */
 .top-banner {
-  width: 100%;
+  width: 100vw;
   height: 280px;
   z-index: 1000;
 }
@@ -24,32 +23,41 @@ html, body {
   object-fit: cover;
   display: block;
 }
-.desktop-banner { display: block; }
-.mobile-banner { display: none; }
+.desktop-banner {
+  display: block;
+}
+.mobile-banner {
+  display: none;
+}
 
 /* ====== SIDEBAR ====== */
 .sidebar {
   position: relative;
-  top: 0;
+  margin-top: -4px;
   width: 300px;
   float: left;
   background: #114221;
-  min-height: calc(100vh - 280px);
-  overflow-y: visible;
+  z-index: 10;
+  min-height: 100vh;
 }
-.sidebar-content {
+.sidebar-banner-wrapper {
+  position: relative;
+  z-index: 0;
+}
+.sidebar-banner-img {
+  width: 100%;
+  display: block;
+}
+.sidebar-content ul {
+  list-style: none;
+  margin: 0;
   padding: 1rem 0;
 }
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.sidebar-content ul li {
+  margin: 0.75rem 0;
   text-align: center;
 }
-.sidebar ul li {
-  margin: 1rem 0;
-}
-.sidebar ul li a {
+.sidebar-content ul li a {
   font-family: 'Geo', sans-serif;
   font-size: 1rem;
   text-transform: uppercase;
@@ -60,23 +68,18 @@ html, body {
   display: block;
   transition: background 0.3s ease, color 0.3s ease;
 }
-.sidebar ul li a:hover {
+.sidebar-content ul li a:hover {
   background-color: #1e4228;
   color: #ffcb47;
 }
-.sidebar-banner-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
-/* ====== MAIN AREA ====== */
+/* ====== MAIN CONTENT ====== */
 main {
   margin-left: 300px;
   padding: 0 2rem;
 }
 
-/* ====== SECTION BANNERS & HEADINGS ====== */
+/* ====== SECTION BANNER ====== */
 .section-banner {
   width: 100%;
   max-height: 120px;
@@ -120,7 +123,7 @@ main {
   100% { transform: translateX(-50%); }
 }
 
-/* ====== VIDEO THUMBNAILS ====== */
+/* ====== VIDEO GALLERY ====== */
 .video-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -182,7 +185,7 @@ main {
   transform: scale(1.05);
 }
 
-/* ====== IMAGE GALLERIES ====== */
+/* ====== IMAGE GALLERY ====== */
 .image-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
