@@ -11,64 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    .section-banner {
-      width: 100%;
-      max-height: 120px;
-      object-fit: contain;
-      display: block;
-      margin: 1rem 0;
-    }
-    .sidebar-toggle {
-      display: none;
-    }
-    @media (max-width: 768px) {
-      .sidebar-toggle {
-        display: block;
-        position: fixed;
-        top: 1rem;
-        left: 1rem;
-        z-index: 2000;
-        background: #255634;
-        color: #fdfdf9;
-        border: none;
-        padding: 0.5rem 1rem;
-        font-size: 1.5rem;
-        cursor: pointer;
-        border-radius: 4px;
-      }
-      .desktop-banner {
-        display: none;
-      }
-      .mobile-banner {
-        display: block;
-      }
-      .sidebar {
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        width: 100vw;
-      }
-      .sidebar.show {
-        transform: translateX(0);
-      }
-      main {
-        margin-left: 0;
-        padding-top: 310px; /* Adjust for banner + reel */
-      }
-      .horizontal-reel {
-        position: fixed;
-        top: 180px;
-        left: 0;
-        width: 100vw;
-        height: 130px;
-        background: #fdfdf9;
-        z-index: 500;
-        overflow: hidden;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        box-sizing: border-box;
-      }
-    }
-  </style>
 </head>
 <body>
   <button class="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('show')">☰</button>
@@ -81,24 +23,11 @@
 
   <div class="horizontal-reel">
     <div class="horizontal-track">
-      <a class="glightbox" href="photo1.jpg"><img alt="Photo 1" src="photo1.jpg" /></a>
-      <a class="glightbox" href="photo2.jpg"><img alt="Photo 2" src="photo2.jpg" /></a>
-      <a class="glightbox" href="nzhouse.jpg"><img alt="NZ House" src="nzhouse.jpg" /></a>
-      <a class="glightbox" href="nztractor.jpg"><img alt="NZ Tractor" src="nztractor.jpg" /></a>
-      <a class="glightbox" href="beachroanna1web.jpg"><img alt="Art 1" src="beachroanna1web.jpg" /></a>
-      <a class="glightbox" href="roanna2website.jpg"><img alt="Art 2" src="roanna2website.jpg" /></a>
-      <a class="glightbox" href="billageweb.jpg"><img alt="Billage Art" src="billageweb.jpg" /></a>
-      <a class="glightbox" href="photo3.jpg"><img alt="Photo 3" src="photo3.jpg" /></a>
-      <a class="glightbox" href="photo4.jpg"><img alt="Photo 4" src="photo4.jpg" /></a>
-      <a class="glightbox" href="photo5.jpg"><img alt="Photo 5" src="photo5.jpg" /></a>
-      <a class="glightbox" href="photo6.jpg"><img alt="Photo 6" src="photo6.jpg" /></a>
-      <a class="glightbox" href="photo7.jpg"><img alt="Photo 7" src="photo7.jpg" /></a>
-      <a class="glightbox" href="photo8.jpg"><img alt="Photo 8" src="photo8.jpg" /></a>
-      <a class="glightbox" href="https://www.youtube.com/watch?v=TK-xTVmz0_g" data-type="video"><img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="Ferry Video" /></a>
+      <!-- Add your horizontal reel images or thumbnails here -->
     </div>
   </div>
 
-  <nav class="sidebar push-down">
+  <nav class="sidebar">
     <div class="sidebar-banner-wrapper">
       <img src="sidebarmk1.jpg" alt="Sidebar Banner" class="sidebar-banner-img">
     </div>
@@ -121,21 +50,52 @@
     <section id="natural" data-aos="fade-up">
       <img src="microban.png" alt="Natural Micro Shorts Banner" class="section-banner">
       <div class="video-gallery">
-        <div class="video-thumb">
-          <a href="https://www.youtube.com/watch?v=TK-xTVmz0_g" class="glightbox" data-type="video">
-            <img src="https://img.youtube.com/vi/TK-xTVmz0_g/0.jpg" alt="A golden ferry ride to Arran island">
-            <div class="overlay"><span>A GOLDEN FERRY RIDE TO ARRAN ISLAND</span></div>
-          </a>
-        </div>
-        <div class="video-thumb">
-          <a href="https://www.youtube.com/watch?v=SlCPKbZmgfY" class="glightbox" data-type="video">
-            <img src="https://img.youtube.com/vi/SlCPKbZmgfY/0.jpg" alt="The enchanted forest up the Frenni">
-            <div class="overlay"><span>THE ENCHANTED FOREST UP THE FRENNI</span></div>
-          </a>
-        </div>
+        <!-- Video thumbnails here -->
       </div>
     </section>
-    <!-- Rest of your site content remains unchanged -->
+
+    <section id="editing" data-aos="fade-up">
+      <h2>Creative Editing Videos</h2>
+      <p>Coming soon...</p>
+    </section>
+
+    <section id="concerts" data-aos="fade-up">
+      <h2>Concert Videography and Photography</h2>
+      <p>Coming soon...</p>
+    </section>
+
+    <section id="uni" data-aos="fade-up">
+      <h2>University and School Work</h2>
+      <p>Coming soon...</p>
+    </section>
+
+    <section id="designs" data-aos="fade-up">
+      <h2>Designs</h2>
+      <p>Coming soon...</p>
+    </section>
+
+    <section id="photography" data-aos="fade-up">
+      <h2>Photography</h2>
+      <div class="photo-grid">
+        <!-- Photography grid images -->
+      </div>
+    </section>
+
+    <section id="digital" data-aos="fade-up">
+      <h2>Digital Art</h2>
+      <div class="image-gallery">
+        <!-- Large images -->
+      </div>
+      <div class="image-gallery small-gallery">
+        <!-- Small images -->
+      </div>
+    </section>
+
+    <section id="contact" data-aos="fade-up">
+      <h2>Contact</h2>
+      <p>Email: your.email@example.com</p>
+      <p>Instagram | LinkedIn | etc.</p>
+    </section>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
@@ -143,6 +103,7 @@
   <script>
     const lightbox = GLightbox({ selector: '.glightbox' });
     AOS.init({ duration: 600, once: true });
+
     window.addEventListener('scroll', () => {
       const img = document.querySelector('.sidebar-banner-img');
       const scrollTop = window.scrollY;
