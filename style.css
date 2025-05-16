@@ -1,27 +1,30 @@
-/* -----------------------------------
-   Main navigation bar
------------------------------------ */
-main-nav {
-  display: flex;
-  background-color: #114221;
-  padding: 1rem 2rem;
-  align-items: center;
-  gap: 1rem;
+/* ====== GENERAL RESETS ====== */
+* {
+  box-sizing: border-box;
+  outline: none;
 }
 
-.glightbox-container {
-  box-shadow: 0 0 60px #255634;
-  border-radius: 10px;
-  overflow: hidden;
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  height: auto;
 }
 
+body::after {
+  content: '';
+  display: block;
+  height: 1px;
+  visibility: hidden;
+}
+
+/* ====== HEADER / BANNER ====== */
 .top-banner {
   position: relative;
   width: 100%;
   height: 280px;
   z-index: 1000;
-  padding: 0;
-  margin: 0;
   overflow: hidden;
 }
 
@@ -40,68 +43,7 @@ main-nav {
   display: none;
 }
 
-@media (max-width: 768px) {
-  .desktop-banner {
-    display: none;
-  }
-
-  .mobile-banner {
-    display: block;
-    width: 100vw;
-    height: auto;
-    object-fit: cover;
-    margin: 0;
-    padding: 0;
-  }
-
-  .sidebar-toggle {
-    display: block;
-  }
-
-  .sidebar {
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    width: 100vw;
-  }
-
-  .sidebar.show {
-    transform: translateX(0);
-  }
-
-  main {
-    margin-left: 0;
-    padding-top: 310px;
-  }
-
-  .horizontal-reel {
-    position: fixed;
-    top: 180px;
-    left: 0;
-    width: 100vw;
-    height: 130px;
-    background: #fdfdf9;
-    z-index: 500;
-    overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-  }
-}
-
-.sidebar-toggle {
-  display: none;
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  z-index: 2000;
-  background: #255634;
-  color: #fdfdf9;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1.5rem;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
+/* ====== SIDEBAR ====== */
 .sidebar {
   position: fixed;
   top: 280px;
@@ -109,40 +51,17 @@ main-nav {
   width: 300px;
   height: calc(100vh - 280px);
   z-index: 999;
+  background: #114221;
 }
 
 .sidebar-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   padding-top: 1rem;
-  width: 100%;
-}
-
-.sidebar-banner-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 0;
-}
-
-.sidebar-banner-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transform: translateY(0);
-  transition: transform 0.1s linear;
 }
 
 .sidebar ul {
-  position: relative;
-  z-index: 1;
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 100%;
   text-align: center;
 }
 
@@ -167,6 +86,38 @@ main-nav {
   color: #ffcb47;
 }
 
+.sidebar-banner-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.sidebar-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: translateY(0);
+  transition: transform 0.1s linear;
+}
+
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2000;
+  background: #255634;
+  color: #fdfdf9;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* ====== MAIN ====== */
 main {
   margin-left: 300px;
   padding-top: 410px;
@@ -174,6 +125,15 @@ main {
   padding-left: 2rem;
 }
 
+.section-banner {
+  width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+  display: block;
+  margin: 1rem 0;
+}
+
+/* ====== LAYOUT GRIDS ====== */
 .video-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -203,14 +163,7 @@ main {
   justify-items: center;
 }
 
-.section-banner {
-  width: 100%;
-  max-height: 120px;
-  object-fit: contain;
-  display: block;
-  margin: 1rem 0;
-}
-
+/* ====== HORIZONTAL REEL ====== */
 .horizontal-reel {
   position: relative;
   margin-left: 300px;
@@ -252,25 +205,45 @@ main {
   100% { transform: translateX(-50%); }
 }
 
-* {
-  box-sizing: border-box;
-}
+/* ====== MOBILE FIXES ====== */
+@media (max-width: 768px) {
+  .desktop-banner {
+    display: none;
+  }
 
-html, body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-  height: auto;
-}
+  .mobile-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 
-body::after {
-  content: '';
-  display: block;
-  height: 1px;
-  visibility: hidden;
-}
+  .sidebar-toggle {
+    display: block;
+  }
 
-* {
-  outline: none;
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    width: 100vw;
+    top: 180px;
+    height: calc(100vh - 180px);
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .horizontal-reel {
+    position: fixed;
+    top: 180px;
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  main {
+    margin-left: 0;
+    padding-top: 310px;
+  }
 }
