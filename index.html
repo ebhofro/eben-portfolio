@@ -15,86 +15,53 @@
 <body>
   <button class="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('show')">☰</button>
 
-  <a id="top"></a> <!-- ✅ this is the scroll target -->
-<header class="top-banner" id="topBanner">
-  <img src="topbannermk1.jpg" alt="Desktop Banner" class="top-banner-img desktop-banner">
-  <img src="mobilebanner.jpg" alt="Mobile Banner" class="top-banner-img mobile-banner">
-</header>
+  <a id="top"></a>
+  <header class="top-banner" id="topBanner">
+    <img src="topbannermk1.jpg" alt="Desktop Banner" class="top-banner-img desktop-banner">
+    <img src="mobilebanner.jpg" alt="Mobile Banner" class="top-banner-img mobile-banner">
+  </header>
 
-<div class="banner-reveal-bg"></div>
-
-<div class="horizontal-reel">
-  <div class="horizontal-track">
-    <!-- scrolling images go here -->
-    <a class="glightbox" href="photo1.jpg">
-  <img alt="Photo 1" src="photo1.jpg" />
-</a>
-<a class="glightbox" href="photo2.jpg">
-  <img alt="Photo 2" src="photo2.jpg" />
-</a>
-<a class="glightbox" href="nzhouse.jpg">
-  <img alt="NZ House" src="nzhouse.jpg" />
-</a>
-<a class="glightbox" href="nztractor.jpg">
-  <img alt="NZ Tractor" src="nztractor.jpg" />
-</a>
-<a class="glightbox" href="beachroanna1web.jpg">
-  <img alt="Art 1" src="beachroanna1web.jpg" />
-</a>
-<a class="glightbox" href="roanna2website.jpg">
-  <img alt="Art 2" src="roanna2website.jpg" />
-</a>
-<a class="glightbox" href="billageweb.jpg">
-  <img alt="Billage Art" src="billageweb.jpg" />
-</a>
-<a class="glightbox" href="photo3.jpg">
-  <img alt="Photo 3" src="photo3.jpg" />
-</a>
-<a class="glightbox" href="photo4.jpg">
-  <img alt="Photo 4" src="photo4.jpg" />
-</a>
-<a class="glightbox" href="photo5.jpg">
-  <img alt="Photo 5" src="photo5.jpg" />
-</a>
-<a class="glightbox" href="photo6.jpg">
-  <img alt="Photo 6" src="photo6.jpg" />
-</a>
-<a class="glightbox" href="photo7.jpg">
-  <img alt="Photo 7" src="photo7.jpg" />
-</a>
-<a class="glightbox" href="photo8.jpg">
-  <img alt="Photo 8" src="photo8.jpg" />
-</a>
-<a class="glightbox" href="https://www.youtube.com/watch?v=TK-xTVmz0_g" data-type="video">
-  <img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="Ferry Video" />
-</a>
-
-  </div>
-</div>
-
- <nav class="sidebar">
-  <div class="sidebar-banner-wrapper">
-    <img src="sidebarmk1.jpg" alt="Sidebar Banner" class="sidebar-banner-img">
+  <div class="horizontal-reel">
+    <div class="horizontal-track">
+      <a class="glightbox" href="photo1.jpg"><img alt="Photo 1" src="photo1.jpg" /></a>
+      <a class="glightbox" href="photo2.jpg"><img alt="Photo 2" src="photo2.jpg" /></a>
+      <a class="glightbox" href="nzhouse.jpg"><img alt="NZ House" src="nzhouse.jpg" /></a>
+      <a class="glightbox" href="nztractor.jpg"><img alt="NZ Tractor" src="nztractor.jpg" /></a>
+      <a class="glightbox" href="beachroanna1web.jpg"><img alt="Art 1" src="beachroanna1web.jpg" /></a>
+      <a class="glightbox" href="roanna2website.jpg"><img alt="Art 2" src="roanna2website.jpg" /></a>
+      <a class="glightbox" href="billageweb.jpg"><img alt="Billage Art" src="billageweb.jpg" /></a>
+      <a class="glightbox" href="photo3.jpg"><img alt="Photo 3" src="photo3.jpg" /></a>
+      <a class="glightbox" href="photo4.jpg"><img alt="Photo 4" src="photo4.jpg" /></a>
+      <a class="glightbox" href="photo5.jpg"><img alt="Photo 5" src="photo5.jpg" /></a>
+      <a class="glightbox" href="photo6.jpg"><img alt="Photo 6" src="photo6.jpg" /></a>
+      <a class="glightbox" href="photo7.jpg"><img alt="Photo 7" src="photo7.jpg" /></a>
+      <a class="glightbox" href="photo8.jpg"><img alt="Photo 8" src="photo8.jpg" /></a>
+      <a class="glightbox" href="https://www.youtube.com/watch?v=TK-xTVmz0_g" data-type="video"><img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="Ferry Video" /></a>
+    </div>
   </div>
 
-  <div class="sidebar-content"> <!-- ✅ WRAPPER for nav list -->
-    <ul>
-      <li><a href="#top">Home</a></li>
-      <li><a href="#natural">Natural Shorts</a></li>
-      <li><a href="#editing">Creative Editing</a></li>
-      <li><a href="#concerts">Concerts</a></li>
-      <li><a href="#uni">Uni Work</a></li>
-      <li><a href="#designs">Designs</a></li>
-      <li><a href="#photography">Photography</a></li>
-      <li><a href="#digital">Digital Art</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+  <nav class="sidebar push-down">
+    <div class="sidebar-banner-wrapper">
+      <img src="sidebarmk1.jpg" alt="Sidebar Banner" class="sidebar-banner-img">
+    </div>
+    <div class="sidebar-content">
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#natural">Natural Shorts</a></li>
+        <li><a href="#editing">Creative Editing</a></li>
+        <li><a href="#concerts">Concerts</a></li>
+        <li><a href="#uni">Uni Work</a></li>
+        <li><a href="#designs">Designs</a></li>
+        <li><a href="#photography">Photography</a></li>
+        <li><a href="#digital">Digital Art</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <main>
     <section id="natural" data-aos="fade-up">
-     <img src="microban.png" alt="Natural Micro Shorts Banner" class="section-banner">
+      <img src="microban.png" alt="Natural Micro Shorts Banner" class="section-banner">
       <div class="video-gallery">
         <div class="video-thumb">
           <a href="https://www.youtube.com/watch?v=TK-xTVmz0_g" class="glightbox" data-type="video">
@@ -131,107 +98,47 @@
       <p>Coming soon...</p>
     </section>
 
-<section id="photography" data-aos="fade-up">
-  <h2>Photography</h2>
-  <div class="photo-grid">
-    <a href="photo1.jpg" class="glightbox"><img src="photo1.jpg" alt="Photo 1"></a>
-    <a href="photo2.jpg" class="glightbox"><img src="photo2.jpg" alt="Photo 2"></a>
-    <a href="nzhouse.jpg" class="glightbox"><img src="nzhouse.jpg" alt="NZ House"></a>
-    <a href="nztractor.jpg" class="glightbox"><img src="nztractor.jpg" alt="NZ Tractor"></a>
-    <!-- Add more as needed -->
-  </div>
-</section>
+    <section id="photography" data-aos="fade-up">
+      <h2>Photography</h2>
+      <div class="photo-grid">
+        <a href="photo1.jpg" class="glightbox"><img src="photo1.jpg" alt="Photo 1"></a>
+        <a href="photo2.jpg" class="glightbox"><img src="photo2.jpg" alt="Photo 2"></a>
+        <a href="nzhouse.jpg" class="glightbox"><img src="nzhouse.jpg" alt="NZ House"></a>
+        <a href="nztractor.jpg" class="glightbox"><img src="nztractor.jpg" alt="NZ Tractor"></a>
+      </div>
+    </section>
 
-   <section id="digital" data-aos="fade-up">
-  <h2>Digital Art</h2>
-
-  <!-- Row 1: full-size images -->
-  <div class="image-gallery">
-    <a href="beachroanna1web.jpg" class="glightbox"><img src="beachroanna1web.jpg" alt="Art 1"></a>
-    <a href="roanna2website.jpg" class="glightbox"><img src="roanna2website.jpg" alt="Art 2"></a>
-  </div>
-
-  <!-- Row 2: smaller images -->
-  <div class="image-gallery small-gallery">
-    <a href="billageweb.jpg" class="glightbox"><img src="billageweb.jpg" alt="Billage Art"></a>
-  </div>
-</section>
-
+    <section id="digital" data-aos="fade-up">
+      <h2>Digital Art</h2>
+      <div class="image-gallery">
+        <a href="beachroanna1web.jpg" class="glightbox"><img src="beachroanna1web.jpg" alt="Art 1"></a>
+        <a href="roanna2website.jpg" class="glightbox"><img src="roanna2website.jpg" alt="Art 2"></a>
+      </div>
+      <div class="image-gallery small-gallery">
+        <a href="billageweb.jpg" class="glightbox"><img src="billageweb.jpg" alt="Billage Art"></a>
+      </div>
+    </section>
 
     <section id="contact" data-aos="fade-up">
       <h2>Contact</h2>
       <p>Email: your.email@example.com</p>
       <p>Instagram | LinkedIn | etc.</p>
     </section>
- </main>
+  </main>
 
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  const lightbox = GLightbox({ selector: '.glightbox' });
-  AOS.init({ duration: 600, once: true });
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    const lightbox = GLightbox({ selector: '.glightbox' });
+    AOS.init({ duration: 600, once: true });
 
-<script>
-  window.addEventListener('scroll', () => {
-    const img = document.querySelector('.sidebar-banner-img');
-    if (img) {
+    window.addEventListener('scroll', () => {
+      const img = document.querySelector('.sidebar-banner-img');
       const scrollTop = window.scrollY;
-      img.style.transform = `translateY(-${scrollTop * 0.2}px)`;
-    }
-  });
-</script>
-
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const banner = document.getElementById("topBanner");
-    const sidebar = document.querySelector(".sidebar");
-    const bgReveal = document.querySelector(".banner-reveal-bg");
-    const img = document.querySelector('.sidebar-banner-img');
-    const scrollTop = window.scrollY;
-
-    // Initial sidebar + background reveal
-    if (scrollTop < 200) {
-      sidebar.classList.add("push-down");
-      if (bgReveal) bgReveal.style.opacity = 1;
-    } else {
-      sidebar.classList.remove("push-down");
-      if (bgReveal) bgReveal.style.opacity = 1;
-    }
-
-    // Optional scroll nudge to fix phantom scrollbar
-    if (scrollTop === 0) {
-      window.scrollTo(0, 1);
-    }
-  });
-
-  window.addEventListener("scroll", () => {
-    const banner = document.getElementById("topBanner");
-    const sidebar = document.querySelector(".sidebar");
-    const bgReveal = document.querySelector(".banner-reveal-bg");
-    const img = document.querySelector('.sidebar-banner-img');
-    const scrollTop = window.scrollY;
-
-    // Toggle banner + sidebar position
-    if (scrollTop < 200) {
-      banner.classList.remove("hide");
-      sidebar.classList.add("push-down");
-      if (bgReveal) bgReveal.style.opacity = 1;
-    } else {
-      banner.classList.add("hide");
-      sidebar.classList.remove("push-down");
-      if (bgReveal) bgReveal.style.opacity = 1;
-    }
-
-    // Sidebar banner parallax
-    if (img) {
-      img.style.transform = `translateY(-${scrollTop * 0.2}px)`;
-    }
-  });
-</script>
-
-
-
-
+      if (img) {
+        img.style.transform = `translateY(-${scrollTop * 0.2}px)`;
+      }
+    });
+  </script>
 </body>
 </html>
