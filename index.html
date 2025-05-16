@@ -11,131 +11,111 @@
   <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      max-width: 100%;
-      overflow-x: hidden;
-      overflow-y: auto;
-      height: auto;
-    }
-
-    .top-banner {
-      position: relative;
-      width: 100vw;
-      height: 280px;
-      z-index: 1000;
-    }
-
-    .top-banner-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .desktop-banner {
-      display: block;
-    }
-
-    .mobile-banner {
-      display: none;
-    }
-
-    .sidebar {
-      position: relative;
-      margin-top: -4px;
-      width: 300px;
-      float: left;
-      background: #114221;
-      z-index: 10;
-    }
-
-    .sidebar-banner-wrapper {
-      position: relative;
-      z-index: 0;
-    }
-
-    .sidebar-banner-img {
-      width: 100%;
-      display: block;
-    }
-
-    .sidebar-content ul {
-      list-style: none;
-      margin: 0;
-      padding: 1rem 0;
-    }
-
-    .sidebar-content ul li {
-      margin: 0.75rem 0;
-      text-align: center;
-    }
-
-    .sidebar-content ul li a {
-      font-family: 'Geo', sans-serif;
-      font-size: 1rem;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: #fdfdf9;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      display: block;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    .sidebar-content ul li a:hover {
-      background-color: #1e4228;
-      color: #ffcb47;
-    }
-
-    main {
-      margin-left: 300px;
-      padding-top: 0;
-    }
-
-    .horizontal-reel {
-      overflow: hidden;
-      position: relative;
-      height: 130px;
-      background: #fdfdf9;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      box-sizing: border-box;
-    }
-
-    .horizontal-track {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      gap: 1.5rem;
-      padding: 0 2rem;
-      animation: scroll-left 60s linear infinite;
-      width: max-content;
-    }
-
-    .horizontal-track img {
-      height: 100px;
-      width: auto;
-      max-width: none;
-      object-fit: cover;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .horizontal-track img:hover {
-      transform: scale(1.05);
-    }
-
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-  </style>
 </head>
 <body>
+  <header class="top-banner">
+    <img src="topbannermk1.jpg" alt="Desktop Banner" class="top-banner-img desktop-banner">
+    <img src="mobilebanner.jpg" alt="Mobile Banner" class="top-banner-img mobile-banner">
+  </header>
+
+  <nav class="sidebar">
+    <div class="sidebar-banner-wrapper">
+      <img src="sidebarmk1.jpg" alt="Sidebar Banner" class="sidebar-banner-img">
+    </div>
+    <div class="sidebar-content">
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#natural">Natural Shorts</a></li>
+        <li><a href="#editing">Creative Editing</a></li>
+        <li><a href="#concerts">Concerts</a></li>
+        <li><a href="#uni">Uni Work</a></li>
+        <li><a href="#designs">Designs</a></li>
+        <li><a href="#photography">Photography</a></li>
+        <li><a href="#digital">Digital Art</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="horizontal-reel">
+      <div class="horizontal-track">
+        <a class="glightbox" href="photo1.jpg"><img alt="Photo 1" src="photo1.jpg" /></a>
+        <a class="glightbox" href="photo2.jpg"><img alt="Photo 2" src="photo2.jpg" /></a>
+        <a class="glightbox" href="nzhouse.jpg"><img alt="NZ House" src="nzhouse.jpg" /></a>
+        <a class="glightbox" href="nztractor.jpg"><img alt="NZ Tractor" src="nztractor.jpg" /></a>
+        <a class="glightbox" href="beachroanna1web.jpg"><img alt="Art 1" src="beachroanna1web.jpg" /></a>
+        <a class="glightbox" href="roanna2website.jpg"><img alt="Art 2" src="roanna2website.jpg" /></a>
+        <a class="glightbox" href="billageweb.jpg"><img alt="Billage Art" src="billageweb.jpg" /></a>
+        <a class="glightbox" href="photo3.jpg"><img alt="Photo 3" src="photo3.jpg" /></a>
+        <a class="glightbox" href="photo4.jpg"><img alt="Photo 4" src="photo4.jpg" /></a>
+        <a class="glightbox" href="photo5.jpg"><img alt="Photo 5" src="photo5.jpg" /></a>
+        <a class="glightbox" href="photo6.jpg"><img alt="Photo 6" src="photo6.jpg" /></a>
+        <a class="glightbox" href="photo7.jpg"><img alt="Photo 7" src="photo7.jpg" /></a>
+        <a class="glightbox" href="photo8.jpg"><img alt="Photo 8" src="photo8.jpg" /></a>
+        <a class="glightbox" href="https://www.youtube.com/watch?v=TK-xTVmz0_g" data-type="video"><img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="Ferry Video" /></a>
+      </div>
+    </div>
+
+    <section id="natural" data-aos="fade-up">
+      <img src="microban.png" alt="Natural Micro Shorts Banner" class="section-banner">
+      <div class="video-gallery">
+        <div class="video-thumb">
+          <a href="https://www.youtube.com/watch?v=TK-xTVmz0_g" class="glightbox" data-type="video">
+            <img src="https://img.youtube.com/vi/TK-xTVmz0_g/0.jpg" alt="A golden ferry ride to Arran island">
+            <div class="overlay"><span>A GOLDEN FERRY RIDE TO ARRAN ISLAND</span></div>
+          </a>
+        </div>
+        <div class="video-thumb">
+          <a href="https://www.youtube.com/watch?v=SlCPKbZmgfY" class="glightbox" data-type="video">
+            <img src="https://img.youtube.com/vi/SlCPKbZmgfY/0.jpg" alt="The enchanted forest up the Frenni">
+            <div class="overlay"><span>THE ENCHANTED FOREST UP THE FRENNI</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="photography" data-aos="fade-up">
+      <h2>Photography</h2>
+      <div class="photo-grid">
+        <a href="photo1.jpg" class="glightbox"><img src="photo1.jpg" alt="Photo 1"></a>
+        <a href="photo2.jpg" class="glightbox"><img src="photo2.jpg" alt="Photo 2"></a>
+        <a href="nzhouse.jpg" class="glightbox"><img src="nzhouse.jpg" alt="NZ House"></a>
+        <a href="nztractor.jpg" class="glightbox"><img src="nztractor.jpg" alt="NZ Tractor"></a>
+      </div>
+    </section>
+
+    <section id="digital" data-aos="fade-up">
+      <h2>Digital Art</h2>
+      <div class="image-gallery">
+        <a href="beachroanna1web.jpg" class="glightbox"><img src="beachroanna1web.jpg" alt="Art 1"></a>
+        <a href="roanna2website.jpg" class="glightbox"><img src="roanna2website.jpg" alt="Art 2"></a>
+      </div>
+      <div class="image-gallery small-gallery">
+        <a href="billageweb.jpg" class="glightbox"><img src="billageweb.jpg" alt="Billage Art"></a>
+      </div>
+    </section>
+
+    <section id="contact" data-aos="fade-up">
+      <h2>Contact</h2>
+      <p>Email: your.email@example.com</p>
+      <p>Instagram | LinkedIn | etc.</p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    const lightbox = GLightbox({ selector: '.glightbox' });
+    AOS.init({ duration: 600, once: true });
+
+    window.addEventListener('scroll', () => {
+      const img = document.querySelector('.sidebar-banner-img');
+      const scrollTop = window.scrollY;
+      if (img) {
+        img.style.transform = `translateY(-${scrollTop * 0.2}px)`;
+      }
+    });
+  </script>
+</body>
+</html>
