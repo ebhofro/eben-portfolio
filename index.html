@@ -4,23 +4,25 @@
   <meta charset="UTF-8">
   <title>Eben Holmes-Frodsham · Portfolio</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- BASIC STYLE ONLY -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- fonts only if you need them -->
+  <!-- FONTS (optional) -->
   <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- TOP BANNER (desktop + mobile) -->
+  <!-- TOP BANNER : shows full image, never cropped -->
   <header class="top-banner">
-    <img class="banner-img desktop" src="topbannermk1.jpg" alt="Desktop banner">
-    <img class="banner-img mobile"  src="mobilebanner.jpg"  alt="Mobile banner">
+    <!-- ONE image for now; add a <source> for mobile later if you like -->
+    <img src="topbannermk1.jpg" alt="Site banner">
   </header>
 
-  <!-- PAGE WRAPPER (flex row) -->
+  <!-- PAGE ROW : sidebar | main -->
   <div class="page">
-    <!-- SIDEBAR -->
     <aside class="sidebar">
       <nav>
         <ul>
@@ -33,10 +35,10 @@
       </nav>
     </aside>
 
-    <!-- MAIN CONTENT (empty for now) -->
     <main id="home">
-      <h1 style="margin-top:0">Hello, world!</h1>
-      <p>Paste your sections here one by one.</p>
+      <h1>Hello, world!</h1>
+      <p>Paste your real sections here one by one.  
+         After each paste, reload and make sure no horizontal scrollbar appears.</p>
     </main>
   </div>
 
