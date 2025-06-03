@@ -2,6 +2,7 @@
 * {
   box-sizing: border-box;
 }
+
 html {
   margin: 0;
   padding: 0;
@@ -9,6 +10,7 @@ html {
   height: 100%;
   overflow-x: hidden;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -30,12 +32,14 @@ body.sidebar-layout {
 .top-banner {
   grid-area: banner;
   width: 100%;
-  height: 250px;
-  max-height: 30vh;
+  margin-left: 0;
+  height: 30vh;
+  max-height: 250px;
   z-index: 1000;
   overflow: hidden;
   position: relative;
 }
+
 .top-banner-img {
   position: absolute;
   top: 0;
@@ -57,12 +61,16 @@ body.sidebar-layout {
     height: 100%;
   }
   .top-banner {
-    height: 180px;
+    height: 25vh;
+    max-height: 180px;
+    margin-left: 0;
   }
 }
+
 .desktop-banner {
   display: block;
 }
+
 .mobile-banner {
   display: none;
 }
@@ -75,7 +83,9 @@ body.sidebar-layout {
   background: #114221;
   z-index: 10;
   min-height: 100vh;
+  overflow: hidden;
 }
+
 .sidebar-banner-wrapper {
   position: absolute;
   top: 0;
@@ -85,27 +95,32 @@ body.sidebar-layout {
   overflow: hidden;
   z-index: 0;
 }
+
 .sidebar-banner-img {
   width: 100%;
   height: 160px;
   display: block;
   object-fit: cover;
 }
+
 .sidebar-content {
   position: relative;
   z-index: 1;
   padding-top: 170px;
   background: #114221;
 }
+
 .sidebar-content ul {
   list-style: none;
   margin: 0;
   padding: 1rem 0;
 }
+
 .sidebar-content ul li {
   margin: 0.75rem 0;
   text-align: center;
 }
+
 .sidebar-content ul li a {
   font-family: 'Geo', sans-serif;
   font-size: 1rem;
@@ -117,6 +132,7 @@ body.sidebar-layout {
   display: block;
   transition: background 0.3s ease, color 0.3s ease;
 }
+
 .sidebar-content ul li a:hover {
   background-color: #1e4228;
   color: #ffcb47;
@@ -146,6 +162,7 @@ main {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
+
 .horizontal-track {
   display: flex;
   align-items: center;
@@ -155,6 +172,7 @@ main {
   animation: scroll-left 60s linear infinite;
   width: max-content;
 }
+
 .horizontal-track img {
   height: 100px;
   width: auto;
@@ -164,9 +182,11 @@ main {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
+
 .horizontal-track img:hover {
   transform: scale(1.05);
 }
+
 @keyframes scroll-left {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -179,11 +199,13 @@ main {
   gap: 2rem;
   padding: 2rem 0;
 }
+
 .video-thumb {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
 }
+
 .video-thumb img {
   width: 100%;
   height: auto;
@@ -191,6 +213,7 @@ main {
   display: block;
   transition: opacity 0.3s ease;
 }
+
 .video-thumb .overlay {
   position: absolute;
   top: 0;
@@ -209,9 +232,11 @@ main {
   text-align: center;
   padding: 1rem;
 }
+
 .video-thumb:hover img {
   opacity: 0.3;
 }
+
 .video-thumb:hover .overlay {
   opacity: 1;
 }
@@ -223,6 +248,7 @@ main {
   gap: 1rem;
   padding: 2rem 0;
 }
+
 .photo-grid img {
   width: 100%;
   height: auto;
@@ -230,6 +256,7 @@ main {
   object-fit: cover;
   transition: transform 0.3s ease;
 }
+
 .photo-grid img:hover {
   transform: scale(1.05);
 }
@@ -241,6 +268,7 @@ main {
   gap: 2rem;
   padding: 2rem 0;
 }
+
 .image-gallery img {
   width: 100%;
   height: auto;
@@ -248,13 +276,16 @@ main {
   object-fit: cover;
   transition: transform 0.3s ease;
 }
+
 .image-gallery img:hover {
   transform: scale(1.05);
 }
+
 .small-gallery {
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   justify-items: center;
 }
+
 .small-gallery img {
   max-width: 120px;
 }
