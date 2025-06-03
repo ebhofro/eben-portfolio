@@ -6,22 +6,22 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css">
 
-  <!-- typefaces (optional) -->
+  <!-- optional fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- ══ TOP BANNER (full image, no cropping) ═════════════════════════════ -->
+  <!-- TOP BANNER -->
   <header class="top-banner">
     <img src="topbannermk1.jpg" alt="Site banner">
   </header>
 
-  <!-- ══ PAGE ROW: sidebar | main ════════════════════════════════════════ -->
+  <!-- PAGE ROW -->
   <div class="page">
 
-    <!-- ── Sidebar ─────────────────────────────────────────────────────── -->
+    <!-- Sidebar -->
     <aside class="sidebar">
       <nav>
         <ul>
@@ -36,13 +36,13 @@
       </nav>
     </aside>
 
-    <!-- ── Main column ──────────────────────────────────────────────────── -->
+    <!-- Main -->
     <main id="home">
 
-      <!-- ══ HORIZONTAL REEL (flush with sidebar + viewport) ═════════════ -->
+      <!-- HORIZONTAL REEL (flush edges, infinite loop) -->
       <section class="horizontal-reel" aria-label="Featured work">
         <div class="horizontal-track">
-          <!-- duplicate images once for seamless loop -->
+          <!-- 1st set -->
           <a class="glightbox" href="photo1.jpg"><img src="photo1.jpg" alt=""></a>
           <a class="glightbox" href="photo2.jpg"><img src="photo2.jpg" alt=""></a>
           <a class="glightbox" href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
@@ -51,7 +51,7 @@
           <a class="glightbox" href="roanna2website.jpg"><img src="roanna2website.jpg" alt=""></a>
           <a class="glightbox" href="billageweb.jpg"><img src="billageweb.jpg" alt=""></a>
 
-          <!-- second copy -->
+          <!-- duplicate set for seamless loop -->
           <a class="glightbox" href="photo1.jpg"><img src="photo1.jpg" alt=""></a>
           <a class="glightbox" href="photo2.jpg"><img src="photo2.jpg" alt=""></a>
           <a class="glightbox" href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
@@ -62,20 +62,18 @@
         </div>
       </section>
 
-      <!-- Everything else lives inside this padded wrapper -->
+      <!-- Your actual content goes below -->
       <div class="content">
-
         <h1>Hello!</h1>
         <p>Paste your real sections here one by one.</p>
 
-        <!-- placeholders so the sidebar links scroll somewhere -->
+        <!-- placeholders so sidebar links work -->
         <section id="natural"><h2>Natural Shorts</h2><p>…</p></section>
         <section id="editing"><h2>Creative Editing</h2><p>…</p></section>
         <section id="photography"><h2>Photography</h2><p>…</p></section>
         <section id="digital"><h2>Digital Art</h2><p>…</p></section>
         <section id="uni"><h2>Uni Work</h2><p>…</p></section>
         <section id="contact"><h2>Contact</h2><p>Email • Instagram • etc.</p></section>
-
       </div>
     </main>
   </div>
