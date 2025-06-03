@@ -6,35 +6,22 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css">
 
-  <!-- fonts (optional) -->
+  <!-- typefaces (optional) -->
   <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- ===== TOP BANNER (stays full-width, no cropping) ===== -->
+  <!-- ══ TOP BANNER (full image, no cropping) ═════════════════════════════ -->
   <header class="top-banner">
     <img src="topbannermk1.jpg" alt="Site banner">
   </header>
 
-  <!-- ===== HORIZONTAL REEL ===== -->
-  <section class="horizontal-reel">
-    <div class="horizontal-track">
-      <a class="glightbox" href="photo1.jpg"><img src="photo1.jpg" alt="Photo 1"></a>
-      <a class="glightbox" href="photo2.jpg"><img src="photo2.jpg" alt="Photo 2"></a>
-      <a class="glightbox" href="nzhouse.jpg"><img src="nzhouse.jpg" alt="NZ House"></a>
-      <a class="glightbox" href="nztractor.jpg"><img src="nztractor.jpg" alt="NZ Tractor"></a>
-      <a class="glightbox" href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt="Art 1"></a>
-      <a class="glightbox" href="roanna2website.jpg"><img src="roanna2website.jpg" alt="Art 2"></a>
-      <a class="glightbox" href="billageweb.jpg"><img src="billageweb.jpg" alt="Billage Art"></a>
-    </div>
-  </section>
-
-  <!-- ===== PAGE ROW: sidebar | main ===== -->
+  <!-- ══ PAGE ROW: sidebar | main ════════════════════════════════════════ -->
   <div class="page">
 
-    <!-- Sidebar -->
+    <!-- ── Sidebar ─────────────────────────────────────────────────────── -->
     <aside class="sidebar">
       <nav>
         <ul>
@@ -49,23 +36,13 @@
       </nav>
     </aside>
 
-       <!-- MAIN content column (sidebar sits to its left) -->
+    <!-- ── Main column ──────────────────────────────────────────────────── -->
     <main id="home">
 
-      <!-- ═════════ HORIZONTAL REEL (directly under banner) ═════════ -->
+      <!-- ══ HORIZONTAL REEL (flush with sidebar + viewport) ═════════════ -->
       <section class="horizontal-reel" aria-label="Featured work">
         <div class="horizontal-track">
-
-          <!-- duplicate images twice so the loop looks seamless -->
-          <a class="glightbox" href="photo1.jpg"><img src="photo1.jpg" alt="Photo 1"></a>
-          <a class="glightbox" href="photo2.jpg"><img src="photo2.jpg" alt="Photo 2"></a>
-          <a class="glightbox" href="nzhouse.jpg"><img src="nzhouse.jpg" alt="NZ House"></a>
-          <a class="glightbox" href="nztractor.jpg"><img src="nztractor.jpg" alt="NZ Tractor"></a>
-          <a class="glightbox" href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt="Art 1"></a>
-          <a class="glightbox" href="roanna2website.jpg"><img src="roanna2website.jpg" alt="Art 2"></a>
-          <a class="glightbox" href="billageweb.jpg"><img src="billageweb.jpg" alt="Billage Art"></a>
-
-          <!-- second copy (needed for seamless infinite loop) -->
+          <!-- duplicate images once for seamless loop -->
           <a class="glightbox" href="photo1.jpg"><img src="photo1.jpg" alt=""></a>
           <a class="glightbox" href="photo2.jpg"><img src="photo2.jpg" alt=""></a>
           <a class="glightbox" href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
@@ -74,33 +51,34 @@
           <a class="glightbox" href="roanna2website.jpg"><img src="roanna2website.jpg" alt=""></a>
           <a class="glightbox" href="billageweb.jpg"><img src="billageweb.jpg" alt=""></a>
 
+          <!-- second copy -->
+          <a class="glightbox" href="photo1.jpg"><img src="photo1.jpg" alt=""></a>
+          <a class="glightbox" href="photo2.jpg"><img src="photo2.jpg" alt=""></a>
+          <a class="glightbox" href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
+          <a class="glightbox" href="nztractor.jpg"><img src="nztractor.jpg" alt=""></a>
+          <a class="glightbox" href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt=""></a>
+          <a class="glightbox" href="roanna2website.jpg"><img src="roanna2website.jpg" alt=""></a>
+          <a class="glightbox" href="billageweb.jpg"><img src="billageweb.jpg" alt=""></a>
         </div>
       </section>
 
-      <!-- everything else in main can follow … -->
-      <h1 style="margin-top:2rem">Hello!</h1>
-      <p>Add your sections underneath this reel.</p>
+      <!-- Everything else lives inside this padded wrapper -->
+      <div class="content">
 
-      <!-- placeholders so the sidebar links scroll somewhere -->
-      <section id="natural"><h2>Natural Shorts</h2><p>…</p></section>
-      <section id="editing"><h2>Creative Editing</h2><p>…</p></section>
-      <section id="photography"><h2>Photography</h2><p>…</p></section>
-      <section id="digital"><h2>Digital Art</h2><p>…</p></section>
-      <section id="uni"><h2>Uni Work</h2><p>…</p></section>
-      <section id="contact"><h2>Contact</h2><p>Email • Instagram • etc.</p></section>
+        <h1>Hello!</h1>
+        <p>Paste your real sections here one by one.</p>
 
+        <!-- placeholders so the sidebar links scroll somewhere -->
+        <section id="natural"><h2>Natural Shorts</h2><p>…</p></section>
+        <section id="editing"><h2>Creative Editing</h2><p>…</p></section>
+        <section id="photography"><h2>Photography</h2><p>…</p></section>
+        <section id="digital"><h2>Digital Art</h2><p>…</p></section>
+        <section id="uni"><h2>Uni Work</h2><p>…</p></section>
+        <section id="contact"><h2>Contact</h2><p>Email • Instagram • etc.</p></section>
+
+      </div>
     </main>
-
-
   </div>
 
-  <!-- (optional) lightbox / AOS scripts if you need them later
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    GLightbox({ selector: '.glightbox' });
-    AOS.init({ duration: 600, once: true });
-  </script>
-  -->
 </body>
 </html>
