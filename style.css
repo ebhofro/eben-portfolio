@@ -6,7 +6,6 @@ html {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
   overflow-x: hidden;
 }
 body {
@@ -29,7 +28,7 @@ body.sidebar-layout {
 /* ====== BANNERS ====== */
 .top-banner {
   grid-area: banner;
-  width: 100%;
+  width: 100vw;
   height: 250px;
   max-height: 30vh;
   z-index: 1000;
@@ -77,9 +76,7 @@ body.sidebar-layout {
   min-height: 100vh;
 }
 .sidebar-banner-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   height: 160px;
   overflow: hidden;
@@ -94,7 +91,7 @@ body.sidebar-layout {
 .sidebar-content {
   position: relative;
   z-index: 1;
-  padding-top: 170px;
+  padding-top: 140px;
   background: #114221;
 }
 .sidebar-content ul {
