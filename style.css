@@ -19,21 +19,25 @@ html, body {
   display: block;
 }
 
-/* ===== HORIZONTAL REEL ===== */
+/* ═════════ HORIZONTAL REEL ═════════ */
 .horizontal-reel {
-  overflow: hidden;
+  height: 140px;                 /* 10 px taller than images for gap */
+  overflow: hidden;              /* clips the moving track */
   background: #fdfdf9;
-  height: 130px;
   box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  margin-bottom: 2rem;           /* space before next section */
 }
+
 .horizontal-track {
   display: flex;
   gap: 1.5rem;
   align-items: center;
   padding: 0 1.5rem;
-  animation: scroll 50s linear infinite;
-  will-change: transform;      /* smoothness */
+  animation: scroll-left 45s linear infinite;
+  will-change: transform;        /* smoother on Chrome / Edge */
 }
+
+/* images inside reel */
 .horizontal-track img {
   height: 100px;
   width: auto;
@@ -42,9 +46,13 @@ html, body {
   transition: transform .3s;
 }
 .horizontal-track img:hover { transform: scale(1.05); }
-@keyframes scroll {
-  to { transform: translateX(-50%); }
+
+/* keyframes: move entire track to the left for a continuous right-to-left flow */
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }  /* half-track shift (because images duplicated) */
 }
+
 
 /* ===== PAGE ROW ===== */
 .page {
