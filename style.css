@@ -1,4 +1,4 @@
-/* ========== RESET ========== */
+/* ========= RESET ========= */
 *,
 *::before,
 *::after { box-sizing: border-box; }
@@ -12,21 +12,21 @@ html, body {
   font-family: 'Space Grotesk', sans-serif;
 }
 
-/* ========== BANNER ========== */
+/* ========= BANNER ========= */
 .top-banner img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* ========== PAGE ROW ========== */
+/* ========= PAGE ROW ========= */
 .page {
   display: flex;
   min-height: 100vh;
 }
-.page > * { min-width: 0; }           /* prevents overflow */
+.page > * { min-width: 0; }   /* guard against overflow */
 
-/* ========== SIDEBAR ========== */
+/* ========= SIDEBAR ========= */
 .sidebar {
   flex: 0 0 300px;
   background: #114221 url("sidebarmk1.jpg") top/cover no-repeat;
@@ -52,26 +52,32 @@ html, body {
 }
 .sidebar a:hover { background:#1e4228; color:#ffcb47; }
 
-/* ========== MAIN ========== */
+/* ========= MAIN ========= */
 main { flex: 1; overflow-x: hidden; }
 .content { padding: 2rem; }
 
-/* ========== HORIZONTAL REEL ========== */
+/* ========= HORIZONTAL REEL ========= */
 .horizontal-reel {
-  margin-top: 1rem;                      /* slight gap below banner */
+  margin-top: 1rem;                      /* gap below banner */
   height: 140px;
   background: #fdfdf9;
   box-shadow: 0 2px 6px rgba(0,0,0,.1);
   overflow: hidden;
 }
 
-/* No lateral padding → first image touches sidebar, last touches right edge */
+/* no side padding → flush with sidebar + right edge */
 .horizontal-track {
   display: flex;
   gap: 1.5rem;                          /* space between images only */
   align-items: center;
   animation: scroll-left 45s linear infinite;
   will-change: transform;
+}
+
+/* remove the extra gap on the far right so last image touches edge */
+.horizontal-reel::after {
+  content: '';
+  flex: 0 0 1.5rem;
 }
 
 .horizontal-track img {
@@ -83,7 +89,7 @@ main { flex: 1; overflow-x: hidden; }
 }
 .horizontal-track img:hover { transform: scale(1.05); }
 
-/* Dynamically-set --half-width (JS) drives the loop distance */
 @keyframes scroll-left {
-  to { transform: translateX(calc(-1 * var(--half-width, 50%))); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }   /* shift exactly half (second copy) */
 }
