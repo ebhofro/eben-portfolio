@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Eben Holmes-Frodsham Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</head>
-<body class="sidebar-layout">
-  <header class="top-banner">
-    <img src="topbannermk1.jpg" alt="Desktop Banner" class="top-banner-img desktop-banner">
-    <img src="mobilebanner.jpg" alt="Mobile Banner" class="top-banner-img mobile-banner">
-  </header>
+  <meta charset="UTF-8">
+  <title>Eben Holmes-Frodsham · Portfolio</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 
-  <nav class="sidebar">
-    <div class="sidebar-banner-wrapper">
-      <img src="sidebarmk1.jpg" alt="Sidebar Banner" class="sidebar-banner-img">
-    </div>
-    <div class="sidebar-content">
+  <!-- typefaces -->
+  <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- light-box & AOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+
+<body class="layout">
+
+  <!-- ✦ Top banner (background-image handles both desktop & mobile) -->
+  <header class="banner"></header>
+
+  <!-- ✦ Sidebar -->
+  <aside class="sidebar">
+    <nav class="sidebar__nav">
       <ul>
         <li><a href="#top">Home</a></li>
         <li><a href="#natural">Natural Shorts</a></li>
@@ -34,88 +34,84 @@
         <li><a href="#digital">Digital Art</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </aside>
 
+  <!-- ✦ Main content -->
   <main>
-    <div class="horizontal-reel">
-      <div class="horizontal-track">
-        <a class="glightbox" href="photo1.jpg"><img alt="Photo 1" src="photo1.jpg" /></a>
-        <a class="glightbox" href="photo2.jpg"><img alt="Photo 2" src="photo2.jpg" /></a>
-        <a class="glightbox" href="nzhouse.jpg"><img alt="NZ House" src="nzhouse.jpg" /></a>
-        <a class="glightbox" href="nztractor.jpg"><img alt="NZ Tractor" src="nztractor.jpg" /></a>
-        <a class="glightbox" href="beachroanna1web.jpg"><img alt="Art 1" src="beachroanna1web.jpg" /></a>
-        <a class="glightbox" href="roanna2website.jpg"><img alt="Art 2" src="roanna2website.jpg" /></a>
-        <a class="glightbox" href="billageweb.jpg"><img alt="Billage Art" src="billageweb.jpg" /></a>
-        <a class="glightbox" href="photo3.jpg"><img alt="Photo 3" src="photo3.jpg" /></a>
-        <a class="glightbox" href="photo4.jpg"><img alt="Photo 4" src="photo4.jpg" /></a>
-        <a class="glightbox" href="photo5.jpg"><img alt="Photo 5" src="photo5.jpg" /></a>
-        <a class="glightbox" href="photo6.jpg"><img alt="Photo 6" src="photo6.jpg" /></a>
-        <a class="glightbox" href="photo7.jpg"><img alt="Photo 7" src="photo7.jpg" /></a>
-        <a class="glightbox" href="photo8.jpg"><img alt="Photo 8" src="photo8.jpg" /></a>
-        <a class="glightbox" href="https://www.youtube.com/watch?v=TK-xTVmz0_g" data-type="video"><img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="Ferry Video" /></a>
-      </div>
-    </div>
 
-    <section id="natural" data-aos="fade-up">
-      <img src="microban.png" alt="Natural Micro Shorts Banner" class="section-banner">
-      <div class="video-gallery">
-        <div class="video-thumb">
-          <a href="https://www.youtube.com/watch?v=TK-xTVmz0_g" class="glightbox" data-type="video">
-            <img src="https://img.youtube.com/vi/TK-xTVmz0_g/0.jpg" alt="A golden ferry ride to Arran island">
-            <div class="overlay"><span>A GOLDEN FERRY RIDE TO ARRAN ISLAND</span></div>
-          </a>
-        </div>
-        <div class="video-thumb">
-          <a href="https://www.youtube.com/watch?v=SlCPKbZmgfY" class="glightbox" data-type="video">
-            <img src="https://img.youtube.com/vi/SlCPKbZmgfY/0.jpg" alt="The enchanted forest up the Frenni">
-            <div class="overlay"><span>THE ENCHANTED FOREST UP THE FRENNI</span></div>
-          </a>
-        </div>
+    <!-- ===== HORIZONTAL REEL ===== -->
+    <section class="reel" aria-label="Featured images">
+      <div class="reel__track">
+        <!-- just paste / duplicate anchors as you like -->
+        <a class="glightbox" href="photo1.jpg"><img src="photo1.jpg" alt="Photo 1"></a>
+        <a class="glightbox" href="photo2.jpg"><img src="photo2.jpg" alt="Photo 2"></a>
+        <a class="glightbox" href="nzhouse.jpg"><img src="nzhouse.jpg" alt="NZ House"></a>
+        <a class="glightbox" href="nztractor.jpg"><img src="nztractor.jpg" alt="NZ Tractor"></a>
+        <a class="glightbox" href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt="Art 1"></a>
+        <a class="glightbox" href="roanna2website.jpg"><img src="roanna2website.jpg" alt="Art 2"></a>
+        <a class="glightbox" href="billageweb.jpg"><img src="billageweb.jpg" alt="Billage Art"></a>
       </div>
     </section>
 
+    <!-- ===== NATURAL SHORTS ===== -->
+    <section id="natural" data-aos="fade-up">
+      <img src="microban.png" alt="Natural micro-shorts banner" class="section-banner">
+      <div class="video-gallery">
+        <a class="video-thumb glightbox"
+           data-type="video"
+           href="https://www.youtube.com/watch?v=TK-xTVmz0_g"
+           aria-label="A golden ferry ride to Arran island">
+          <img src="https://img.youtube.com/vi/TK-xTVmz0_g/0.jpg" alt="">
+          <span class="overlay">A GOLDEN FERRY RIDE TO ARRAN ISLAND</span>
+        </a>
+
+        <a class="video-thumb glightbox"
+           data-type="video"
+           href="https://www.youtube.com/watch?v=SlCPKbZmgfY"
+           aria-label="The enchanted forest up the Frenni">
+          <img src="https://img.youtube.com/vi/SlCPKbZmgfY/0.jpg" alt="">
+          <span class="overlay">THE ENCHANTED FOREST UP THE FRENNI</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== PHOTOGRAPHY ===== -->
     <section id="photography" data-aos="fade-up">
       <h2>Photography</h2>
       <div class="photo-grid">
-        <a href="photo1.jpg" class="glightbox"><img src="photo1.jpg" alt="Photo 1"></a>
-        <a href="photo2.jpg" class="glightbox"><img src="photo2.jpg" alt="Photo 2"></a>
-        <a href="nzhouse.jpg" class="glightbox"><img src="nzhouse.jpg" alt="NZ House"></a>
-        <a href="nztractor.jpg" class="glightbox"><img src="nztractor.jpg" alt="NZ Tractor"></a>
+        <a class="glightbox" href="photo1.jpg"><img src="photo1.jpg" alt="Photo 1"></a>
+        <a class="glightbox" href="photo2.jpg"><img src="photo2.jpg" alt="Photo 2"></a>
+        <a class="glightbox" href="nzhouse.jpg"><img src="nzhouse.jpg" alt="NZ House"></a>
+        <a class="glightbox" href="nztractor.jpg"><img src="nztractor.jpg" alt="NZ Tractor"></a>
       </div>
     </section>
 
+    <!-- ===== DIGITAL ART ===== -->
     <section id="digital" data-aos="fade-up">
       <h2>Digital Art</h2>
       <div class="image-gallery">
-        <a href="beachroanna1web.jpg" class="glightbox"><img src="beachroanna1web.jpg" alt="Art 1"></a>
-        <a href="roanna2website.jpg" class="glightbox"><img src="roanna2website.jpg" alt="Art 2"></a>
-      </div>
-      <div class="image-gallery small-gallery">
-        <a href="billageweb.jpg" class="glightbox"><img src="billageweb.jpg" alt="Billage Art"></a>
+        <a class="glightbox" href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt="Art 1"></a>
+        <a class="glightbox" href="roanna2website.jpg"><img src="roanna2website.jpg" alt="Art 2"></a>
+        <a class="glightbox" href="billageweb.jpg"><img src="billageweb.jpg" alt="Billage Art"></a>
       </div>
     </section>
 
+    <!-- ===== CONTACT ===== -->
     <section id="contact" data-aos="fade-up">
       <h2>Contact</h2>
       <p>Email: your.email@example.com</p>
       <p>Instagram | LinkedIn | etc.</p>
     </section>
+
   </main>
 
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    const lightbox = GLightbox({ selector: '.glightbox' });
+    GLightbox({ selector: '.glightbox' });
     AOS.init({ duration: 600, once: true });
-
-    window.addEventListener('scroll', () => {
-      const img = document.querySelector('.sidebar-banner-img');
-      const scrollTop = window.scrollY;
-      if (img) {
-        img.style.transform = `translateY(-${scrollTop * 0.2}px)`;
-      }
-    });
   </script>
 </body>
 </html>
