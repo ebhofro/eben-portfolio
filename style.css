@@ -1,4 +1,4 @@
-/* ========= RESET ========= */
+/* ===== RESET ===== */
 *,
 *::before,
 *::after { box-sizing: border-box; }
@@ -6,61 +6,51 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
   width: 100%;
-  overflow-x: hidden;          /* never allow horizontal scroll */
+  height: 100%;
+  overflow-x: hidden;                /* absolutely no horizontal scroll */
   font-family: 'Space Grotesk', sans-serif;
 }
 
-/* ========= BANNER ========= */
-.top-banner {
-  position: relative;
-  height: 30vh;                /* adjust as you like */
-  max-height: 250px;
-  overflow: hidden;
-}
-.banner-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.mobile  { display: none; }    /* show desktop by default */
-
-@media (max-width: 768px) {
-  .top-banner { height: 25vh; max-height: 180px; }
-  .desktop   { display: none; }
-  .mobile    { display: block; }
+/* ===== BANNER ===== */
+.top-banner img {
+  width: 100%;                       /* fill viewport width */
+  height: auto;                      /* keep full image visible */
+  display: block;                    /* removes tiny whitespace */
 }
 
-/* ========= PAGE LAYOUT ========= */
-/* Flexbox is simpler and rarely spawns unexpected scrollbars */
+/* ===== PAGE ROW ===== */
 .page {
-  display: flex;
-  min-height: calc(100vh - 30vh);   /* viewport minus banner */
+  display: flex;                     /* simple two-column layout */
+  width: 100%;
+  min-height: calc(100vh -  /* subtract banner height */
+                   /* JS could read real height later */
+                   /* but this keeps demo simple      */
+                   0px);
 }
+/* Prevent Flex items from growing wider than viewport */
+.page > * { min-width: 0; }
 
-/* ========= SIDEBAR ========= */
+/* ===== SIDEBAR ===== */
 .sidebar {
-  width: 300px;
-  background: #114221 url("sidebarmk1.jpg") top center / cover no-repeat;
+  flex: 0 0 300px;                   /* fixed 300 px column */
+  background: #114221 url("sidebarmk1.jpg") top/cover no-repeat;
   color: #fdfdf9;
-  padding-top: 160px;           /* reveal banner height */
-  overflow-y: auto;             /* own scroll if links exceed viewport */
+  padding-top: 160px;                /* lets banner picture show */
+  overflow-y: auto;                  /* own scroll if needed */
 }
 .sidebar ul {
   list-style: none;
   margin: 0;
   padding: 0 0 2rem;
 }
-.sidebar li + li { margin-top: 0.75rem; }
+.sidebar li + li { margin-top: .75rem; }
 .sidebar a {
   display: block;
-  padding: 0.75rem 1rem;
+  padding: .75rem 1rem;
+  text-align: center;
   font-family: 'Geo', sans-serif;
   text-transform: uppercase;
-  text-align: center;
   font-weight: bold;
   color: #fdfdf9;
   text-decoration: none;
@@ -71,11 +61,11 @@ html, body {
   color: #ffcb47;
 }
 
-/* ========= MAIN CONTENT ========= */
+/* ===== MAIN COLUMN ===== */
 main {
-  flex: 1;
+  flex: 1;                            /* take remaining width */
   padding: 2rem;
-  overflow-x: hidden;          /* prevent child overflow from spawning bar */
+  overflow-x: hidden;                 /* belt-and-braces guard */
 }
 
-/* You can paste your existing gallery / reel CSS below this comment */
+/* --- Add your gallery / reel / section styles under here --- */
