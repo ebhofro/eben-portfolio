@@ -1,122 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Eben Holmes-Frodsham · Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 
-  <!-- Main stylesheet (the scrollbar / banner-fix version) -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Typefaces -->
+  <!-- fonts only if you need them -->
   <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Lightbox & AOS animation CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
+<body>
 
-<body class="sidebar-layout" id="top">
-
-  <!-- ========== TOP BANNER (desktop & mobile) ========== -->
+  <!-- TOP BANNER (desktop + mobile) -->
   <header class="top-banner">
-    <img src="topbannermk1.jpg" alt="Desktop banner" class="top-banner-img desktop-banner">
-    <img src="mobilebanner.jpg"  alt="Mobile banner"  class="top-banner-img mobile-banner">
+    <img class="banner-img desktop" src="topbannermk1.jpg" alt="Desktop banner">
+    <img class="banner-img mobile"  src="mobilebanner.jpg"  alt="Mobile banner">
   </header>
 
-  <!-- ========== SIDEBAR ========== -->
-  <nav class="sidebar">
-    <div class="sidebar-content">
-      <ul>
-        <li><a href="#top">Home</a></li>
-        <li><a href="#natural">Natural Shorts</a></li>
-        <li><a href="#editing">Creative Editing</a></li>
-        <li><a href="#concerts">Concerts</a></li>
-        <li><a href="#uni">Uni Work</a></li>
-        <li><a href="#designs">Designs</a></li>
-        <li><a href="#photography">Photography</a></li>
-        <li><a href="#digital">Digital Art</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- PAGE WRAPPER (flex row) -->
+  <div class="page">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#natural">Natural Shorts</a></li>
+          <li><a href="#photography">Photography</a></li>
+          <li><a href="#digital">Digital Art</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-  <!-- ========== MAIN CONTENT ========== -->
-  <main>
+    <!-- MAIN CONTENT (empty for now) -->
+    <main id="home">
+      <h1 style="margin-top:0">Hello, world!</h1>
+      <p>Paste your sections here one by one.</p>
+    </main>
+  </div>
 
-    <!-- ===== HORIZONTAL REEL ===== -->
-    <section class="horizontal-reel" aria-label="Featured images">
-      <div class="horizontal-track">
-        <a class="glightbox" href="photo1.jpg"><img src="photo1.jpg" alt="Photo 1"></a>
-        <a class="glightbox" href="photo2.jpg"><img src="photo2.jpg" alt="Photo 2"></a>
-        <a class="glightbox" href="nzhouse.jpg"><img src="nzhouse.jpg" alt="NZ House"></a>
-        <a class="glightbox" href="nztractor.jpg"><img src="nztractor.jpg" alt="NZ Tractor"></a>
-        <a class="glightbox" href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt="Art 1"></a>
-        <a class="glightbox" href="roanna2website.jpg"><img src="roanna2website.jpg" alt="Art 2"></a>
-        <a class="glightbox" href="billageweb.jpg"><img src="billageweb.jpg" alt="Billage Art"></a>
-      </div>
-    </section>
-
-    <!-- ===== NATURAL SHORTS ===== -->
-    <section id="natural" data-aos="fade-up">
-      <img src="microban.png" alt="Natural micro-shorts banner" class="section-banner">
-      <div class="video-gallery">
-        <a class="video-thumb glightbox" data-type="video"
-           href="https://www.youtube.com/watch?v=TK-xTVmz0_g">
-          <img src="https://img.youtube.com/vi/TK-xTVmz0_g/0.jpg" alt="">
-          <span class="overlay">A GOLDEN FERRY RIDE TO ARRAN ISLAND</span>
-        </a>
-        <a class="video-thumb glightbox" data-type="video"
-           href="https://www.youtube.com/watch?v=SlCPKbZmgfY">
-          <img src="https://img.youtube.com/vi/SlCPKbZmgfY/0.jpg" alt="">
-          <span class="overlay">THE ENCHANTED FOREST UP THE FRENNI</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ===== PLACEHOLDER SECTIONS (so sidebar links work) ===== -->
-    <section id="editing" data-aos="fade-up"><h2>Creative Editing</h2><p>Coming soon…</p></section>
-    <section id="concerts" data-aos="fade-up"><h2>Concerts</h2><p>Coming soon…</p></section>
-    <section id="uni"      data-aos="fade-up"><h2>Uni Work</h2><p>Coming soon…</p></section>
-    <section id="designs"  data-aos="fade-up"><h2>Designs</h2><p>Coming soon…</p></section>
-
-    <!-- ===== PHOTOGRAPHY ===== -->
-    <section id="photography" data-aos="fade-up">
-      <h2>Photography</h2>
-      <div class="photo-grid">
-        <a class="glightbox" href="photo1.jpg"><img src="photo1.jpg" alt="Photo 1"></a>
-        <a class="glightbox" href="photo2.jpg"><img src="photo2.jpg" alt="Photo 2"></a>
-        <a class="glightbox" href="nzhouse.jpg"><img src="nzhouse.jpg" alt="NZ House"></a>
-        <a class="glightbox" href="nztractor.jpg"><img src="nztractor.jpg" alt="NZ Tractor"></a>
-      </div>
-    </section>
-
-    <!-- ===== DIGITAL ART ===== -->
-    <section id="digital" data-aos="fade-up">
-      <h2>Digital Art</h2>
-      <div class="image-gallery">
-        <a class="glightbox" href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt="Art 1"></a>
-        <a class="glightbox" href="roanna2website.jpg"><img src="roanna2website.jpg" alt="Art 2"></a>
-        <a class="glightbox" href="billageweb.jpg"><img src="billageweb.jpg" alt="Billage Art"></a>
-      </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" data-aos="fade-up">
-      <h2>Contact</h2>
-      <p>Email: your.email@example.com</p>
-      <p>Instagram | LinkedIn | etc.</p>
-    </section>
-
-  </main>
-
-  <!-- ========== SCRIPTS ========== -->
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    GLightbox({ selector: '.glightbox' });
-    AOS.init({ duration: 600, once: true });
-  </script>
 </body>
 </html>
