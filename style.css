@@ -14,10 +14,21 @@ body {
   overflow-x: hidden;
 }
 
+body.sidebar-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "banner banner"
+    "sidebar main";
+  min-height: 100vh;
+}
+
 /* ====== BANNERS ====== */
 .top-banner {
+  grid-area: banner;
   width: 100%;
-  max-height: 280px;
+  height: auto;
   z-index: 1000;
   clear: both;
   overflow: hidden;
@@ -31,9 +42,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .top-banner {
-    height: auto;
-  }
   .desktop-banner {
     display: none;
   }
@@ -53,16 +61,20 @@ body {
 
 /* ====== SIDEBAR ====== */
 .sidebar {
+  grid-area: sidebar;
   position: relative;
   width: 300px;
-  float: left;
   background: #114221;
   z-index: 10;
-  min-height: 100vh;
+  min-height: 100%;
 }
 .sidebar-banner-wrapper {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 150px;
+  overflow: hidden;
   z-index: 0;
 }
 .sidebar-banner-img {
@@ -74,7 +86,7 @@ body {
 .sidebar-content {
   position: relative;
   z-index: 1;
-  padding-top: 150px;
+  padding-top: 160px;
 }
 .sidebar-content ul {
   list-style: none;
@@ -103,7 +115,7 @@ body {
 
 /* ====== MAIN CONTENT ====== */
 main {
-  margin-left: 300px;
+  grid-area: main;
   padding: 0 2rem;
 }
 
