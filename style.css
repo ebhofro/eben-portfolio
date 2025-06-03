@@ -1,4 +1,4 @@
-/* ========== BASE RESET ========== */
+/* ========= RESET ========= */
 *,
 *::before,
 *::after { box-sizing: border-box; }
@@ -6,101 +6,76 @@
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
   height: 100%;
-  overflow-x: hidden;          /* kills horizontal scroll */
+  width: 100%;
+  overflow-x: hidden;          /* never allow horizontal scroll */
   font-family: 'Space Grotesk', sans-serif;
 }
 
-/* ========== GRID LAYOUT SHELL ========== */
-body.sidebar-layout {
-  --sidebar-w: 300px;
-  display: grid;
-  grid-template-columns: var(--sidebar-w) 1fr;
-  grid-template-rows: auto 1fr;
-  grid-template-areas:
-    "banner banner"
-    "sidebar main";
-  min-height: 100vh;
-}
-
-/* Every grid child must be allowed to shrink   */
-/* (fixes the phantom horizontal scrollbar)     */
-body.sidebar-layout > * { min-width: 0; }
-
-/* ========== TOP BANNER ========== */
+/* ========= BANNER ========= */
 .top-banner {
-  grid-area: banner;
-  grid-column: 1 / -1;           /* span both columns */
-  height: 30vh;
-  max-height: 250px;
   position: relative;
+  height: 30vh;                /* adjust as you like */
+  max-height: 250px;
   overflow: hidden;
 }
-
-.top-banner-img {
+.banner-img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;              /* fill banner, crop top/bottom */
-  display: block;
+  object-fit: cover;
 }
-
-.desktop-banner { display: block; }
-.mobile-banner  { display: none;  }
+.mobile  { display: none; }    /* show desktop by default */
 
 @media (max-width: 768px) {
-  .top-banner      { height: 25vh; max-height: 180px; }
-  .desktop-banner  { display: none; }
-  .mobile-banner   { display: block; }
+  .top-banner { height: 25vh; max-height: 180px; }
+  .desktop   { display: none; }
+  .mobile    { display: block; }
 }
 
-/* ========== SIDEBAR ========== */
+/* ========= PAGE LAYOUT ========= */
+/* Flexbox is simpler and rarely spawns unexpected scrollbars */
+.page {
+  display: flex;
+  min-height: calc(100vh - 30vh);   /* viewport minus banner */
+}
+
+/* ========= SIDEBAR ========= */
 .sidebar {
-  grid-area: sidebar;
-  width: var(--sidebar-w);
-  min-height: 100vh;
-  background: #114221 url("sidebarmk1.jpg") top center/cover no-repeat;
+  width: 300px;
+  background: #114221 url("sidebarmk1.jpg") top center / cover no-repeat;
   color: #fdfdf9;
-  overflow-y: auto;
+  padding-top: 160px;           /* reveal banner height */
+  overflow-y: auto;             /* own scroll if links exceed viewport */
 }
-
-.sidebar-content {
-  padding: 170px 0 2rem;         /* leaves the banner visible */
-}
-
-.sidebar-content ul {
+.sidebar ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 2rem;
 }
-
-.sidebar-content li { margin: 0.75rem 0; text-align: center; }
-
-.sidebar-content a {
+.sidebar li + li { margin-top: 0.75rem; }
+.sidebar a {
+  display: block;
+  padding: 0.75rem 1rem;
   font-family: 'Geo', sans-serif;
-  font-size: 1rem;
   text-transform: uppercase;
+  text-align: center;
   font-weight: bold;
   color: #fdfdf9;
   text-decoration: none;
-  padding: 0.75rem 1rem;
-  display: block;
-  transition: background 0.3s, color 0.3s;
+  transition: background .3s, color .3s;
 }
-
-.sidebar-content a:hover {
+.sidebar a:hover {
   background: #1e4228;
   color: #ffcb47;
 }
 
-/* ========== MAIN COLUMN ========== */
+/* ========= MAIN CONTENT ========= */
 main {
-  grid-area: main;
-  padding: 0 2rem;
-  overflow-x: hidden;            /* belt-and-braces */
+  flex: 1;
+  padding: 2rem;
+  overflow-x: hidden;          /* prevent child overflow from spawning bar */
 }
 
-/* ------- Put the rest of your original gallery / reel / section styles here. -------- */
-/* They don’t affect the banner or the horizontal scroll, so you can keep them as-is.  */
+/* You can paste your existing gallery / reel CSS below this comment */
