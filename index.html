@@ -13,12 +13,12 @@
 
 <body>
 
-  <!-- TOP BANNER -->
+  <!-- ── Top banner ─────────────────────────────────────────── -->
   <header class="top-banner">
     <img src="topbannermk1.jpg" alt="Site banner">
   </header>
 
-  <!-- PAGE ROW -->
+  <!-- ── Page row : sidebar | main ──────────────────────────── -->
   <div class="page">
 
     <!-- Sidebar -->
@@ -36,38 +36,28 @@
       </nav>
     </aside>
 
-    <!-- Main -->
+    <!-- Main column -->
     <main id="home">
 
-      <!-- HORIZONTAL REEL (flush edges, infinite loop) -->
+      <!-- ══ Horizontal reel (auto-fills, smooth loop) ═════════ -->
       <section class="horizontal-reel" aria-label="Featured work">
         <div class="horizontal-track">
-          <!-- 1st set -->
-          <a class="glightbox" href="photo1.jpg"><img src="photo1.jpg" alt=""></a>
-          <a class="glightbox" href="photo2.jpg"><img src="photo2.jpg" alt=""></a>
-          <a class="glightbox" href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
-          <a class="glightbox" href="nztractor.jpg"><img src="nztractor.jpg" alt=""></a>
-          <a class="glightbox" href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt=""></a>
-          <a class="glightbox" href="roanna2website.jpg"><img src="roanna2website.jpg" alt=""></a>
-          <a class="glightbox" href="billageweb.jpg"><img src="billageweb.jpg" alt=""></a>
-
-          <!-- duplicate set for seamless loop -->
-          <a class="glightbox" href="photo1.jpg"><img src="photo1.jpg" alt=""></a>
-          <a class="glightbox" href="photo2.jpg"><img src="photo2.jpg" alt=""></a>
-          <a class="glightbox" href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
-          <a class="glightbox" href="nztractor.jpg"><img src="nztractor.jpg" alt=""></a>
-          <a class="glightbox" href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt=""></a>
-          <a class="glightbox" href="roanna2website.jpg"><img src="roanna2website.jpg" alt=""></a>
-          <a class="glightbox" href="billageweb.jpg"><img src="billageweb.jpg" alt=""></a>
+          <!-- ONE copy of each image is enough; JS duplicates as needed -->
+          <a href="photo1.jpg"><img src="photo1.jpg" alt=""></a>
+          <a href="photo2.jpg"><img src="photo2.jpg" alt=""></a>
+          <a href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
+          <a href="nztractor.jpg"><img src="nztractor.jpg" alt=""></a>
+          <a href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt=""></a>
+          <a href="roanna2website.jpg"><img src="roanna2website.jpg" alt=""></a>
+          <a href="billageweb.jpg"><img src="billageweb.jpg" alt=""></a>
         </div>
       </section>
 
-      <!-- Your actual content goes below -->
+      <!-- Your real content below -->
       <div class="content">
         <h1>Hello!</h1>
-        <p>Paste your real sections here one by one.</p>
+        <p>Paste your sections here one by one.</p>
 
-        <!-- placeholders so sidebar links work -->
         <section id="natural"><h2>Natural Shorts</h2><p>…</p></section>
         <section id="editing"><h2>Creative Editing</h2><p>…</p></section>
         <section id="photography"><h2>Photography</h2><p>…</p></section>
@@ -78,5 +68,18 @@
     </main>
   </div>
 
+  <!-- JS: duplicate reel images until the track ≥ 2× viewport -->
+  <script>
+    const reel   = document.querySelector('.horizontal-reel');
+    const track  = reel.querySelector('.horizontal-track');
+
+    // duplicate full set until track is at least twice the visible width
+    while (track.scrollWidth < reel.offsetWidth * 2) {
+      track.innerHTML += track.innerHTML;
+    }
+
+    // after duplicating, set a CSS custom property with half the width
+    track.style.setProperty('--half-width', track.scrollWidth / 2 + 'px');
+  </script>
 </body>
 </html>
