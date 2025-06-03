@@ -1,4 +1,4 @@
-/* ===== RESET ===== */
+/* ========== RESET ========== */
 *,
 *::before,
 *::after { box-sizing: border-box; }
@@ -12,21 +12,21 @@ html, body {
   font-family: 'Space Grotesk', sans-serif;
 }
 
-/* ===== BANNER ===== */
+/* ========== BANNER ========== */
 .top-banner img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* ===== PAGE ROW ===== */
+/* ========== PAGE ROW ========== */
 .page {
   display: flex;
   min-height: 100vh;
 }
-.page > * { min-width: 0; }
+.page > * { min-width: 0; }           /* prevents overflow */
 
-/* ===== SIDEBAR ===== */
+/* ========== SIDEBAR ========== */
 .sidebar {
   flex: 0 0 300px;
   background: #114221 url("sidebarmk1.jpg") top/cover no-repeat;
@@ -52,31 +52,26 @@ html, body {
 }
 .sidebar a:hover { background:#1e4228; color:#ffcb47; }
 
-/* ===== MAIN ===== */
+/* ========== MAIN ========== */
 main { flex: 1; overflow-x: hidden; }
 .content { padding: 2rem; }
 
-/* ===== HORIZONTAL REEL ===== */
+/* ========== HORIZONTAL REEL ========== */
 .horizontal-reel {
+  margin-top: 1rem;                      /* slight gap below banner */
   height: 140px;
   background: #fdfdf9;
   box-shadow: 0 2px 6px rgba(0,0,0,.1);
   overflow: hidden;
 }
 
-/* track now has ZERO padding so images touch sidebar & right edge */
+/* No lateral padding → first image touches sidebar, last touches right edge */
 .horizontal-track {
   display: flex;
-  gap: 1.5rem;                 /* space BETWEEN images only */
+  gap: 1.5rem;                          /* space between images only */
   align-items: center;
   animation: scroll-left 45s linear infinite;
   will-change: transform;
-}
-
-/* compensate right-edge gap from final gap unit */
-.horizontal-reel::after {
-  content: '';
-  flex: 0 0 1.5rem;            /* cancels the last gap so last img touches edge */
 }
 
 .horizontal-track img {
@@ -88,7 +83,7 @@ main { flex: 1; overflow-x: hidden; }
 }
 .horizontal-track img:hover { transform: scale(1.05); }
 
+/* Dynamically-set --half-width (JS) drives the loop distance */
 @keyframes scroll-left {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  to { transform: translateX(calc(-1 * var(--half-width, 50%))); }
 }
