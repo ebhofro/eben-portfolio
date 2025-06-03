@@ -5,12 +5,14 @@
 html {
   margin: 0;
   padding: 0;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   overflow-x: hidden;
 }
 body {
   margin: 0;
   padding: 0;
+  min-height: 100%;
   overflow-x: hidden;
 }
 
@@ -28,15 +30,18 @@ body.sidebar-layout {
 .top-banner {
   grid-area: banner;
   width: 100%;
-  height: auto;
+  height: 250px;
+  max-height: 30vh;
   z-index: 1000;
-  clear: both;
   overflow: hidden;
   position: relative;
 }
 .top-banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -49,7 +54,10 @@ body.sidebar-layout {
     display: block;
   }
   .top-banner-img {
-    height: auto;
+    height: 100%;
+  }
+  .top-banner {
+    height: 180px;
   }
 }
 .desktop-banner {
@@ -66,27 +74,28 @@ body.sidebar-layout {
   width: 300px;
   background: #114221;
   z-index: 10;
-  min-height: 100%;
+  min-height: 100vh;
 }
 .sidebar-banner-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 150px;
+  height: 160px;
   overflow: hidden;
   z-index: 0;
 }
 .sidebar-banner-img {
   width: 100%;
-  height: 150px;
+  height: 160px;
   display: block;
   object-fit: cover;
 }
 .sidebar-content {
   position: relative;
   z-index: 1;
-  padding-top: 160px;
+  padding-top: 170px;
+  background: #114221;
 }
 .sidebar-content ul {
   list-style: none;
