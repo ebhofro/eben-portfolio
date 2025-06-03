@@ -1,4 +1,4 @@
-/* ===== RESET ===== */
+/* ========== RESET ========== */
 *,
 *::before,
 *::after { box-sizing: border-box; }
@@ -8,65 +8,30 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow-x: hidden;          /* banish horizontal scroll */
+  overflow-x: hidden;          /* kill horizontal scrollbar */
   font-family: 'Space Grotesk', sans-serif;
 }
 
-/* ===== TOP BANNER ===== */
+/* ========== TOP BANNER ========== */
 .top-banner img {
-  width: 100%;                 /* image always fills width */
-  height: auto;                /* full image, no side-crop */
+  width: 100%;
+  height: auto;
   display: block;
 }
 
-/* ═════════ HORIZONTAL REEL ═════════ */
-.horizontal-reel {
-  height: 140px;                 /* 10 px taller than images for gap */
-  overflow: hidden;              /* clips the moving track */
-  background: #fdfdf9;
-  box-shadow: 0 2px 6px rgba(0,0,0,.1);
-  margin-bottom: 2rem;           /* space before next section */
-}
-
-.horizontal-track {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  padding: 0 1.5rem;
-  animation: scroll-left 45s linear infinite;
-  will-change: transform;        /* smoother on Chrome / Edge */
-}
-
-/* images inside reel */
-.horizontal-track img {
-  height: 100px;
-  width: auto;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,.1);
-  transition: transform .3s;
-}
-.horizontal-track img:hover { transform: scale(1.05); }
-
-/* keyframes: move entire track to the left for a continuous right-to-left flow */
-@keyframes scroll-left {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }  /* half-track shift (because images duplicated) */
-}
-
-
-/* ===== PAGE ROW ===== */
+/* ========== PAGE ROW (sidebar | main) ========== */
 .page {
-  display: flex;               /* simple two-column layout */
-  min-height: 100vh;           /* full viewport height */
+  display: flex;
+  min-height: 100vh;
 }
-.page > * { min-width: 0; }    /* crucial – prevents overflow */
+.page > * { min-width: 0; }    /* prevents overflow */
 
-/* ===== SIDEBAR ===== */
+/* ========== SIDEBAR ========== */
 .sidebar {
-  flex: 0 0 300px;                             /* fixed width */
+  flex: 0 0 300px;
   background: #114221 url("sidebarmk1.jpg") top/cover no-repeat;
   color: #fdfdf9;
-  padding-top: 160px;                          /* reveal banner art */
+  padding-top: 160px;
 }
 .sidebar ul {
   list-style: none;
@@ -85,16 +50,39 @@ html, body {
   text-decoration: none;
   transition: background .3s, color .3s;
 }
-.sidebar a:hover {
-  background: #1e4228;
-  color: #ffcb47;
-}
+.sidebar a:hover { background:#1e4228; color:#ffcb47; }
 
-/* ===== MAIN COLUMN ===== */
-main {
-  flex: 1;
-  padding: 2rem;
-  overflow-x: hidden;          /* belt-and-braces guard */
-}
+/* ========== MAIN COLUMN ========== */
+main { flex: 1; overflow-x: hidden; }
 
-/* (add any extra gallery / section CSS below) */
+/* -- content wrapper keeps padding for everything but the reel -- */
+.content { padding: 2rem; }
+
+/* ========== HORIZONTAL REEL ========== */
+.horizontal-reel {
+  height: 140px;
+  background: #fdfdf9;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  overflow: hidden;            /* clip moving track */
+}
+.horizontal-track {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 0 1.5rem;
+  animation: scroll-left 45s linear infinite;
+  will-change: transform;
+}
+.horizontal-track img {
+  height: 100px;
+  width: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  transition: transform .3s;
+}
+.horizontal-track img:hover { transform: scale(1.05); }
+
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
