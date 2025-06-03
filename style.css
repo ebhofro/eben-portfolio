@@ -7,13 +7,11 @@ html, body {
   padding: 0;
   max-width: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
-  height: auto;
 }
 
 /* ====== BANNERS ====== */
 .top-banner {
-  width: 100%; /* was 100vw */
+  width: 100%;
   height: 280px;
   z-index: 1000;
   clear: both;
@@ -23,6 +21,21 @@ html, body {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+@media (max-width: 768px) {
+  .top-banner {
+    height: auto;
+  }
+  .desktop-banner {
+    display: none;
+  }
+  .mobile-banner {
+    display: block;
+  }
+  .top-banner-img {
+    height: auto;
+  }
 }
 .desktop-banner {
   display: block;
@@ -46,7 +59,13 @@ html, body {
 }
 .sidebar-banner-img {
   width: 100%;
+  height: 150px;
   display: block;
+  object-fit: cover;
+}
+.sidebar-content {
+  position: relative;
+  z-index: 1;
 }
 .sidebar-content ul {
   list-style: none;
