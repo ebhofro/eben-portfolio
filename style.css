@@ -24,7 +24,7 @@ html, body {
   display: flex;
   min-height: 100vh;
 }
-.page > * { min-width: 0; }   /* guard against overflow */
+.page > * { min-width: 0; }          /* prevent overflow */
 
 /* ========= SIDEBAR ========= */
 .sidebar {
@@ -58,26 +58,20 @@ main { flex: 1; overflow-x: hidden; }
 
 /* ========= HORIZONTAL REEL ========= */
 .horizontal-reel {
-  margin-top: 1rem;                      /* gap below banner */
+  margin: 20px 0;                      /* 20 px gap below banner */
   height: 140px;
   background: #fdfdf9;
   box-shadow: 0 2px 6px rgba(0,0,0,.1);
   overflow: hidden;
 }
 
-/* no side padding → flush with sidebar + right edge */
+/* no side padding ⇒ flush with sidebar & right edge */
 .horizontal-track {
   display: flex;
-  gap: 1.5rem;                          /* space between images only */
+  gap: 1.5rem;                        /* space between images */
   align-items: center;
-  animation: scroll-left 45s linear infinite;
+  animation: scroll-left 40s linear infinite;
   will-change: transform;
-}
-
-/* remove the extra gap on the far right so last image touches edge */
-.horizontal-reel::after {
-  content: '';
-  flex: 0 0 1.5rem;
 }
 
 .horizontal-track img {
@@ -89,7 +83,8 @@ main { flex: 1; overflow-x: hidden; }
 }
 .horizontal-track img:hover { transform: scale(1.05); }
 
+/* 0 %: first set visible  · 100 %: second set visible   */
 @keyframes scroll-left {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }   /* shift exactly half (second copy) */
+  100% { transform: translateX(-50%); }
 }
