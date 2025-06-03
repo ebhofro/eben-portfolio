@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Eben Holmes-Frodsham · Portfolio</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- typefaces -->
+  <!-- Main stylesheet (the scrollbar / banner-fix version) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Typefaces -->
   <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- light-box & AOS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <!-- Lightbox & AOS animation CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 
-<body class="layout">
+<body class="sidebar-layout" id="top">
 
-  <!-- ✦ Top banner (background-image handles both desktop & mobile) -->
-  <header class="banner"></header>
+  <!-- ========== TOP BANNER (desktop & mobile) ========== -->
+  <header class="top-banner">
+    <img src="topbannermk1.jpg" alt="Desktop banner" class="top-banner-img desktop-banner">
+    <img src="mobilebanner.jpg"  alt="Mobile banner"  class="top-banner-img mobile-banner">
+  </header>
 
-  <!-- ✦ Sidebar -->
-  <aside class="sidebar">
-    <nav class="sidebar__nav">
+  <!-- ========== SIDEBAR ========== -->
+  <nav class="sidebar">
+    <div class="sidebar-content">
       <ul>
         <li><a href="#top">Home</a></li>
         <li><a href="#natural">Natural Shorts</a></li>
@@ -34,16 +39,15 @@
         <li><a href="#digital">Digital Art</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
-  </aside>
+    </div>
+  </nav>
 
-  <!-- ✦ Main content -->
+  <!-- ========== MAIN CONTENT ========== -->
   <main>
 
     <!-- ===== HORIZONTAL REEL ===== -->
-    <section class="reel" aria-label="Featured images">
-      <div class="reel__track">
-        <!-- just paste / duplicate anchors as you like -->
+    <section class="horizontal-reel" aria-label="Featured images">
+      <div class="horizontal-track">
         <a class="glightbox" href="photo1.jpg"><img src="photo1.jpg" alt="Photo 1"></a>
         <a class="glightbox" href="photo2.jpg"><img src="photo2.jpg" alt="Photo 2"></a>
         <a class="glightbox" href="nzhouse.jpg"><img src="nzhouse.jpg" alt="NZ House"></a>
@@ -58,23 +62,24 @@
     <section id="natural" data-aos="fade-up">
       <img src="microban.png" alt="Natural micro-shorts banner" class="section-banner">
       <div class="video-gallery">
-        <a class="video-thumb glightbox"
-           data-type="video"
-           href="https://www.youtube.com/watch?v=TK-xTVmz0_g"
-           aria-label="A golden ferry ride to Arran island">
+        <a class="video-thumb glightbox" data-type="video"
+           href="https://www.youtube.com/watch?v=TK-xTVmz0_g">
           <img src="https://img.youtube.com/vi/TK-xTVmz0_g/0.jpg" alt="">
           <span class="overlay">A GOLDEN FERRY RIDE TO ARRAN ISLAND</span>
         </a>
-
-        <a class="video-thumb glightbox"
-           data-type="video"
-           href="https://www.youtube.com/watch?v=SlCPKbZmgfY"
-           aria-label="The enchanted forest up the Frenni">
+        <a class="video-thumb glightbox" data-type="video"
+           href="https://www.youtube.com/watch?v=SlCPKbZmgfY">
           <img src="https://img.youtube.com/vi/SlCPKbZmgfY/0.jpg" alt="">
           <span class="overlay">THE ENCHANTED FOREST UP THE FRENNI</span>
         </a>
       </div>
     </section>
+
+    <!-- ===== PLACEHOLDER SECTIONS (so sidebar links work) ===== -->
+    <section id="editing" data-aos="fade-up"><h2>Creative Editing</h2><p>Coming soon…</p></section>
+    <section id="concerts" data-aos="fade-up"><h2>Concerts</h2><p>Coming soon…</p></section>
+    <section id="uni"      data-aos="fade-up"><h2>Uni Work</h2><p>Coming soon…</p></section>
+    <section id="designs"  data-aos="fade-up"><h2>Designs</h2><p>Coming soon…</p></section>
 
     <!-- ===== PHOTOGRAPHY ===== -->
     <section id="photography" data-aos="fade-up">
@@ -106,7 +111,7 @@
 
   </main>
 
-  <!-- JS -->
+  <!-- ========== SCRIPTS ========== -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
@@ -115,4 +120,3 @@
   </script>
 </body>
 </html>
-
