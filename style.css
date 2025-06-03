@@ -2,27 +2,63 @@
 * {
   box-sizing: border-box;
 }
-html, body {
+html {
   margin: 0;
   padding: 0;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
-  height: auto;
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body.sidebar-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "banner banner"
+    "sidebar main";
+  min-height: 100vh;
 }
 
 /* ====== BANNERS ====== */
 .top-banner {
-  width: 100%; /* was 100vw */
-  height: 280px;
+  grid-area: banner;
+  width: 100%;
+  height: 250px;
+  max-height: 30vh;
   z-index: 1000;
-  clear: both;
+  overflow: hidden;
+  position: relative;
 }
 .top-banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+@media (max-width: 768px) {
+  .desktop-banner {
+    display: none;
+  }
+  .mobile-banner {
+    display: block;
+  }
+  .top-banner-img {
+    height: 100%;
+  }
+  .top-banner {
+    height: 180px;
+  }
 }
 .desktop-banner {
   display: block;
@@ -33,20 +69,33 @@ html, body {
 
 /* ====== SIDEBAR ====== */
 .sidebar {
+  grid-area: sidebar;
   position: relative;
   width: 300px;
-  float: left;
   background: #114221;
   z-index: 10;
   min-height: 100vh;
 }
 .sidebar-banner-wrapper {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
   z-index: 0;
 }
 .sidebar-banner-img {
   width: 100%;
+  height: 160px;
   display: block;
+  object-fit: cover;
+}
+.sidebar-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 170px;
+  background: #114221;
 }
 .sidebar-content ul {
   list-style: none;
@@ -75,7 +124,7 @@ html, body {
 
 /* ====== MAIN CONTENT ====== */
 main {
-  margin-left: 300px;
+  grid-area: main;
   padding: 0 2rem;
 }
 
