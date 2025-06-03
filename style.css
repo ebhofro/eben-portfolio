@@ -8,16 +8,17 @@ html {
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden;          /* eliminates stray horizontal scroll */
 }
 
 body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden;          /* extra guard */
 }
 
+/* ====== GRID LAYOUT WRAPPER ====== */
 body.sidebar-layout {
   display: grid;
   grid-template-columns: 300px 1fr;
@@ -28,22 +29,21 @@ body.sidebar-layout {
   min-height: 100vh;
 }
 
-/* ====== BANNERS ====== */
+/* ====== TOP BANNER ====== */
 .top-banner {
   grid-area: banner;
+  grid-column: 1 / -1;        /* span both columns */
   width: 100%;
-  margin-left: 0;
   height: 30vh;
   max-height: 250px;
-  z-index: 1000;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  z-index: 1000;
 }
 
 .top-banner-img {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -51,63 +51,40 @@ body.sidebar-layout {
 }
 
 @media (max-width: 768px) {
-  .desktop-banner {
-    display: none;
-  }
-  .mobile-banner {
-    display: block;
-  }
-  .top-banner-img {
-    height: 100%;
-  }
+  .desktop-banner { display: none; }
+  .mobile-banner  { display: block; }
+
   .top-banner {
     height: 25vh;
     max-height: 180px;
-    margin-left: 0;
   }
 }
 
-.desktop-banner {
-  display: block;
-}
-
-.mobile-banner {
-  display: none;
-}
+.desktop-banner { display: block; }
+.mobile-banner  { display: none;  }
 
 /* ====== SIDEBAR ====== */
 .sidebar {
   grid-area: sidebar;
   position: relative;
   width: 300px;
-  background: #114221;
-  z-index: 10;
   min-height: 100vh;
   overflow: hidden;
+  background: #114221 url("sidebarmk1.jpg") top center / cover no-repeat;
+  z-index: 10;
 }
 
-.sidebar-banner-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 160px;
-  overflow: hidden;
-  z-index: 0;
-}
-
+/* the old wrapper/image are no longer needed */
+.sidebar-banner-wrapper,
 .sidebar-banner-img {
-  width: 100%;
-  height: 160px;
-  display: block;
-  object-fit: cover;
+  display: none;
 }
 
 .sidebar-content {
   position: relative;
   z-index: 1;
-  padding-top: 170px;
-  background: #114221;
+  padding-top: 170px;         /* keeps links beneath banner area */
+  background: transparent;    /* let the banner show through */
 }
 
 .sidebar-content ul {
@@ -142,6 +119,7 @@ body.sidebar-layout {
 main {
   grid-area: main;
   padding: 0 2rem;
+  overflow-x: hidden;         /* guard against overly wide embeds */
 }
 
 /* ====== SECTION BANNER ====== */
@@ -169,8 +147,9 @@ main {
   height: 100%;
   gap: 1.5rem;
   padding: 0 2rem;
-  animation: scroll-left 60s linear infinite;
   width: max-content;
+  animation: scroll-left 60s linear infinite;
+  will-change: transform;
 }
 
 .horizontal-track img {
@@ -188,7 +167,7 @@ main {
 }
 
 @keyframes scroll-left {
-  0% { transform: translateX(0); }
+  0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
@@ -216,30 +195,22 @@ main {
 
 .video-thumb .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 10px;
-  background: rgba(0,0,0,0.5);
-  color: white;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
   font-size: 0.9rem;
   text-align: center;
   padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.video-thumb:hover img {
-  opacity: 0.3;
-}
-
-.video-thumb:hover .overlay {
-  opacity: 1;
-}
+.video-thumb:hover img     { opacity: 0.3; }
+.video-thumb:hover .overlay { opacity: 1;  }
 
 /* ====== PHOTO GRID ====== */
 .photo-grid {
@@ -257,9 +228,7 @@ main {
   transition: transform 0.3s ease;
 }
 
-.photo-grid img:hover {
-  transform: scale(1.05);
-}
+.photo-grid img:hover { transform: scale(1.05); }
 
 /* ====== IMAGE GALLERY ====== */
 .image-gallery {
@@ -277,20 +246,14 @@ main {
   transition: transform 0.3s ease;
 }
 
-.image-gallery img:hover {
-  transform: scale(1.05);
-}
+.image-gallery img:hover { transform: scale(1.05); }
 
 .small-gallery {
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   justify-items: center;
 }
 
-.small-gallery img {
-  max-width: 120px;
-}
+.small-gallery img { max-width: 120px; }
 
 /* ====== CONTACT ====== */
-#contact {
-  padding-bottom: 4rem;
-}
+#contact { padding-bottom: 4rem; }
