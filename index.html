@@ -16,9 +16,12 @@
 
 <body>
 
-  <!-- Top banner -->
-  <header class="top-banner"><img src="topbannermk1.jpg" alt="Site banner"></header>
+  <!-- ── Top banner ──────────────────────────────────────────── -->
+  <header class="top-banner">
+    <img src="topbannermk1.jpg" alt="Site banner">
+  </header>
 
+  <!-- ── Page row : sidebar | main ──────────────────────────── -->
   <div class="page">
 
     <!-- Sidebar -->
@@ -39,16 +42,23 @@
     <!-- Main column -->
     <main id="home">
 
-      <!-- scrolling reel (unchanged) -->
-      <section class="horizontal-reel" aria-label="Featured work">
+      <!-- ══ Endless scrolling reel ═════════════════════════════ -->
+      <section class="horizontal-reel" aria-label="Featured images">
         <div class="horizontal-track">
-          <a href="jspr.jpg"><img src="photo1.jpg" alt=""></a>
-          <a href="bolognaplane.jpg"><img src="photo2.jpg" alt=""></a>
+
+          <!-- existing images -->
+          <a href="photo1.jpg"><img src="photo1.jpg" alt=""></a>
+          <a href="photo2.jpg"><img src="photo2.jpg" alt=""></a>
           <a href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
           <a href="nztractor.jpg"><img src="nztractor.jpg" alt=""></a>
           <a href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt=""></a>
           <a href="roanna2website.jpg"><img src="roanna2website.jpg" alt=""></a>
           <a href="billageweb.jpg"><img src="billageweb.jpg" alt=""></a>
+
+          <!-- NEW images in reel -->
+          <a href="jspr.jpg"><img src="jspr.jpg" alt="Jetstream"></a>
+          <a href="bolognaplane.jpg"><img src="bolognaplane.jpg" alt="Bologna Plane"></a>
+
         </div>
       </section>
 
@@ -88,19 +98,27 @@
       <section id="photography">
         <h2 class="section-title">Photography</h2>
 
-        <!-- 7-column square-thumbnail grid -->
         <div class="photo-gallery">
+
+          <!-- existing photos -->
           <a class="photo-thumb glightbox" data-gallery="photos" href="photo1.jpg">
-            <img src="jspr.jpg" alt="Photo 1"></a>
+            <img src="photo1.jpg" alt="Photo 1"></a>
 
           <a class="photo-thumb glightbox" data-gallery="photos" href="photo2.jpg">
-            <img src="bolognaplane.jpg" alt="Photo 2"></a>
+            <img src="photo2.jpg" alt="Photo 2"></a>
 
           <a class="photo-thumb glightbox" data-gallery="photos" href="nzhouse.jpg">
             <img src="nzhouse.jpg" alt="NZ House"></a>
 
           <a class="photo-thumb glightbox" data-gallery="photos" href="nztractor.jpg">
             <img src="nztractor.jpg" alt="NZ Tractor"></a>
+
+          <!-- NEW photos -->
+          <a class="photo-thumb glightbox" data-gallery="photos" href="jspr.jpg">
+            <img src="jspr.jpg" alt="Jetstream"></a>
+
+          <a class="photo-thumb glightbox" data-gallery="photos" href="bolognaplane.jpg">
+            <img src="bolognaplane.jpg" alt="Bologna Plane"></a>
         </div>
       </section>
 
@@ -116,16 +134,18 @@
       const track  = document.querySelector('.horizontal-track');
       const reel   = document.querySelector('.horizontal-reel');
       const gap    = parseInt(getComputedStyle(track).gap) || 24;
-      const speed  = 0.2;    /* slow reel */
+      const speed  = 0.2;                    // slow reel
       let offset   = 0;
 
-      const original  = track.innerHTML;
-      const originalW = track.scrollWidth;
+      /* Duplicate minimal sets for smooth loop */
+      const originalHTML = track.innerHTML;
+      const originalW    = track.scrollWidth;
       while (track.scrollWidth < reel.offsetWidth + originalW &&
              track.children.length < 30) {
-        track.insertAdjacentHTML('beforeend', original);
+        track.insertAdjacentHTML('beforeend', originalHTML);
       }
 
+      /* Frame loop */
       const step = () => {
         offset -= speed;
         const first   = track.children[0];
