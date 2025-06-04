@@ -16,7 +16,7 @@
 
 <body>
 
-  <!-- █ Top banner █ -->
+  <!-- ══ Top banner ══ -->
   <header class="top-banner">
     <img src="topbannermk1.jpg" alt="Site banner" />
   </header>
@@ -25,13 +25,10 @@
 
     <!-- ▒▒ Sidebar ▒▒ -->
     <aside class="sidebar">
+      <!-- parallax banner (background image) -->
+      <div class="sidebar-banner"></div>
 
-      <!-- parallax banner image -->
-      <div class="sidebar-banner">
-        <img src="sidebarmk1.jpg" alt="" class="sidebar-banner-img" />
-      </div>
-
-      <!-- sticky links -->
+      <!-- sticky nav -->
       <nav class="sidebar-content">
         <ul>
           <li><a href="#home">Home</a></li>
@@ -48,10 +45,10 @@
     <!-- ▒▒ Main column ▒▒ -->
     <main>
 
-      <!-- Sentinel for Home link -->
+      <!-- anchor for Home -->
       <span id="home" class="anchor"></span>
 
-      <!-- endless scrolling reel -->
+      <!-- scrolling reel -->
       <section class="horizontal-reel">
         <div class="horizontal-track">
           <a href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
@@ -64,20 +61,20 @@
         </div>
       </section>
 
-      <!-- welcome block below reel -->
+      <!-- welcome block -->
       <section class="home-intro">
         <h2>Welcome</h2>
-        <p>Add your intro text here…</p>
+        <p>Write your introduction here…</p>
       </section>
 
-      <!-- NATURAL MICRO SHORTS -->
+      <!-- Natural Micro Shorts -->
       <span id="natural" class="anchor"></span>
       <section>
-        <img class="section-banner" src="microban.png" alt="Natural Micro Shorts">
+        <img class="section-banner" src="microban.png" alt="Natural Micro Shorts" />
         <div class="video-gallery">
           <a class="video-thumb glightbox" data-type="video" href="https://www.youtube.com/watch?v=TK-xTVmz0_g">
             <img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="">
-            <span class="overlay">A GOLDEN FERRY RIDE TO ARRAN ISLAND</span>
+            <span class="overlay">A GOLDEN FERRY RIDE TO ARRAN</span>
           </a>
           <a class="video-thumb glightbox" data-type="video" href="https://www.youtube.com/watch?v=SlCPKbZmgfY">
             <img src="https://img.youtube.com/vi/SlCPKbZmgfY/hqdefault.jpg" alt="">
@@ -86,7 +83,7 @@
         </div>
       </section>
 
-      <!-- CREATIVE EDITING -->
+      <!-- Creative Editing -->
       <span id="editing" class="anchor"></span>
       <section>
         <h2 class="section-title">Creative Video Editing</h2>
@@ -98,7 +95,7 @@
         </div>
       </section>
 
-      <!-- PHOTOGRAPHY -->
+      <!-- Photography -->
       <span id="photography" class="anchor"></span>
       <section>
         <h2 class="section-title">Photography</h2>
@@ -116,35 +113,36 @@
   <!-- JS: GLightbox + parallax banner + reel -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
-    /* GLightbox with scroll restore */
+    /* GLightbox with scroll memory */
     const lb = GLightbox({ selector: '.glightbox' });
-    let lastScroll = 0;
-    lb.on('open', ()=> lastScroll = scrollY);
-    lb.on('close',()=> scrollTo({top:lastScroll,behavior:'instant'}));
+    let savedY = 0;
+    lb.on('open',  () => savedY = scrollY);
+    lb.on('close', () => scrollTo({ top: savedY, behavior: 'instant' }));
 
-    /* sidebar banner parallax */
-    const sbImg = document.querySelector('.sidebar-banner-img');
-    addEventListener('scroll',()=> sbImg.style.transform =
-      `translateY(${ -scrollY * .2 }px)`);
+    /* parallax sidebar banner */
+    const banner = document.querySelector('.sidebar-banner');
+    addEventListener('scroll', () => {
+      banner.style.backgroundPositionY = `${-scrollY * .25}px`;
+    });
 
-    /* sticky list already handled by CSS */
+    /* horizontal reel */
+    addEventListener('load', () => {
+      const track = document.querySelector('.horizontal-track');
+      const reel  = document.querySelector('.horizontal-reel');
+      const gap   = parseFloat(getComputedStyle(track).gap) || 24;
+      const speed = 0.2;  let off = 0;
 
-    /* smooth reel */
-    addEventListener('load',()=>{
-      const track=document.querySelector('.horizontal-track');
-      const reel =document.querySelector('.horizontal-reel');
-      const gap = parseFloat(getComputedStyle(track).gap)||24;
-      const speed=.2; let off=0;
-      const base=track.innerHTML, baseW=track.scrollWidth;
-      while(track.scrollWidth < reel.offsetWidth + baseW && track.children.length < 30){
-        track.insertAdjacentHTML('beforeend', base);
+      const baseHTML = track.innerHTML, baseW = track.scrollWidth;
+      while (track.scrollWidth < reel.offsetWidth + baseW && track.children.length < 30) {
+        track.insertAdjacentHTML('beforeend', baseHTML);
       }
-      (function step(){
-        off-=speed;
-        const w=track.children[0].getBoundingClientRect().width + gap;
-        if(-off>=w){ off+=w; track.append(track.children[0]); }
-        track.style.transform=`translateX(${off}px)`;
-        requestAnimationFrame(step);
+
+      (function loop() {
+        off -= speed;
+        const stepW = track.children[0].getBoundingClientRect().width + gap;
+        if (-off >= stepW) { off += stepW; track.append(track.children[0]); }
+        track.style.transform = `translateX(${off}px)`;
+        requestAnimationFrame(loop);
       })();
     });
   </script>
