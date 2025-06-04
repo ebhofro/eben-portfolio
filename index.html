@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Eben Holmes-Frodsham · Portfolio</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
 
   <!-- GLightbox -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 </head>
 
 <body>
 
   <!-- Top banner -->
-  <header class="top-banner"><img src="topbannermk1.jpg" alt="Site banner"></header>
+  <header class="top-banner">
+    <img src="topbannermk1.jpg" alt="Site banner" />
+  </header>
 
+  <!-- Sidebar + Main -->
   <div class="page">
-
-    <!-- Sidebar -->
     <aside class="sidebar">
-      <div class="sidebar-banner-wrapper">
-        <img src="sidebarmk1.jpg" alt="Sidebar banner" class="sidebar-banner-img">
-      </div>
-
-      <nav class="sidebar-content">
+      <nav>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#natural">Natural Shorts</a></li>
@@ -40,36 +37,36 @@
       </nav>
     </aside>
 
-    <!-- Main column -->
     <main id="home">
 
-      <!-- horizontal reel -->
-      <section class="horizontal-reel">
+      <!-- Endless scrolling reel -->
+      <section class="horizontal-reel" aria-label="Featured images">
         <div class="horizontal-track">
-          <a href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
-          <a href="nztractor.jpg"><img src="nztractor.jpg" alt=""></a>
-          <a href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt=""></a>
-          <a href="roanna2website.jpg"><img src="roanna2website.jpg" alt=""></a>
-          <a href="billageweb.jpg"><img src="billageweb.jpg" alt=""></a>
-          <a href="jspr.jpg"><img src="jspr.jpg" alt=""></a>
-          <a href="bolognaplane.jpg"><img src="bolognaplane.jpg" alt=""></a>
+          <!-- existing images -->
+          <a href="nzhouse.jpg"><img src="nzhouse.jpg" alt="NZ House" /></a>
+          <a href="nztractor.jpg"><img src="nztractor.jpg" alt="NZ Tractor" /></a>
+          <a href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt="Art 1" /></a>
+          <a href="roanna2website.jpg"><img src="roanna2website.jpg" alt="Art 2" /></a>
+          <a href="billageweb.jpg"><img src="billageweb.jpg" alt="Billage Art" /></a>
+
+          <!-- NEW reel images -->
+          <a href="jspr.jpg"><img src="jspr.jpg" alt="Jetstream" /></a>
+          <a href="bolognaplane.jpg"><img src="bolognaplane.jpg" alt="Bologna Plane" /></a>
         </div>
       </section>
 
       <!-- Natural Micro Shorts -->
       <section id="natural">
-        <img class="section-banner" src="microban.png" alt="Natural Micro Shorts">
+        <img class="section-banner" src="microban.png" alt="Natural Micro Shorts" />
 
         <div class="video-gallery">
-          <a class="video-thumb glightbox" data-type="video"
-             href="https://www.youtube.com/watch?v=TK-xTVmz0_g">
-            <img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="">
+          <a class="video-thumb glightbox" data-type="video" href="https://www.youtube.com/watch?v=TK-xTVmz0_g">
+            <img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="" />
             <span class="overlay">A GOLDEN FERRY RIDE TO ARRAN ISLAND</span>
           </a>
 
-          <a class="video-thumb glightbox" data-type="video"
-             href="https://www.youtube.com/watch?v=SlCPKbZmgfY">
-            <img src="https://img.youtube.com/vi/SlCPKbZmgfY/hqdefault.jpg" alt="">
+          <a class="video-thumb glightbox" data-type="video" href="https://www.youtube.com/watch?v=SlCPKbZmgfY">
+            <img src="https://img.youtube.com/vi/SlCPKbZmgfY/hqdefault.jpg" alt="" />
             <span class="overlay">THE ENCHANTED FOREST UP THE FRENNI</span>
           </a>
         </div>
@@ -80,9 +77,8 @@
         <h2 class="section-title">Creative Video Editing</h2>
 
         <div class="video-gallery">
-          <a class="video-thumb glightbox" data-type="video"
-             href="https://youtu.be/NlCne_3IVy0">
-            <img src="https://img.youtube.com/vi/NlCne_3IVy0/hqdefault.jpg" alt="">
+          <a class="video-thumb glightbox" data-type="video" href="https://youtu.be/NlCne_3IVy0">
+            <img src="https://img.youtube.com/vi/NlCne_3IVy0/hqdefault.jpg" alt="" />
             <span class="overlay">CREATIVE EDIT SHOWCASE</span>
           </a>
         </div>
@@ -94,49 +90,59 @@
 
         <div class="photo-gallery">
           <a class="photo-thumb glightbox" data-gallery="photos" href="nzhouse.jpg">
-            <img src="nzhouse.jpg" alt=""></a>
+            <img src="nzhouse.jpg" alt="NZ House" /></a>
+
           <a class="photo-thumb glightbox" data-gallery="photos" href="nztractor.jpg">
-            <img src="nztractor.jpg" alt=""></a>
+            <img src="nztractor.jpg" alt="NZ Tractor" /></a>
+
           <a class="photo-thumb glightbox" data-gallery="photos" href="jspr.jpg">
-            <img src="jspr.jpg" alt=""></a>
+            <img src="jspr.jpg" alt="Jetstream" /></a>
+
           <a class="photo-thumb glightbox" data-gallery="photos" href="bolognaplane.jpg">
-            <img src="bolognaplane.jpg" alt=""></a>
+            <img src="bolognaplane.jpg" alt="Bologna Plane" /></a>
         </div>
       </section>
 
     </main>
   </div>
 
-  <!-- GLightbox + reel animation -->
+  <!-- GLightbox + Smooth Reel -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
-    GLightbox({ selector: '.glightbox' });
+    /* 1. GLightbox with scroll memory */
+    const lightbox = GLightbox({ selector: '.glightbox' });
+    let savedScroll = 0;
+    lightbox.on('open', () => { savedScroll = window.scrollY || window.pageYOffset; });
+    lightbox.on('close', () => { window.scrollTo({ top:savedScroll, behavior:'instant' }); });
 
-    // simple parallax for sidebar banner
-    const img = document.querySelector('.sidebar-banner-img');
-    addEventListener('scroll', () => {
-      img.style.transform = `translateY(${ -scrollY * 0.2 }px)`;
-    });
-
-    // infinite reel
+    /* 2. Smooth reel (speed 0.2 px / frame) */
     window.addEventListener('load', () => {
       const track = document.querySelector('.horizontal-track');
       const reel  = document.querySelector('.horizontal-reel');
-      const gap   = 24, speed = 0.2;
+      const gap   = parseInt(getComputedStyle(track).gap) || 24;
+      const speed = 0.2;
       let offset  = 0;
 
-      const baseHTML = track.innerHTML, baseW = track.scrollWidth;
-      while (track.scrollWidth < reel.offsetWidth + baseW) {
-        track.insertAdjacentHTML('beforeend', baseHTML);
+      /* duplicate minimal sets */
+      const original = track.innerHTML;
+      const originalW = track.scrollWidth;
+      while (track.scrollWidth < reel.offsetWidth + originalW && track.children.length < 30) {
+        track.insertAdjacentHTML('beforeend', original);
       }
 
-      (function loop(){
+      /* frame loop */
+      function step(){
         offset -= speed;
-        const step = track.children[0].offsetWidth + gap;
-        if (-offset >= step){ offset += step; track.append(track.children[0]); }
+        const first   = track.children[0];
+        const firstW  = first.getBoundingClientRect().width + gap;
+        if (-offset >= firstW){
+          offset += firstW;
+          track.appendChild(first);
+        }
         track.style.transform = `translateX(${offset}px)`;
-        requestAnimationFrame(loop);
-      })();
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
     });
   </script>
 </body>
