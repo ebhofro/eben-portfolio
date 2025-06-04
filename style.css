@@ -125,3 +125,15 @@ main{flex:1;overflow-x:hidden;}
 
 /* empty placeholders keep 4-col layout tidy */
 .video-slot{background:#eee;}
+
+}
+
+/* === CREATIVE EDITING placeholder banner === */
+.editing-banner{
+  width:100%;
+  max-width:600px;            /* same width rule as other banners */
+  height:150px;               /* placeholder height */
+  margin:50px auto 30px;      /* 50 px gap above, centered */
+  background:#dcdcdc url("placeholder.png") center/contain no-repeat;
+  border-radius:8px;
+}
