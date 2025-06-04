@@ -15,15 +15,16 @@
 </head>
 
 <body>
-
   <!-- Top banner -->
-  <header class="top-banner"><img src="topbannermk1.jpg" alt="Site banner"></header>
+  <header class="top-banner">
+    <img src="topbannermk1.jpg" alt="Site banner">
+  </header>
 
   <div class="page">
-
     <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-banner-wrapper">
+        <!-- Replace with your actual sidebar-banner file -->
         <img src="sidebarmk1.jpg" alt="Sidebar banner" class="sidebar-banner-img">
       </div>
 
@@ -42,7 +43,6 @@
 
     <!-- Main column -->
     <main id="home">
-
       <!-- horizontal reel -->
       <section class="horizontal-reel">
         <div class="horizontal-track">
@@ -59,16 +59,12 @@
       <!-- Natural Micro Shorts -->
       <section id="natural">
         <img class="section-banner" src="microban.png" alt="Natural Micro Shorts">
-
         <div class="video-gallery">
-          <a class="video-thumb glightbox" data-type="video"
-             href="https://www.youtube.com/watch?v=TK-xTVmz0_g">
+          <a class="video-thumb glightbox" data-type="video" href="https://www.youtube.com/watch?v=TK-xTVmz0_g">
             <img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="">
             <span class="overlay">A GOLDEN FERRY RIDE TO ARRAN ISLAND</span>
           </a>
-
-          <a class="video-thumb glightbox" data-type="video"
-             href="https://www.youtube.com/watch?v=SlCPKbZmgfY">
+          <a class="video-thumb glightbox" data-type="video" href="https://www.youtube.com/watch?v=SlCPKbZmgfY">
             <img src="https://img.youtube.com/vi/SlCPKbZmgfY/hqdefault.jpg" alt="">
             <span class="overlay">THE ENCHANTED FOREST UP THE FRENNI</span>
           </a>
@@ -78,10 +74,8 @@
       <!-- Creative Editing -->
       <section id="editing">
         <h2 class="section-title">Creative Video Editing</h2>
-
         <div class="video-gallery">
-          <a class="video-thumb glightbox" data-type="video"
-             href="https://youtu.be/NlCne_3IVy0">
+          <a class="video-thumb glightbox" data-type="video" href="https://youtu.be/NlCne_3IVy0">
             <img src="https://img.youtube.com/vi/NlCne_3IVy0/hqdefault.jpg" alt="">
             <span class="overlay">CREATIVE EDIT SHOWCASE</span>
           </a>
@@ -91,19 +85,21 @@
       <!-- Photography -->
       <section id="photography">
         <h2 class="section-title">Photography</h2>
-
         <div class="photo-gallery">
           <a class="photo-thumb glightbox" data-gallery="photos" href="nzhouse.jpg">
-            <img src="nzhouse.jpg" alt=""></a>
+            <img src="nzhouse.jpg" alt="">
+          </a>
           <a class="photo-thumb glightbox" data-gallery="photos" href="nztractor.jpg">
-            <img src="nztractor.jpg" alt=""></a>
+            <img src="nztractor.jpg" alt="">
+          </a>
           <a class="photo-thumb glightbox" data-gallery="photos" href="jspr.jpg">
-            <img src="jspr.jpg" alt=""></a>
+            <img src="jspr.jpg" alt="">
+          </a>
           <a class="photo-thumb glightbox" data-gallery="photos" href="bolognaplane.jpg">
-            <img src="bolognaplane.jpg" alt=""></a>
+            <img src="bolognaplane.jpg" alt="">
+          </a>
         </div>
       </section>
-
     </main>
   </div>
 
@@ -133,7 +129,10 @@
       (function loop(){
         offset -= speed;
         const step = track.children[0].offsetWidth + gap;
-        if (-offset >= step){ offset += step; track.append(track.children[0]); }
+        if (-offset >= step) { 
+          offset += step; 
+          track.append(track.children[0]); 
+        }
         track.style.transform = `translateX(${offset}px)`;
         requestAnimationFrame(loop);
       })();
