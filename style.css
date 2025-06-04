@@ -5,28 +5,52 @@
 html,body{margin:0;padding:0;width:100%;height:100%;overflow-x:hidden;
           font-family:'Space Grotesk',sans-serif;}
 
-/* TOP BANNER */
-.top-banner img{width:100%;display:block;height:auto;}
+/* ░░ SIDEBAR ░░
+   ─ Banner: fixed 200 px area, full image (no zoom)
+   ─ Link list: sticky and visible as soon as it scrolls to the top
+*/
+.sidebar{
+  flex:0 0 300px;
+  background:#114221;
+  color:#fdfdf9;
+  position:relative;
+  overflow:hidden;
+}
 
-/* LAYOUT */
-.page{display:flex;min-height:100vh;}
-.page>*{min-width:0;}
+/* banner sits at the very top of sidebar */
+.sidebar-banner-wrapper{
+  height:200px;                 /* fixed height you want visible */
+  overflow:hidden;
+}
+.sidebar-banner-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;             /* show whole banner, no zoom crop */
+}
 
-/* SIDEBAR */
-.sidebar{flex:0 0 300px;background:#114221;color:#fdfdf9;position:relative;overflow:hidden;}
+/* sticky nav list */
+.sidebar-content{
+  position:sticky;
+  top:0;                        /* sticks to viewport top */
+  margin-top:200px;             /* start _below_ the banner */
+}
 
-.sidebar-banner-wrapper{height:200px;overflow:hidden;position:relative;}
-.sidebar-banner-img{width:100%;height:100%;object-fit:contain;
-                    position:absolute;top:0;left:0;will-change:transform;}
-
-.sidebar-content{padding-top:210px; /* leaves room for banner */ }
-
+/* nav list styling (unchanged) */
 .sidebar ul{list-style:none;margin:0;padding:0 0 2rem;}
 .sidebar li+li{margin-top:.75rem;}
-.sidebar a{display:block;padding:.75rem 1rem;text-align:center;
-  font-family:'Geo',sans-serif;text-transform:uppercase;font-weight:bold;
-  color:#fdfdf9;text-decoration:none;transition:background .3s,color .3s;}
+.sidebar a{
+  display:block;
+  padding:.75rem 1rem;
+  text-align:center;
+  font-family:'Geo',sans-serif;
+  text-transform:uppercase;
+  font-weight:bold;
+  color:#fdfdf9;
+  text-decoration:none;
+  transition:background .3s,color .3s;
+}
 .sidebar a:hover{background:#1e4228;color:#ffcb47;}
+
 
 /* MAIN */
 main{flex:1;overflow-x:hidden;}
