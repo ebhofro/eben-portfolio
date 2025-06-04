@@ -6,19 +6,23 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css">
 
-  <!-- optional fonts -->
+  <!-- fonts (optional) -->
   <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- GLightbox for video pop-up -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 </head>
 
 <body>
 
-  <!-- top banner -->
+  <!-- Top banner -->
   <header class="top-banner"><img src="topbannermk1.jpg" alt="Site banner"></header>
 
+  <!-- Page row -->
   <div class="page">
 
-    <!-- sidebar -->
+    <!-- Sidebar -->
     <aside class="sidebar">
       <nav>
         <ul>
@@ -33,10 +37,10 @@
       </nav>
     </aside>
 
-    <!-- main column -->
+    <!-- Main column -->
     <main id="home">
 
-      <!-- scrolling reel -->
+      <!-- Infinite scrolling reel -->
       <section class="horizontal-reel" aria-label="Featured work">
         <div class="horizontal-track">
           <a href="photo1.jpg"><img src="photo1.jpg" alt=""></a>
@@ -49,36 +53,39 @@
         </div>
       </section>
 
-      <!-- ███ NATURAL MICRO SHORTS ─────────────── -->
+      <!-- ███ NATURAL MICRO SHORTS ███ -->
       <section id="natural">
+        <!-- banner -->
+        <img class="section-banner" src="microban.png" alt="Natural Micro Shorts">
 
-        <!-- banner image -->
-        <img class="section-banner" src="microban.png"
-             alt="Natural Micro Shorts">
-
-        <!-- video gallery (4-column grid) -->
+        <!-- video gallery -->
         <div class="video-gallery">
 
           <!-- video 1 -->
-          <a class="video-thumb"
+          <a class="video-thumb glightbox"
+             data-type="video"
              href="https://www.youtube.com/watch?v=TK-xTVmz0_g"
-             target="_blank" aria-label="A golden ferry ride to Arran island">
+             aria-label="A golden ferry ride to Arran island">
             <img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="">
             <span class="overlay">A GOLDEN FERRY RIDE TO ARRAN ISLAND</span>
           </a>
 
           <!-- video 2 -->
-          <a class="video-thumb"
+          <a class="video-thumb glightbox"
+             data-type="video"
              href="https://www.youtube.com/watch?v=SlCPKbZmgfY"
-             target="_blank" aria-label="The enchanted forest up the Frenni">
+             aria-label="The enchanted forest up the Frenni">
             <img src="https://img.youtube.com/vi/SlCPKbZmgfY/hqdefault.jpg" alt="">
             <span class="overlay">THE ENCHANTED FOREST UP THE FRENNI</span>
           </a>
 
+          <!-- two empty slots so grid still shows 4 columns -->
+          <div class="video-slot"></div>
+          <div class="video-slot"></div>
         </div>
       </section>
 
-      <!-- placeholder for rest of site -->
+      <!-- placeholder for more content -->
       <div class="content">
         <h2 id="editing">Creative Editing</h2>
         <p>…</p>
@@ -87,16 +94,20 @@
     </main>
   </div>
 
-  <!-- smooth-loop reel script (unchanged) -->
+  <!-- JS: infinite reel + GLightbox -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
+    /* init light-box */
+    GLightbox({ selector: '.glightbox' });
+
+    /* infinite reel (unchanged) */
     window.addEventListener('load', () => {
       const track  = document.querySelector('.horizontal-track');
       const reel   = document.querySelector('.horizontal-reel');
       const gap    = parseInt(getComputedStyle(track).gap) || 24;
-      const speed  = 0.5;           // ← change here for faster/slower reel
+      const speed  = 0.5;           // px per frame
       let offset   = 0;
 
-      // duplicate minimal sets (never freezes)
       const original = track.innerHTML;
       const originalW = track.scrollWidth;
       while (track.scrollWidth < reel.offsetWidth + originalW &&
