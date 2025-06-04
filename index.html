@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css">
 
-  <!-- fonts (optional) -->
+  <!-- fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 
@@ -39,7 +39,7 @@
     <!-- Main column -->
     <main id="home">
 
-      <!-- scrolling reel (unchanged) -->
+      <!-- scrolling reel -->
       <section class="horizontal-reel" aria-label="Featured work">
         <div class="horizontal-track">
           <a href="photo1.jpg"><img src="photo1.jpg" alt=""></a>
@@ -68,48 +68,32 @@
             <img src="https://img.youtube.com/vi/SlCPKbZmgfY/hqdefault.jpg" alt="">
             <span class="overlay">THE ENCHANTED FOREST UP THE FRENNI</span>
           </a>
-
-          <div class="video-slot"></div><div class="video-slot"></div>
         </div>
       </section>
 
       <!-- ███ CREATIVE VIDEO EDITING ███ -->
       <section id="editing">
 
-        <!-- placeholder banner area (600 × auto) -->
-        <div class="editing-banner"></div>
+        <!-- replace this <h2> with an <img class="section-banner"> whenever you design a banner -->
+        <h2 class="section-title">Creative Video Editing</h2>
 
         <div class="video-gallery">
 
-          <!-- example creative-edit clip #1 -->
+          <!-- your creative-edit clip -->
           <a class="video-thumb glightbox" data-type="video"
-             href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-            <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="">
-            <span class="overlay">SAMPLE CREATIVE EDIT</span>
+             href="https://youtu.be/NlCne_3IVy0">
+            <img src="https://img.youtube.com/vi/NlCne_3IVy0/hqdefault.jpg" alt="">
+            <span class="overlay">CREATIVE EDIT SHOWCASE</span>
           </a>
 
-          <!-- example creative-edit clip #2 -->
-          <a class="video-thumb glightbox" data-type="video"
-             href="https://www.youtube.com/watch?v=L_jWHffIx5E">
-            <img src="https://img.youtube.com/vi/L_jWHffIx5E/hqdefault.jpg" alt="">
-            <span class="overlay">SECOND CREATIVE EDIT</span>
-          </a>
-
-          <!-- two placeholders to keep 4-wide layout -->
-          <div class="video-slot"></div><div class="video-slot"></div>
         </div>
       </section>
 
-      <!-- placeholder for further site content -->
-      <div class="content">
-        <h2 id="photography">Photography</h2>
-        <p>…</p>
-      </div>
-
+      <!-- (add more site sections below as needed) -->
     </main>
   </div>
 
-  <!-- JS: GLightbox + infinite reel (speed = 0.2) -->
+  <!-- JS: GLightbox + smooth reel (speed 0.2) -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
     GLightbox({ selector: '.glightbox' });
@@ -118,7 +102,7 @@
       const track  = document.querySelector('.horizontal-track');
       const reel   = document.querySelector('.horizontal-reel');
       const gap    = parseInt(getComputedStyle(track).gap) || 24;
-      const speed  = 0.2;                      // slower reel
+      const speed  = 0.2;                // slower reel
       let offset   = 0;
 
       const original  = track.innerHTML;
