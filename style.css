@@ -74,15 +74,16 @@ main{flex:1;overflow-x:hidden;}
 .section-banner{
   display:block;
   margin:50px auto 30px;        /* 50 px below reel; centered */
-  max-width:600px;              /* bigger banner */
+  max-width:600px;
   height:auto;
 }
 
-/* 4-col gallery with aspect-ratio boxes (no letter-box) */
+/* 4-column gallery — now with wider gaps and side padding */
 .video-gallery{
+  padding:0 32px;               /* breathing room left & right */
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:24px;
+  gap:32px;                     /* wider gaps between thumbs */
   margin-bottom:40px;
 }
 .video-thumb,
@@ -122,5 +123,5 @@ main{flex:1;overflow-x:hidden;}
 .video-thumb:hover img{opacity:.25;}
 .video-thumb:hover .overlay{opacity:1;}
 
-/* empty slots so grid always looks 4-wide */
+/* empty placeholders keep 4-col layout tidy */
 .video-slot{background:#eee;}
