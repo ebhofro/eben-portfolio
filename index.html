@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css">
 
-  <!-- optional fonts -->
+  <!-- fonts (optional) -->
   <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- GLightbox for video pop-up -->
+  <!-- GLightbox -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 </head>
 
@@ -39,7 +39,7 @@
     <!-- Main column -->
     <main id="home">
 
-      <!-- Infinite scrolling reel -->
+      <!-- scrolling reel (unchanged) -->
       <section class="horizontal-reel" aria-label="Featured work">
         <div class="horizontal-track">
           <a href="photo1.jpg"><img src="photo1.jpg" alt=""></a>
@@ -54,79 +54,92 @@
 
       <!-- ███ NATURAL MICRO SHORTS ███ -->
       <section id="natural">
-        <!-- banner -->
         <img class="section-banner" src="microban.png" alt="Natural Micro Shorts">
 
-        <!-- video gallery -->
         <div class="video-gallery">
-
-          <!-- video 1 -->
-          <a class="video-thumb glightbox"
-             data-type="video"
-             href="https://www.youtube.com/watch?v=TK-xTVmz0_g"
-             aria-label="A golden ferry ride to Arran island">
+          <a class="video-thumb glightbox" data-type="video"
+             href="https://www.youtube.com/watch?v=TK-xTVmz0_g">
             <img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="">
             <span class="overlay">A GOLDEN FERRY RIDE TO ARRAN ISLAND</span>
           </a>
 
-          <!-- video 2 -->
-          <a class="video-thumb glightbox"
-             data-type="video"
-             href="https://www.youtube.com/watch?v=SlCPKbZmgfY"
-             aria-label="The enchanted forest up the Frenni">
+          <a class="video-thumb glightbox" data-type="video"
+             href="https://www.youtube.com/watch?v=SlCPKbZmgfY">
             <img src="https://img.youtube.com/vi/SlCPKbZmgfY/hqdefault.jpg" alt="">
             <span class="overlay">THE ENCHANTED FOREST UP THE FRENNI</span>
           </a>
 
-          <!-- two empty placeholders keep 4-col grid tidy -->
-          <div class="video-slot"></div>
-          <div class="video-slot"></div>
+          <div class="video-slot"></div><div class="video-slot"></div>
         </div>
       </section>
 
-      <!-- placeholder for more content -->
+      <!-- ███ CREATIVE VIDEO EDITING ███ -->
+      <section id="editing">
+
+        <!-- placeholder banner area (600 × auto) -->
+        <div class="editing-banner"></div>
+
+        <div class="video-gallery">
+
+          <!-- example creative-edit clip #1 -->
+          <a class="video-thumb glightbox" data-type="video"
+             href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+            <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="">
+            <span class="overlay">SAMPLE CREATIVE EDIT</span>
+          </a>
+
+          <!-- example creative-edit clip #2 -->
+          <a class="video-thumb glightbox" data-type="video"
+             href="https://www.youtube.com/watch?v=L_jWHffIx5E">
+            <img src="https://img.youtube.com/vi/L_jWHffIx5E/hqdefault.jpg" alt="">
+            <span class="overlay">SECOND CREATIVE EDIT</span>
+          </a>
+
+          <!-- two placeholders to keep 4-wide layout -->
+          <div class="video-slot"></div><div class="video-slot"></div>
+        </div>
+      </section>
+
+      <!-- placeholder for further site content -->
       <div class="content">
-        <h2 id="editing">Creative Editing</h2>
+        <h2 id="photography">Photography</h2>
         <p>…</p>
       </div>
 
     </main>
   </div>
 
-  <!-- JS: GLightbox + smooth infinite reel -->
+  <!-- JS: GLightbox + infinite reel (speed = 0.2) -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
-    /* ── pop-up light-box ─────────────────────────── */
     GLightbox({ selector: '.glightbox' });
 
-    /* ── infinite reel  (speed = 0.2) ─────────────── */
     window.addEventListener('load', () => {
       const track  = document.querySelector('.horizontal-track');
       const reel   = document.querySelector('.horizontal-reel');
       const gap    = parseInt(getComputedStyle(track).gap) || 24;
-      const speed  = 0.2;          //  << slower scroll
+      const speed  = 0.2;                      // slower reel
       let offset   = 0;
 
-      /* duplicate minimal sets */
-      const original   = track.innerHTML;
-      const originalW  = track.scrollWidth;
+      const original  = track.innerHTML;
+      const originalW = track.scrollWidth;
       while (track.scrollWidth < reel.offsetWidth + originalW &&
              track.children.length < 30) {
         track.insertAdjacentHTML('beforeend', original);
       }
 
-      function step() {
+      const step = () => {
         offset -= speed;
         const first   = track.children[0];
         const firstW  = first.getBoundingClientRect().width + gap;
 
         if (-offset >= firstW) {
-          offset += firstW;        // snap track
+          offset += firstW;
           track.appendChild(first);
         }
         track.style.transform = `translateX(${offset}px)`;
         requestAnimationFrame(step);
-      }
+      };
       requestAnimationFrame(step);
     });
   </script>
