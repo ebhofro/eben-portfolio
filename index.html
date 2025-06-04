@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Eben Holmes-Frodsham · Portfolio</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 
   <!-- fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- GLightbox -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 </head>
 
 <body>
@@ -21,15 +21,12 @@
 
   <div class="page">
 
-    <!-- ▒▒ SIDEBAR ▒▒ -->
+    <!-- Sidebar -->
     <aside class="sidebar">
-
-      <!-- full-width banner (300 px) — parallax handled in JS -->
-      <div class="sidebar-banner">
-        <img src="sidebarmk1.jpg" alt="" class="sidebar-banner-img">
+      <div class="sidebar-banner-wrapper">
+        <img src="sidebarmk1.jpg" alt="Sidebar banner" class="sidebar-banner-img">
       </div>
 
-      <!-- sticky links (start higher) -->
       <nav class="sidebar-content">
         <ul>
           <li><a href="#home">Home</a></li>
@@ -43,12 +40,10 @@
       </nav>
     </aside>
 
-    <!-- ▒▒ MAIN ▒▒ -->
-    <main>
+    <!-- Main column -->
+    <main id="home">
 
-      <span id="home" class="anchor"></span>
-
-      <!-- scrolling reel -->
+      <!-- horizontal reel -->
       <section class="horizontal-reel">
         <div class="horizontal-track">
           <a href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
@@ -61,54 +56,86 @@
         </div>
       </section>
 
-      <!-- welcome block -->
-      <section class="home-intro"><h2>Welcome</h2><p>Your intro here …</p></section>
+      <!-- Natural Micro Shorts -->
+      <section id="natural">
+        <img class="section-banner" src="microban.png" alt="Natural Micro Shorts">
 
-      <!-- Natural Shorts -->
-      <span id="natural" class="anchor"></span>
-      <section>
-        <img class="section-banner" src="microban.png" alt="">
-        <!-- thumbs … -->
+        <div class="video-gallery">
+          <a class="video-thumb glightbox" data-type="video"
+             href="https://www.youtube.com/watch?v=TK-xTVmz0_g">
+            <img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="">
+            <span class="overlay">A GOLDEN FERRY RIDE TO ARRAN ISLAND</span>
+          </a>
+
+          <a class="video-thumb glightbox" data-type="video"
+             href="https://www.youtube.com/watch?v=SlCPKbZmgfY">
+            <img src="https://img.youtube.com/vi/SlCPKbZmgfY/hqdefault.jpg" alt="">
+            <span class="overlay">THE ENCHANTED FOREST UP THE FRENNI</span>
+          </a>
+        </div>
       </section>
 
       <!-- Creative Editing -->
-      <span id="editing" class="anchor"></span>
-      <section><h2 class="section-title">Creative Video Editing</h2></section>
+      <section id="editing">
+        <h2 class="section-title">Creative Video Editing</h2>
+
+        <div class="video-gallery">
+          <a class="video-thumb glightbox" data-type="video"
+             href="https://youtu.be/NlCne_3IVy0">
+            <img src="https://img.youtube.com/vi/NlCne_3IVy0/hqdefault.jpg" alt="">
+            <span class="overlay">CREATIVE EDIT SHOWCASE</span>
+          </a>
+        </div>
+      </section>
 
       <!-- Photography -->
-      <span id="photography" class="anchor"></span>
-      <section><h2 class="section-title">Photography</h2></section>
+      <section id="photography">
+        <h2 class="section-title">Photography</h2>
+
+        <div class="photo-gallery">
+          <a class="photo-thumb glightbox" data-gallery="photos" href="nzhouse.jpg">
+            <img src="nzhouse.jpg" alt=""></a>
+          <a class="photo-thumb glightbox" data-gallery="photos" href="nztractor.jpg">
+            <img src="nztractor.jpg" alt=""></a>
+          <a class="photo-thumb glightbox" data-gallery="photos" href="jspr.jpg">
+            <img src="jspr.jpg" alt=""></a>
+          <a class="photo-thumb glightbox" data-gallery="photos" href="bolognaplane.jpg">
+            <img src="bolognaplane.jpg" alt=""></a>
+        </div>
+      </section>
 
     </main>
   </div>
 
-  <!-- JS -->
+  <!-- GLightbox + reel animation -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
-    /* GLightbox (unchanged) */
     GLightbox({ selector: '.glightbox' });
 
-    /* simple parallax for sidebar banner */
-    const sbImg = document.querySelector('.sidebar-banner-img');
+    // simple parallax for sidebar banner
+    const img = document.querySelector('.sidebar-banner-img');
     addEventListener('scroll', () => {
-      sbImg.style.transform = `translateY(${ -scrollY * 0.25 }px)`;
+      img.style.transform = `translateY(${ -scrollY * 0.2 }px)`;
     });
 
-    /* horizontal reel (unchanged) */
-    addEventListener('load', () => {
+    // infinite reel
+    window.addEventListener('load', () => {
       const track = document.querySelector('.horizontal-track');
       const reel  = document.querySelector('.horizontal-reel');
       const gap   = 24, speed = 0.2;
       let offset  = 0;
 
-      const base = track.innerHTML, w = track.scrollWidth;
-      while (track.scrollWidth < reel.offsetWidth + w) track.insertAdjacentHTML('beforeend', base);
+      const baseHTML = track.innerHTML, baseW = track.scrollWidth;
+      while (track.scrollWidth < reel.offsetWidth + baseW) {
+        track.insertAdjacentHTML('beforeend', baseHTML);
+      }
 
       (function loop(){
         offset -= speed;
         const step = track.children[0].offsetWidth + gap;
         if (-offset >= step){ offset += step; track.append(track.children[0]); }
-        track.style.transform = `translateX(${offset}px)`; requestAnimationFrame(loop);
+        track.style.transform = `translateX(${offset}px)`;
+        requestAnimationFrame(loop);
       })();
     });
   </script>
