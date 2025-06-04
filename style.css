@@ -87,7 +87,7 @@ main {
   overflow-x: hidden;
 }
 
-/* ========== HORIZONTAL REEL ========== */
+/* ========== HORIZONTAL REEL (FIXED) ========== */
 .horizontal-reel {
   margin: 20px 0;
   height: 140px;
@@ -100,6 +100,8 @@ main {
   align-items: center;
   gap: 24px;
   will-change: transform;
+  /* Add scrolling animation */
+  animation: scroll 20s linear infinite;
 }
 .horizontal-track img {
   height: 100px;
@@ -110,6 +112,19 @@ main {
 }
 .horizontal-track img:hover {
   transform: scale(1.05);
+}
+/* Pause on hover */
+.horizontal-reel:hover .horizontal-track {
+  animation-play-state: paused;
+}
+/* Keyframes for continuous scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ========== SECTION BANNERS / TITLES ========== */
@@ -204,4 +219,13 @@ main {
   .photo-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* ========== GENERIC SECTION SPACING ========== */
+section {
+  padding-bottom: 40px;
+}
+section h2,
+section img.section-banner {
+  margin-top: 60px;
 }
