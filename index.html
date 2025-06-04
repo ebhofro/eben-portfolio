@@ -13,12 +13,8 @@
 
 <body>
 
-  <!-- ── Top banner ─────────────────────────────────────────── -->
-  <header class="top-banner">
-    <img src="topbannermk1.jpg" alt="Site banner">
-  </header>
+  <header class="top-banner"><img src="topbannermk1.jpg" alt="Site banner"></header>
 
-  <!-- ── Page row : sidebar | main ──────────────────────────── -->
   <div class="page">
 
     <!-- Sidebar -->
@@ -39,11 +35,10 @@
     <!-- Main column -->
     <main id="home">
 
-      <!-- ══ Infinite horizontal reel (20 px gap below banner) ══ -->
+      <!-- Smooth infinite reel (20 px gap below banner) -->
       <section class="horizontal-reel" aria-label="Featured work">
         <div class="horizontal-track">
-
-          <!-- Add **each** image only ONCE — JS handles the looping -->
+          <!-- add EACH image ONCE -->
           <a href="photo1.jpg"><img src="photo1.jpg" alt=""></a>
           <a href="photo2.jpg"><img src="photo2.jpg" alt=""></a>
           <a href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
@@ -51,48 +46,42 @@
           <a href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt=""></a>
           <a href="roanna2website.jpg"><img src="roanna2website.jpg" alt=""></a>
           <a href="billageweb.jpg"><img src="billageweb.jpg" alt=""></a>
-
         </div>
       </section>
 
-      <!-- Your real content below -->
+      <!-- Real content placeholder -->
       <div class="content">
         <h1>Hello!</h1>
-        <p>Paste your sections here one by one.</p>
-
-        <section id="natural"><h2>Natural Shorts</h2><p>…</p></section>
-        <section id="editing"><h2>Creative Editing</h2><p>…</p></section>
-        <section id="photography"><h2>Photography</h2><p>…</p></section>
-        <section id="digital"><h2>Digital Art</h2><p>…</p></section>
-        <section id="uni"><h2>Uni Work</h2><p>…</p></section>
-        <section id="contact"><h2>Contact</h2><p>Email • Instagram • etc.</p></section>
+        <p>Add your sections here…</p>
       </div>
     </main>
   </div>
 
-  <!-- ── JavaScript for smooth infinite reel ────────────────── -->
+  <!-- Smooth-loop script -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const track  = document.querySelector('.horizontal-track');
-      const gap    = 24;         /* must match --reel-gap in CSS (px)            */
-      const speed  = 0.5;        /* pixels per frame ≈ 30 px/s @ 60 fps          */
-      let offset   = 0;
+    window.addEventListener('load', () => {
+      const track   = document.querySelector('.horizontal-track');
+      const reel    = document.querySelector('.horizontal-reel');
+      const gap     = parseInt(getComputedStyle(track).gap) || 24;   // px
+      const speed   = 0.5;                                           // px per frame
+      let   offset  = 0;
 
-      /* ensure enough images to cover > viewport */
-      while (track.scrollWidth < window.innerWidth * 2) {
-        track.appendChild(track.children[0].cloneNode(true));
+      /* duplicate minimal number of image sets (max 3) */
+      const originalHTML   = track.innerHTML;
+      const originalWidth  = track.scrollWidth;
+      while (track.scrollWidth < reel.offsetWidth + originalWidth && track.children.length < 30) {
+        track.insertAdjacentHTML('beforeend', originalHTML);
       }
 
       function step () {
         offset -= speed;
-        const first = track.children[0];
+        const first      = track.children[0];
         const firstWidth = first.getBoundingClientRect().width + gap;
 
         if (-offset >= firstWidth) {
-          offset += firstWidth;          /* “teleport” track right by 1 image */
-          track.appendChild(first);      /* move first image to the end        */
+          offset += firstWidth;      // snap track back by one image-width
+          track.appendChild(first);  // move first image to the end
         }
-
         track.style.transform = `translateX(${offset}px)`;
         requestAnimationFrame(step);
       }
