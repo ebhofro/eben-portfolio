@@ -21,10 +21,16 @@
     <img src="topbannermk1.jpg" alt="Site banner" />
   </header>
 
-  <!-- Sidebar + Main -->
+  <!-- Page row -->
   <div class="page">
+
+    <!-- ▒▒▒  SIDEBAR  ▒▒▒ -->
     <aside class="sidebar">
-      <nav>
+      <!-- progress bar -->
+      <div class="scroll-bar"></div>
+
+      <!-- sticky link list -->
+      <nav class="sidebar-content">
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#natural">Natural Shorts</a></li>
@@ -37,19 +43,17 @@
       </nav>
     </aside>
 
+    <!-- ▒▒▒  MAIN COLUMN  ▒▒▒ -->
     <main id="home">
 
-      <!-- Endless scrolling reel -->
+      <!-- scrolling reel (unchanged) -->
       <section class="horizontal-reel" aria-label="Featured images">
         <div class="horizontal-track">
-          <!-- existing images -->
           <a href="nzhouse.jpg"><img src="nzhouse.jpg" alt="NZ House" /></a>
           <a href="nztractor.jpg"><img src="nztractor.jpg" alt="NZ Tractor" /></a>
-          <a href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt="Art 1" /></a>
-          <a href="roanna2website.jpg"><img src="roanna2website.jpg" alt="Art 2" /></a>
-          <a href="billageweb.jpg"><img src="billageweb.jpg" alt="Billage Art" /></a>
-
-          <!-- NEW reel images -->
+          <a href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt="" /></a>
+          <a href="roanna2website.jpg"><img src="roanna2website.jpg" alt="" /></a>
+          <a href="billageweb.jpg"><img src="billageweb.jpg" alt="" /></a>
           <a href="jspr.jpg"><img src="jspr.jpg" alt="Jetstream" /></a>
           <a href="bolognaplane.jpg"><img src="bolognaplane.jpg" alt="Bologna Plane" /></a>
         </div>
@@ -89,59 +93,69 @@
         <h2 class="section-title">Photography</h2>
 
         <div class="photo-gallery">
-          <a class="photo-thumb glightbox" data-gallery="photos" href="nzhouse.jpg">
-            <img src="nzhouse.jpg" alt="NZ House" /></a>
-
-          <a class="photo-thumb glightbox" data-gallery="photos" href="nztractor.jpg">
-            <img src="nztractor.jpg" alt="NZ Tractor" /></a>
-
-          <a class="photo-thumb glightbox" data-gallery="photos" href="jspr.jpg">
-            <img src="jspr.jpg" alt="Jetstream" /></a>
-
-          <a class="photo-thumb glightbox" data-gallery="photos" href="bolognaplane.jpg">
-            <img src="bolognaplane.jpg" alt="Bologna Plane" /></a>
+          <a class="photo-thumb glightbox" data-gallery="photos" href="nzhouse.jpg"><img src="nzhouse.jpg" alt="" /></a>
+          <a class="photo-thumb glightbox" data-gallery="photos" href="nztractor.jpg"><img src="nztractor.jpg" alt="" /></a>
+          <a class="photo-thumb glightbox" data-gallery="photos" href="jspr.jpg"><img src="jspr.jpg" alt="" /></a>
+          <a class="photo-thumb glightbox" data-gallery="photos" href="bolognaplane.jpg"><img src="bolognaplane.jpg" alt="" /></a>
         </div>
       </section>
 
     </main>
   </div>
 
-  <!-- GLightbox + Smooth Reel -->
+  <!-- JS: GLightbox · scroll-memory · “you-are-here” & progress bar · smooth reel -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
-    /* 1. GLightbox with scroll memory */
-    const lightbox = GLightbox({ selector: '.glightbox' });
-    let savedScroll = 0;
-    lightbox.on('open', () => { savedScroll = window.scrollY || window.pageYOffset; });
-    lightbox.on('close', () => { window.scrollTo({ top:savedScroll, behavior:'instant' }); });
+    /* ── GLightbox with scroll-position memory ───────────────── */
+    const lb     = GLightbox({ selector: '.glightbox' });
+    let scTop    = 0;
+    lb.on('open',  () => scTop = window.scrollY || window.pageYOffset);
+    lb.on('close', () => window.scrollTo({ top: scTop, behavior: 'instant' }));
 
-    /* 2. Smooth reel (speed 0.2 px / frame) */
+    /* ── Sidebar link highlight & progress bar ───────────────── */
+    const links   = document.querySelectorAll('.sidebar a');
+    const bar     = document.querySelector('.scroll-bar');
+    const secs    = [...links].map(l => document.querySelector(l.getAttribute('href')));
+
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        const link = document.querySelector(`.sidebar a[href="#${e.target.id}"]`);
+        if(e.isIntersecting){
+          links.forEach(l=>l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    },{threshold:0.4});
+    secs.forEach(sec=>observer.observe(sec));
+
+    window.addEventListener('scroll',()=>{
+      const h = document.documentElement;
+      const pct = h.scrollTop / (h.scrollHeight - h.clientHeight);
+      bar.style.height = pct * 100 + '%';
+    });
+
+    /* ── Smooth infinite reel (speed 0.2) ───────────────────── */
     window.addEventListener('load', () => {
-      const track = document.querySelector('.horizontal-track');
-      const reel  = document.querySelector('.horizontal-reel');
-      const gap   = parseInt(getComputedStyle(track).gap) || 24;
-      const speed = 0.2;
-      let offset  = 0;
+      const track  = document.querySelector('.horizontal-track');
+      const reel   = document.querySelector('.horizontal-reel');
+      const gap    = parseFloat(getComputedStyle(track).gap) || 24;
+      const speed  = 0.2;
+      let offset   = 0;
 
-      /* duplicate minimal sets */
-      const original = track.innerHTML;
+      const original  = track.innerHTML;
       const originalW = track.scrollWidth;
-      while (track.scrollWidth < reel.offsetWidth + originalW && track.children.length < 30) {
+      while (track.scrollWidth < reel.offsetWidth + originalW &&
+             track.children.length < 30){
         track.insertAdjacentHTML('beforeend', original);
       }
 
-      /* frame loop */
-      function step(){
+      const step = () => {
         offset -= speed;
-        const first   = track.children[0];
-        const firstW  = first.getBoundingClientRect().width + gap;
-        if (-offset >= firstW){
-          offset += firstW;
-          track.appendChild(first);
-        }
+        const firstW = track.children[0].getBoundingClientRect().width + gap;
+        if(-offset >= firstW){ offset += firstW; track.append(track.children[0]); }
         track.style.transform = `translateX(${offset}px)`;
         requestAnimationFrame(step);
-      }
+      };
       requestAnimationFrame(step);
     });
   </script>
