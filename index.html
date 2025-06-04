@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
 
-  <!-- fonts -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
 
@@ -16,17 +16,17 @@
 
 <body>
 
-  <!-- Top banner -->
-  <header class="top-banner"><img src="topbannermk1.jpg" alt="Site banner"></header>
+  <!-- █ Top banner █ -->
+  <header class="top-banner">
+    <img src="topbannermk1.jpg" alt="Site banner" />
+  </header>
 
   <div class="page">
 
-    <!-- ▒▒▒ SIDEBAR ▒▒▒ -->
+    <!-- ▒▒ Sidebar ▒▒ -->
     <aside class="sidebar">
-      <!-- parallax banner -->
-      <div class="sidebar-banner"></div>
-      <!-- scroll bar -->
-      <div class="scroll-bar"></div>
+      <!-- parallax banner image (no zoom) -->
+      <div class="sidebar-banner"><img src="sidebarmk1.jpg" alt="" class="sidebar-banner-img" /></div>
 
       <!-- sticky links -->
       <nav class="sidebar-content">
@@ -42,46 +42,50 @@
       </nav>
     </aside>
 
-    <!-- ▒▒▒ MAIN ▒▒▒ -->
+    <!-- ▒▒ Main column ▒▒ -->
     <main>
 
-      <!-- anchor + intro gap for HOME -->
+      <!-- Sentinel for “Home” link -->
       <span id="home" class="anchor"></span>
-      <section class="home-intro">
-        <h2>Welcome</h2>
-        <p>Add your intro text here…</p>
-      </section>
 
-      <!-- scrolling reel -->
+      <!-- Endless scrolling reel -->
       <section class="horizontal-reel" aria-label="Featured images">
         <div class="horizontal-track">
-          <a href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
-          <a href="nztractor.jpg"><img src="nztractor.jpg" alt=""></a>
-          <a href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt=""></a>
-          <a href="roanna2website.jpg"><img src="roanna2website.jpg" alt=""></a>
-          <a href="billageweb.jpg"><img src="billageweb.jpg" alt=""></a>
-          <a href="jspr.jpg"><img src="jspr.jpg" alt=""></a>
-          <a href="bolognaplane.jpg"><img src="bolognaplane.jpg" alt=""></a>
+          <a href="nzhouse.jpg"><img src="nzhouse.jpg" alt="" /></a>
+          <a href="nztractor.jpg"><img src="nztractor.jpg" alt="" /></a>
+          <a href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt="" /></a>
+          <a href="roanna2website.jpg"><img src="roanna2website.jpg" alt="" /></a>
+          <a href="billageweb.jpg"><img src="billageweb.jpg" alt="" /></a>
+          <a href="jspr.jpg"><img src="jspr.jpg" alt="" /></a>
+          <a href="bolognaplane.jpg"><img src="bolognaplane.jpg" alt="" /></a>
         </div>
       </section>
 
-      <!-- NATURAL MICRO SHORTS -->
-      <section id="natural">
-        <img class="section-banner" src="microban.png" alt="Natural Micro Shorts">
+      <!-- Welcome / intro block  (now below the reel) -->
+      <section class="home-intro">
+        <h2>Welcome</h2>
+        <p>Write your welcome text here …</p>
+      </section>
+
+      <!-- Natural Micro Shorts -->
+      <span id="natural" class="anchor"></span>
+      <section>
+        <img class="section-banner" src="microban.png" alt="Natural Micro Shorts" />
         <div class="video-gallery">
           <a class="video-thumb glightbox" data-type="video" href="https://www.youtube.com/watch?v=TK-xTVmz0_g">
-            <img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="">
+            <img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="" />
             <span class="overlay">A GOLDEN FERRY RIDE TO ARRAN ISLAND</span>
           </a>
           <a class="video-thumb glightbox" data-type="video" href="https://www.youtube.com/watch?v=SlCPKbZmgfY">
-            <img src="https://img.youtube.com/vi/SlCPKbZmgfY/hqdefault.jpg" alt="">
+            <img src="https://img.youtube.com/vi/SlCPKbZmgfY/hqdefault.jpg" alt="" />
             <span class="overlay">THE ENCHANTED FOREST UP THE FRENNI</span>
           </a>
         </div>
       </section>
 
-      <!-- CREATIVE EDITING -->
-      <section id="editing">
+      <!-- Creative Editing -->
+      <span id="editing" class="anchor"></span>
+      <section>
         <h2 class="section-title">Creative Video Editing</h2>
         <div class="video-gallery">
           <a class="video-thumb glightbox" data-type="video" href="https://youtu.be/NlCne_3IVy0">
@@ -91,8 +95,9 @@
         </div>
       </section>
 
-      <!-- PHOTOGRAPHY -->
-      <section id="photography">
+      <!-- Photography -->
+      <span id="photography" class="anchor"></span>
+      <section>
         <h2 class="section-title">Photography</h2>
         <div class="photo-gallery">
           <a class="photo-thumb glightbox" data-gallery="photos" href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
@@ -102,61 +107,59 @@
         </div>
       </section>
 
+      <!-- Add more sections… -->
     </main>
   </div>
 
-  <!-- JS: GLightbox · sidebar effects · smooth reel -->
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
-    /* ─ GLightbox with scroll memory ─ */
+    /* ───────────────── GLightbox with scroll-restore */
     const lb  = GLightbox({ selector: '.glightbox' });
-    let sPos  = 0;
-    lb.on('open', ()=> sPos = scrollY );
-    lb.on('close',()=> scrollTo({top:sPos,behavior:'instant'}));
+    let saved = 0;
+    lb.on('open',  () => saved = scrollY);
+    lb.on('close', () => scrollTo({top:saved,behavior:'instant'}));
 
-    /* ─ Sidebar parallax banner ─ */
-    const sbBanner = document.querySelector('.sidebar-banner');
-    window.addEventListener('scroll', ()=> {
-      sbBanner.style.transform = `translateY(${ -window.scrollY * 0.25 }px)`;
+    /* ───────────────── Sidebar parallax */
+    const sbImg = document.querySelector('.sidebar-banner-img');
+    addEventListener('scroll', () =>{
+      sbImg.style.transform = `translateY(${ -scrollY * 0.25 }px)`;
     });
 
-    /* ─ You-are-here + progress bar ─ */
-    const bar   = document.querySelector('.scroll-bar');
-    const links = document.querySelectorAll('.sidebar a');
-    const secs  = [...links].map(l=>document.querySelector(l.getAttribute('href')));
-
-    const io = new IntersectionObserver(ent=>{
-      ent.forEach(e=>{
-        const a = document.querySelector(`.sidebar a[href="#${e.target.id}"]`);
+    /* ───────────────── Active link highlight */
+    const navLinks = document.querySelectorAll('.sidebar a');
+    const sections = Array.from(navLinks).map(l=>document.querySelector(l.getAttribute('href')));
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        const link = document.querySelector(`.sidebar a[href="#${e.target.id}"]`);
         if(e.isIntersecting){
-          links.forEach(l=>l.classList.remove('active'));
-          a.classList.add('active');
+          navLinks.forEach(l=>l.classList.remove('active'));
+          link.classList.add('active');
         }
       });
-    },{threshold:0.25});
+    },{rootMargin:'-45% 0px -45% 0px'});
+    sections.forEach(s=>io.observe(s));
 
-    secs.forEach(sec=>io.observe(sec));
-    window.addEventListener('scroll', ()=>{
-      const d = document.documentElement;
-      const pct = d.scrollTop / (d.scrollHeight - d.clientHeight);
-      bar.style.height = pct*100 + '%';
-    });
+    /* ───────────────── Infinite horizontal reel  */
+    addEventListener('load', () =>{
+      const track = document.querySelector('.horizontal-track');
+      const reel  = document.querySelector('.horizontal-reel');
+      const gap   = parseFloat(getComputedStyle(track).gap)||24;
+      const speed = 0.2;
+      let offset  = 0;
 
-    /* ─ Smooth reel ─ */
-    window.addEventListener('load', ()=>{
-      const track=document.querySelector('.horizontal-track');
-      const reel =document.querySelector('.horizontal-reel');
-      const gap =parseFloat(getComputedStyle(track).gap)||24;
-      const speed=.2; let off=0;
-      const base=track.innerHTML, baseW=track.scrollWidth;
-      while(track.scrollWidth < reel.offsetWidth+baseW && track.children.length<30){
-        track.insertAdjacentHTML('beforeend',base);
+      const base   = track.innerHTML;
+      const baseW  = track.scrollWidth;
+      while(track.scrollWidth < reel.offsetWidth + baseW && track.children.length < 30){
+        track.insertAdjacentHTML('beforeend', base);
       }
-      const step=()=>{
-        off-=speed;
-        const firstW=track.children[0].getBoundingClientRect().width+gap;
-        if(-off>=firstW){off+=firstW;track.append(track.children[0]);}
-        track.style.transform=`translateX(${off}px)`;requestAnimationFrame(step);
+
+      const step = () =>{
+        offset -= speed;
+        const firstW = track.children[0].getBoundingClientRect().width + gap;
+        if(-offset >= firstW){ offset += firstW; track.append(track.children[0]); }
+        track.style.transform = `translateX(${offset}px)`;
+        requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
     });
