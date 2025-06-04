@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Google Fonts -->
+  <!-- fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
 
@@ -17,19 +17,18 @@
 <body>
 
   <!-- Top banner -->
-  <header class="top-banner">
-    <img src="topbannermk1.jpg" alt="Site banner" />
-  </header>
+  <header class="top-banner"><img src="topbannermk1.jpg" alt="Site banner"></header>
 
-  <!-- Page row -->
   <div class="page">
 
-    <!-- ▒▒▒  SIDEBAR  ▒▒▒ -->
+    <!-- ▒▒▒ SIDEBAR ▒▒▒ -->
     <aside class="sidebar">
-      <!-- progress bar -->
+      <!-- parallax banner -->
+      <div class="sidebar-banner"></div>
+      <!-- scroll bar -->
       <div class="scroll-bar"></div>
 
-      <!-- sticky link list -->
+      <!-- sticky links -->
       <nav class="sidebar-content">
         <ul>
           <li><a href="#home">Home</a></li>
@@ -43,118 +42,121 @@
       </nav>
     </aside>
 
-    <!-- ▒▒▒  MAIN COLUMN  ▒▒▒ -->
-    <main id="home">
+    <!-- ▒▒▒ MAIN ▒▒▒ -->
+    <main>
 
-      <!-- scrolling reel (unchanged) -->
+      <!-- anchor + intro gap for HOME -->
+      <span id="home" class="anchor"></span>
+      <section class="home-intro">
+        <h2>Welcome</h2>
+        <p>Add your intro text here…</p>
+      </section>
+
+      <!-- scrolling reel -->
       <section class="horizontal-reel" aria-label="Featured images">
         <div class="horizontal-track">
-          <a href="nzhouse.jpg"><img src="nzhouse.jpg" alt="NZ House" /></a>
-          <a href="nztractor.jpg"><img src="nztractor.jpg" alt="NZ Tractor" /></a>
-          <a href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt="" /></a>
-          <a href="roanna2website.jpg"><img src="roanna2website.jpg" alt="" /></a>
-          <a href="billageweb.jpg"><img src="billageweb.jpg" alt="" /></a>
-          <a href="jspr.jpg"><img src="jspr.jpg" alt="Jetstream" /></a>
-          <a href="bolognaplane.jpg"><img src="bolognaplane.jpg" alt="Bologna Plane" /></a>
+          <a href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
+          <a href="nztractor.jpg"><img src="nztractor.jpg" alt=""></a>
+          <a href="beachroanna1web.jpg"><img src="beachroanna1web.jpg" alt=""></a>
+          <a href="roanna2website.jpg"><img src="roanna2website.jpg" alt=""></a>
+          <a href="billageweb.jpg"><img src="billageweb.jpg" alt=""></a>
+          <a href="jspr.jpg"><img src="jspr.jpg" alt=""></a>
+          <a href="bolognaplane.jpg"><img src="bolognaplane.jpg" alt=""></a>
         </div>
       </section>
 
-      <!-- Natural Micro Shorts -->
+      <!-- NATURAL MICRO SHORTS -->
       <section id="natural">
-        <img class="section-banner" src="microban.png" alt="Natural Micro Shorts" />
-
+        <img class="section-banner" src="microban.png" alt="Natural Micro Shorts">
         <div class="video-gallery">
           <a class="video-thumb glightbox" data-type="video" href="https://www.youtube.com/watch?v=TK-xTVmz0_g">
-            <img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="" />
+            <img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="">
             <span class="overlay">A GOLDEN FERRY RIDE TO ARRAN ISLAND</span>
           </a>
-
           <a class="video-thumb glightbox" data-type="video" href="https://www.youtube.com/watch?v=SlCPKbZmgfY">
-            <img src="https://img.youtube.com/vi/SlCPKbZmgfY/hqdefault.jpg" alt="" />
+            <img src="https://img.youtube.com/vi/SlCPKbZmgfY/hqdefault.jpg" alt="">
             <span class="overlay">THE ENCHANTED FOREST UP THE FRENNI</span>
           </a>
         </div>
       </section>
 
-      <!-- Creative Editing -->
+      <!-- CREATIVE EDITING -->
       <section id="editing">
         <h2 class="section-title">Creative Video Editing</h2>
-
         <div class="video-gallery">
           <a class="video-thumb glightbox" data-type="video" href="https://youtu.be/NlCne_3IVy0">
-            <img src="https://img.youtube.com/vi/NlCne_3IVy0/hqdefault.jpg" alt="" />
+            <img src="https://img.youtube.com/vi/NlCne_3IVy0/hqdefault.jpg" alt="">
             <span class="overlay">CREATIVE EDIT SHOWCASE</span>
           </a>
         </div>
       </section>
 
-      <!-- Photography -->
+      <!-- PHOTOGRAPHY -->
       <section id="photography">
         <h2 class="section-title">Photography</h2>
-
         <div class="photo-gallery">
-          <a class="photo-thumb glightbox" data-gallery="photos" href="nzhouse.jpg"><img src="nzhouse.jpg" alt="" /></a>
-          <a class="photo-thumb glightbox" data-gallery="photos" href="nztractor.jpg"><img src="nztractor.jpg" alt="" /></a>
-          <a class="photo-thumb glightbox" data-gallery="photos" href="jspr.jpg"><img src="jspr.jpg" alt="" /></a>
-          <a class="photo-thumb glightbox" data-gallery="photos" href="bolognaplane.jpg"><img src="bolognaplane.jpg" alt="" /></a>
+          <a class="photo-thumb glightbox" data-gallery="photos" href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
+          <a class="photo-thumb glightbox" data-gallery="photos" href="nztractor.jpg"><img src="nztractor.jpg" alt=""></a>
+          <a class="photo-thumb glightbox" data-gallery="photos" href="jspr.jpg"><img src="jspr.jpg" alt=""></a>
+          <a class="photo-thumb glightbox" data-gallery="photos" href="bolognaplane.jpg"><img src="bolognaplane.jpg" alt=""></a>
         </div>
       </section>
 
     </main>
   </div>
 
-  <!-- JS: GLightbox · scroll-memory · “you-are-here” & progress bar · smooth reel -->
+  <!-- JS: GLightbox · sidebar effects · smooth reel -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
-    /* ── GLightbox with scroll-position memory ───────────────── */
-    const lb     = GLightbox({ selector: '.glightbox' });
-    let scTop    = 0;
-    lb.on('open',  () => scTop = window.scrollY || window.pageYOffset);
-    lb.on('close', () => window.scrollTo({ top: scTop, behavior: 'instant' }));
+    /* ─ GLightbox with scroll memory ─ */
+    const lb  = GLightbox({ selector: '.glightbox' });
+    let sPos  = 0;
+    lb.on('open', ()=> sPos = scrollY );
+    lb.on('close',()=> scrollTo({top:sPos,behavior:'instant'}));
 
-    /* ── Sidebar link highlight & progress bar ───────────────── */
-    const links   = document.querySelectorAll('.sidebar a');
-    const bar     = document.querySelector('.scroll-bar');
-    const secs    = [...links].map(l => document.querySelector(l.getAttribute('href')));
-
-    const observer = new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        const link = document.querySelector(`.sidebar a[href="#${e.target.id}"]`);
-        if(e.isIntersecting){
-          links.forEach(l=>l.classList.remove('active'));
-          link.classList.add('active');
-        }
-      });
-    },{threshold:0.4});
-    secs.forEach(sec=>observer.observe(sec));
-
-    window.addEventListener('scroll',()=>{
-      const h = document.documentElement;
-      const pct = h.scrollTop / (h.scrollHeight - h.clientHeight);
-      bar.style.height = pct * 100 + '%';
+    /* ─ Sidebar parallax banner ─ */
+    const sbBanner = document.querySelector('.sidebar-banner');
+    window.addEventListener('scroll', ()=> {
+      sbBanner.style.transform = `translateY(${ -window.scrollY * 0.25 }px)`;
     });
 
-    /* ── Smooth infinite reel (speed 0.2) ───────────────────── */
-    window.addEventListener('load', () => {
-      const track  = document.querySelector('.horizontal-track');
-      const reel   = document.querySelector('.horizontal-reel');
-      const gap    = parseFloat(getComputedStyle(track).gap) || 24;
-      const speed  = 0.2;
-      let offset   = 0;
+    /* ─ You-are-here + progress bar ─ */
+    const bar   = document.querySelector('.scroll-bar');
+    const links = document.querySelectorAll('.sidebar a');
+    const secs  = [...links].map(l=>document.querySelector(l.getAttribute('href')));
 
-      const original  = track.innerHTML;
-      const originalW = track.scrollWidth;
-      while (track.scrollWidth < reel.offsetWidth + originalW &&
-             track.children.length < 30){
-        track.insertAdjacentHTML('beforeend', original);
+    const io = new IntersectionObserver(ent=>{
+      ent.forEach(e=>{
+        const a = document.querySelector(`.sidebar a[href="#${e.target.id}"]`);
+        if(e.isIntersecting){
+          links.forEach(l=>l.classList.remove('active'));
+          a.classList.add('active');
+        }
+      });
+    },{threshold:0.25});
+
+    secs.forEach(sec=>io.observe(sec));
+    window.addEventListener('scroll', ()=>{
+      const d = document.documentElement;
+      const pct = d.scrollTop / (d.scrollHeight - d.clientHeight);
+      bar.style.height = pct*100 + '%';
+    });
+
+    /* ─ Smooth reel ─ */
+    window.addEventListener('load', ()=>{
+      const track=document.querySelector('.horizontal-track');
+      const reel =document.querySelector('.horizontal-reel');
+      const gap =parseFloat(getComputedStyle(track).gap)||24;
+      const speed=.2; let off=0;
+      const base=track.innerHTML, baseW=track.scrollWidth;
+      while(track.scrollWidth < reel.offsetWidth+baseW && track.children.length<30){
+        track.insertAdjacentHTML('beforeend',base);
       }
-
-      const step = () => {
-        offset -= speed;
-        const firstW = track.children[0].getBoundingClientRect().width + gap;
-        if(-offset >= firstW){ offset += firstW; track.append(track.children[0]); }
-        track.style.transform = `translateX(${offset}px)`;
-        requestAnimationFrame(step);
+      const step=()=>{
+        off-=speed;
+        const firstW=track.children[0].getBoundingClientRect().width+gap;
+        if(-off>=firstW){off+=firstW;track.append(track.children[0]);}
+        track.style.transform=`translateX(${off}px)`;requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
     });
