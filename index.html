@@ -39,7 +39,7 @@
     <!-- Main column -->
     <main id="home">
 
-      <!-- scrolling reel -->
+      <!-- scrolling reel (unchanged) -->
       <section class="horizontal-reel" aria-label="Featured work">
         <div class="horizontal-track">
           <a href="photo1.jpg"><img src="photo1.jpg" alt=""></a>
@@ -73,23 +73,37 @@
 
       <!-- ███ CREATIVE VIDEO EDITING ███ -->
       <section id="editing">
-
-        <!-- replace this <h2> with an <img class="section-banner"> whenever you design a banner -->
         <h2 class="section-title">Creative Video Editing</h2>
 
         <div class="video-gallery">
-
-          <!-- your creative-edit clip -->
           <a class="video-thumb glightbox" data-type="video"
              href="https://youtu.be/NlCne_3IVy0">
             <img src="https://img.youtube.com/vi/NlCne_3IVy0/hqdefault.jpg" alt="">
             <span class="overlay">CREATIVE EDIT SHOWCASE</span>
           </a>
-
         </div>
       </section>
 
-      <!-- (add more site sections below as needed) -->
+      <!-- ███ PHOTOGRAPHY ███ -->
+      <section id="photography">
+        <h2 class="section-title">Photography</h2>
+
+        <!-- 7-column square-thumbnail grid -->
+        <div class="photo-gallery">
+          <a class="photo-thumb glightbox" data-gallery="photos" href="photo1.jpg">
+            <img src="photo1.jpg" alt="Photo 1"></a>
+
+          <a class="photo-thumb glightbox" data-gallery="photos" href="photo2.jpg">
+            <img src="photo2.jpg" alt="Photo 2"></a>
+
+          <a class="photo-thumb glightbox" data-gallery="photos" href="nzhouse.jpg">
+            <img src="nzhouse.jpg" alt="NZ House"></a>
+
+          <a class="photo-thumb glightbox" data-gallery="photos" href="nztractor.jpg">
+            <img src="nztractor.jpg" alt="NZ Tractor"></a>
+        </div>
+      </section>
+
     </main>
   </div>
 
@@ -102,7 +116,7 @@
       const track  = document.querySelector('.horizontal-track');
       const reel   = document.querySelector('.horizontal-reel');
       const gap    = parseInt(getComputedStyle(track).gap) || 24;
-      const speed  = 0.2;                // slower reel
+      const speed  = 0.2;    /* slow reel */
       let offset   = 0;
 
       const original  = track.innerHTML;
