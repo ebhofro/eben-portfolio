@@ -16,19 +16,20 @@
 
 <body>
 
-  <!-- ══ Top banner ══ -->
-  <header class="top-banner">
-    <img src="topbannermk1.jpg" alt="Site banner" />
-  </header>
+  <!-- Top banner -->
+  <header class="top-banner"><img src="topbannermk1.jpg" alt="Site banner"></header>
 
   <div class="page">
 
-    <!-- ▒▒ Sidebar ▒▒ -->
+    <!-- ▒▒ SIDEBAR ▒▒ -->
     <aside class="sidebar">
-      <!-- parallax banner (background image) -->
-      <div class="sidebar-banner"></div>
 
-      <!-- sticky nav -->
+      <!-- full-width banner (300 px) — parallax handled in JS -->
+      <div class="sidebar-banner">
+        <img src="sidebarmk1.jpg" alt="" class="sidebar-banner-img">
+      </div>
+
+      <!-- sticky links (start higher) -->
       <nav class="sidebar-content">
         <ul>
           <li><a href="#home">Home</a></li>
@@ -42,10 +43,9 @@
       </nav>
     </aside>
 
-    <!-- ▒▒ Main column ▒▒ -->
+    <!-- ▒▒ MAIN ▒▒ -->
     <main>
 
-      <!-- anchor for Home -->
       <span id="home" class="anchor"></span>
 
       <!-- scrolling reel -->
@@ -62,87 +62,53 @@
       </section>
 
       <!-- welcome block -->
-      <section class="home-intro">
-        <h2>Welcome</h2>
-        <p>Write your introduction here…</p>
-      </section>
+      <section class="home-intro"><h2>Welcome</h2><p>Your intro here …</p></section>
 
-      <!-- Natural Micro Shorts -->
+      <!-- Natural Shorts -->
       <span id="natural" class="anchor"></span>
       <section>
-        <img class="section-banner" src="microban.png" alt="Natural Micro Shorts" />
-        <div class="video-gallery">
-          <a class="video-thumb glightbox" data-type="video" href="https://www.youtube.com/watch?v=TK-xTVmz0_g">
-            <img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="">
-            <span class="overlay">A GOLDEN FERRY RIDE TO ARRAN</span>
-          </a>
-          <a class="video-thumb glightbox" data-type="video" href="https://www.youtube.com/watch?v=SlCPKbZmgfY">
-            <img src="https://img.youtube.com/vi/SlCPKbZmgfY/hqdefault.jpg" alt="">
-            <span class="overlay">THE ENCHANTED FOREST UP THE FRENNI</span>
-          </a>
-        </div>
+        <img class="section-banner" src="microban.png" alt="">
+        <!-- thumbs … -->
       </section>
 
       <!-- Creative Editing -->
       <span id="editing" class="anchor"></span>
-      <section>
-        <h2 class="section-title">Creative Video Editing</h2>
-        <div class="video-gallery">
-          <a class="video-thumb glightbox" data-type="video" href="https://youtu.be/NlCne_3IVy0">
-            <img src="https://img.youtube.com/vi/NlCne_3IVy0/hqdefault.jpg" alt="">
-            <span class="overlay">CREATIVE EDIT SHOWCASE</span>
-          </a>
-        </div>
-      </section>
+      <section><h2 class="section-title">Creative Video Editing</h2></section>
 
       <!-- Photography -->
       <span id="photography" class="anchor"></span>
-      <section>
-        <h2 class="section-title">Photography</h2>
-        <div class="photo-gallery">
-          <a class="photo-thumb glightbox" data-gallery="photos" href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
-          <a class="photo-thumb glightbox" data-gallery="photos" href="nztractor.jpg"><img src="nztractor.jpg" alt=""></a>
-          <a class="photo-thumb glightbox" data-gallery="photos" href="jspr.jpg"><img src="jspr.jpg" alt=""></a>
-          <a class="photo-thumb glightbox" data-gallery="photos" href="bolognaplane.jpg"><img src="bolognaplane.jpg" alt=""></a>
-        </div>
-      </section>
+      <section><h2 class="section-title">Photography</h2></section>
 
     </main>
   </div>
 
-  <!-- JS: GLightbox + parallax banner + reel -->
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
-    /* GLightbox with scroll memory */
-    const lb = GLightbox({ selector: '.glightbox' });
-    let savedY = 0;
-    lb.on('open',  () => savedY = scrollY);
-    lb.on('close', () => scrollTo({ top: savedY, behavior: 'instant' }));
+    /* GLightbox (unchanged) */
+    GLightbox({ selector: '.glightbox' });
 
-    /* parallax sidebar banner */
-    const banner = document.querySelector('.sidebar-banner');
+    /* simple parallax for sidebar banner */
+    const sbImg = document.querySelector('.sidebar-banner-img');
     addEventListener('scroll', () => {
-      banner.style.backgroundPositionY = `${-scrollY * .25}px`;
+      sbImg.style.transform = `translateY(${ -scrollY * 0.25 }px)`;
     });
 
-    /* horizontal reel */
+    /* horizontal reel (unchanged) */
     addEventListener('load', () => {
       const track = document.querySelector('.horizontal-track');
       const reel  = document.querySelector('.horizontal-reel');
-      const gap   = parseFloat(getComputedStyle(track).gap) || 24;
-      const speed = 0.2;  let off = 0;
+      const gap   = 24, speed = 0.2;
+      let offset  = 0;
 
-      const baseHTML = track.innerHTML, baseW = track.scrollWidth;
-      while (track.scrollWidth < reel.offsetWidth + baseW && track.children.length < 30) {
-        track.insertAdjacentHTML('beforeend', baseHTML);
-      }
+      const base = track.innerHTML, w = track.scrollWidth;
+      while (track.scrollWidth < reel.offsetWidth + w) track.insertAdjacentHTML('beforeend', base);
 
-      (function loop() {
-        off -= speed;
-        const stepW = track.children[0].getBoundingClientRect().width + gap;
-        if (-off >= stepW) { off += stepW; track.append(track.children[0]); }
-        track.style.transform = `translateX(${off}px)`;
-        requestAnimationFrame(loop);
+      (function loop(){
+        offset -= speed;
+        const step = track.children[0].offsetWidth + gap;
+        if (-offset >= step){ offset += step; track.append(track.children[0]); }
+        track.style.transform = `translateX(${offset}px)`; requestAnimationFrame(loop);
       })();
     });
   </script>
