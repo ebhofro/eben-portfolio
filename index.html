@@ -1,39 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Eben Holmes-Frodsham · Portfolio</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- Fonts -->
+  <!-- fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- GLightbox -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 </head>
 
 <body>
 
-  <!-- ▓▓ Site banner ▓▓ -->
-  <header class="top-banner">
-    <img src="topbannermk1.jpg" alt="Site banner">
-  </header>
+  <!-- Top banner -->
+  <header class="top-banner"><img src="topbannermk1.jpg" alt="Site banner"></header>
 
-  <!-- ▓▓ Sidebar + Main ▓▓ -->
   <div class="page">
 
-    <!-- Sidebar -->
+    <!-- ▒▒ SIDEBAR ▒▒ -->
     <aside class="sidebar">
 
-      <!-- 200 px-tall banner -->
-      <div class="sidebar-banner-wrapper">
-        <img src="sidebarmk1.jpg" alt="Sidebar banner" class="sidebar-banner-img">
-      </div>
+      <!-- full image (entire picture visible) -->
+      <img src="sidebarmk1.jpg" alt="Sidebar banner" class="sidebar-banner">
 
-      <!-- Sticky nav list -->
-      <nav class="sidebar-content">
+      <!-- sticky nav, starts immediately below image -->
+      <nav class="sidebar-nav">
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#natural">Natural Shorts</a></li>
@@ -46,10 +41,10 @@
       </nav>
     </aside>
 
-    <!-- Main column -->
+    <!-- ▒▒ MAIN ▒▒ -->
     <main id="home">
 
-      <!-- Horizontal reel -->
+      <!-- horizontal reel -->
       <section class="horizontal-reel">
         <div class="horizontal-track">
           <a href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
@@ -62,72 +57,29 @@
         </div>
       </section>
 
-      <!-- Welcome block -->
-      <section class="home-intro">
-        <h2>Welcome</h2>
-        <p>Add your introduction here …</p>
-      </section>
+      <!-- welcome -->
+      <section class="home-intro"><h2>Welcome</h2><p>Your intro text …</p></section>
 
-      <!-- Natural Micro Shorts -->
-      <section id="natural">
-        <img class="section-banner" src="microban.png" alt="Natural Micro Shorts">
-        <div class="video-gallery">
-          <a class="video-thumb glightbox" data-type="video"
-             href="https://www.youtube.com/watch?v=TK-xTVmz0_g">
-            <img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="">
-            <span class="overlay">A GOLDEN FERRY RIDE TO ARRAN</span>
-          </a>
-          <a class="video-thumb glightbox" data-type="video"
-             href="https://www.youtube.com/watch?v=SlCPKbZmgfY">
-            <img src="https://img.youtube.com/vi/SlCPKbZmgfY/hqdefault.jpg" alt="">
-            <span class="overlay">THE ENCHANTED FOREST UP THE FRENNI</span>
-          </a>
-        </div>
-      </section>
-
-      <!-- Creative Editing -->
-      <section id="editing">
-        <h2 class="section-title">Creative Video Editing</h2>
-        <div class="video-gallery">
-          <a class="video-thumb glightbox" data-type="video"
-             href="https://youtu.be/NlCne_3IVy0">
-            <img src="https://img.youtube.com/vi/NlCne_3IVy0/hqdefault.jpg" alt="">
-            <span class="overlay">CREATIVE EDIT SHOWCASE</span>
-          </a>
-        </div>
-      </section>
-
-      <!-- Photography -->
-      <section id="photography">
-        <h2 class="section-title">Photography</h2>
-        <div class="photo-gallery">
-          <a class="photo-thumb glightbox" data-gallery="photos" href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
-          <a class="photo-thumb glightbox" data-gallery="photos" href="nztractor.jpg"><img src="nztractor.jpg" alt=""></a>
-          <a class="photo-thumb glightbox" data-gallery="photos" href="jspr.jpg"><img src="jspr.jpg" alt=""></a>
-          <a class="photo-thumb glightbox" data-gallery="photos" href="bolognaplane.jpg"><img src="bolognaplane.jpg" alt=""></a>
-        </div>
-      </section>
+      <!-- Natural shorts, Creative editing, Photography … (unchanged) -->
+      <!-- … keep your existing sections here … -->
 
     </main>
   </div>
 
-  <!-- JS: GLightbox + horizontal reel -->
+  <!-- JS: GLightbox + endless reel -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
-    /* GLightbox */
     GLightbox({ selector: '.glightbox' });
 
-    /* Infinite reel (speed 0.2) */
     window.addEventListener('load', () => {
-      const track  = document.querySelector('.horizontal-track');
-      const reel   = document.querySelector('.horizontal-reel');
-      const gap    = 24, speed = 0.2;
-      let offset = 0;
+      const track = document.querySelector('.horizontal-track');
+      const reel  = document.querySelector('.horizontal-reel');
+      const gap   = 24, speed = 0.2;
+      let offset  = 0;
 
-      const base = track.innerHTML, baseW = track.scrollWidth;
-      while (track.scrollWidth < reel.offsetWidth + baseW) {
+      const base  = track.innerHTML, baseW = track.scrollWidth;
+      while (track.scrollWidth < reel.offsetWidth + baseW)
         track.insertAdjacentHTML('beforeend', base);
-      }
 
       (function loop(){
         offset -= speed;
