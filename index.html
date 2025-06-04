@@ -16,17 +16,22 @@
 
 <body>
 
-  <!-- ██ Site’s top banner ██ -->
+  <!-- ███ Site Top Banner ███ -->
   <header class="top-banner">
     <img src="topbannermk1.jpg" alt="Site banner" />
   </header>
 
   <div class="page">
 
-    <!-- ██ SIDEBAR ██ -->
+    <!-- ███ SIDEBAR ███ -->
     <aside class="sidebar">
 
-      <!-- ▷ Nav links at top (transparent background) ▷ -->
+      <!-- ▷ Sidebar banner image first ▷ -->
+      <div class="sidebar-banner">
+        <img src="sidebarmk1.jpg" alt="Sidebar banner" />
+      </div>
+
+      <!-- ▷ Nav links below banner (transparent, sticky) ▷ -->
       <nav class="sidebar-nav">
         <ul>
           <li><a href="#home">Home</a></li>
@@ -38,14 +43,9 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-
-      <!-- ▷ Banner immediately below nav ▷ -->
-      <div class="sidebar-banner">
-        <img src="sidebarmk1.jpg" alt="Sidebar banner" />
-      </div>
     </aside>
 
-    <!-- ██ MAIN CONTENT ██ -->
+    <!-- ███ MAIN CONTENT ███ -->
     <main id="home">
 
       <!-- ── Horizontal reel ── -->
@@ -87,65 +87,3 @@
         <h2 class="section-title">Creative Video Editing</h2>
         <div class="video-gallery">
           <a class="video-thumb glightbox" data-type="video" href="https://youtu.be/NlCne_3IVy0">
-            <img src="https://img.youtube.com/vi/NlCne_3IVy0/hqdefault.jpg" alt="" />
-            <span class="overlay">CREATIVE EDIT SHOWCASE</span>
-          </a>
-        </div>
-      </section>
-
-      <!-- ── Photography ── -->
-      <section id="photography">
-        <h2 class="section-title">Photography</h2>
-        <div class="photo-gallery">
-          <a class="photo-thumb glightbox" data-gallery="photos" href="nzhouse.jpg">
-            <img src="nzhouse.jpg" alt="" />
-          </a>
-          <a class="photo-thumb glightbox" data-gallery="photos" href="nztractor.jpg">
-            <img src="nztractor.jpg" alt="" />
-          </a>
-          <a class="photo-thumb glightbox" data-gallery="photos" href="jspr.jpg">
-            <img src="jspr.jpg" alt="" />
-          </a>
-          <a class="photo-thumb glightbox" data-gallery="photos" href="bolognaplane.jpg">
-            <img src="bolognaplane.jpg" alt="" />
-          </a>
-        </div>
-      </section>
-
-      <!-- You can add more sections below as needed -->
-
-    </main>
-  </div>
-
-  <!-- JS: GLightbox & infinite reel animation -->
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-  <script>
-    GLightbox({ selector: '.glightbox' });
-
-    window.addEventListener('load', () => {
-      const track  = document.querySelector('.horizontal-track');
-      const reel   = document.querySelector('.horizontal-reel');
-      const gap    = 24;
-      const speed  = 0.2;
-      let offset   = 0;
-
-      const baseHTML = track.innerHTML;
-      const baseW    = track.scrollWidth;
-      while (track.scrollWidth < reel.offsetWidth + baseW) {
-        track.insertAdjacentHTML('beforeend', baseHTML);
-      }
-
-      (function loop() {
-        offset -= speed;
-        const step = track.children[0].offsetWidth + gap;
-        if (-offset >= step) {
-          offset += step;
-          track.append(track.children[0]);
-        }
-        track.style.transform = `translateX(${offset}px)`;
-        requestAnimationFrame(loop);
-      })();
-    });
-  </script>
-</body>
-</html>
