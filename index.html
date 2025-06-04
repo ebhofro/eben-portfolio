@@ -13,11 +13,12 @@
 
 <body>
 
+  <!-- top banner -->
   <header class="top-banner"><img src="topbannermk1.jpg" alt="Site banner"></header>
 
   <div class="page">
 
-    <!-- Sidebar -->
+    <!-- sidebar -->
     <aside class="sidebar">
       <nav>
         <ul>
@@ -32,13 +33,12 @@
       </nav>
     </aside>
 
-    <!-- Main column -->
+    <!-- main column -->
     <main id="home">
 
-      <!-- Smooth infinite reel (20 px gap below banner) -->
+      <!-- scrolling reel -->
       <section class="horizontal-reel" aria-label="Featured work">
         <div class="horizontal-track">
-          <!-- add EACH image ONCE -->
           <a href="photo1.jpg"><img src="photo1.jpg" alt=""></a>
           <a href="photo2.jpg"><img src="photo2.jpg" alt=""></a>
           <a href="nzhouse.jpg"><img src="nzhouse.jpg" alt=""></a>
@@ -49,38 +49,68 @@
         </div>
       </section>
 
-      <!-- Real content placeholder -->
+      <!-- ███ NATURAL MICRO SHORTS ─────────────── -->
+      <section id="natural">
+
+        <!-- banner image -->
+        <img class="section-banner" src="microban.png"
+             alt="Natural Micro Shorts">
+
+        <!-- video gallery (4-column grid) -->
+        <div class="video-gallery">
+
+          <!-- video 1 -->
+          <a class="video-thumb"
+             href="https://www.youtube.com/watch?v=TK-xTVmz0_g"
+             target="_blank" aria-label="A golden ferry ride to Arran island">
+            <img src="https://img.youtube.com/vi/TK-xTVmz0_g/hqdefault.jpg" alt="">
+            <span class="overlay">A GOLDEN FERRY RIDE TO ARRAN ISLAND</span>
+          </a>
+
+          <!-- video 2 -->
+          <a class="video-thumb"
+             href="https://www.youtube.com/watch?v=SlCPKbZmgfY"
+             target="_blank" aria-label="The enchanted forest up the Frenni">
+            <img src="https://img.youtube.com/vi/SlCPKbZmgfY/hqdefault.jpg" alt="">
+            <span class="overlay">THE ENCHANTED FOREST UP THE FRENNI</span>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- placeholder for rest of site -->
       <div class="content">
-        <h1>Hello!</h1>
-        <p>Add your sections here…</p>
+        <h2 id="editing">Creative Editing</h2>
+        <p>…</p>
       </div>
+
     </main>
   </div>
 
-  <!-- Smooth-loop script -->
+  <!-- smooth-loop reel script (unchanged) -->
   <script>
     window.addEventListener('load', () => {
-      const track   = document.querySelector('.horizontal-track');
-      const reel    = document.querySelector('.horizontal-reel');
-      const gap     = parseInt(getComputedStyle(track).gap) || 24;   // px
-      const speed   = 0.2;                                           // px per frame
-      let   offset  = 0;
+      const track  = document.querySelector('.horizontal-track');
+      const reel   = document.querySelector('.horizontal-reel');
+      const gap    = parseInt(getComputedStyle(track).gap) || 24;
+      const speed  = 0.5;           // ← change here for faster/slower reel
+      let offset   = 0;
 
-      /* duplicate minimal number of image sets (max 3) */
-      const originalHTML   = track.innerHTML;
-      const originalWidth  = track.scrollWidth;
-      while (track.scrollWidth < reel.offsetWidth + originalWidth && track.children.length < 30) {
-        track.insertAdjacentHTML('beforeend', originalHTML);
+      // duplicate minimal sets (never freezes)
+      const original = track.innerHTML;
+      const originalW = track.scrollWidth;
+      while (track.scrollWidth < reel.offsetWidth + originalW &&
+             track.children.length < 30) {
+        track.insertAdjacentHTML('beforeend', original);
       }
 
-      function step () {
+      function step() {
         offset -= speed;
-        const first      = track.children[0];
-        const firstWidth = first.getBoundingClientRect().width + gap;
-
-        if (-offset >= firstWidth) {
-          offset += firstWidth;      // snap track back by one image-width
-          track.appendChild(first);  // move first image to the end
+        const first = track.children[0];
+        const firstW = first.getBoundingClientRect().width + gap;
+        if (-offset >= firstW) {
+          offset += firstW;
+          track.appendChild(first);
         }
         track.style.transform = `translateX(${offset}px)`;
         requestAnimationFrame(step);
