@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css">
 
-  <!-- fonts (optional) -->
+  <!-- optional fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 
@@ -19,7 +19,6 @@
   <!-- Top banner -->
   <header class="top-banner"><img src="topbannermk1.jpg" alt="Site banner"></header>
 
-  <!-- Page row -->
   <div class="page">
 
     <!-- Sidebar -->
@@ -79,7 +78,7 @@
             <span class="overlay">THE ENCHANTED FOREST UP THE FRENNI</span>
           </a>
 
-          <!-- two empty slots so grid still shows 4 columns -->
+          <!-- two empty placeholders keep 4-col grid tidy -->
           <div class="video-slot"></div>
           <div class="video-slot"></div>
         </div>
@@ -94,22 +93,23 @@
     </main>
   </div>
 
-  <!-- JS: infinite reel + GLightbox -->
+  <!-- JS: GLightbox + smooth infinite reel -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
-    /* init light-box */
+    /* ── pop-up light-box ─────────────────────────── */
     GLightbox({ selector: '.glightbox' });
 
-    /* infinite reel (unchanged) */
+    /* ── infinite reel  (speed = 0.2) ─────────────── */
     window.addEventListener('load', () => {
       const track  = document.querySelector('.horizontal-track');
       const reel   = document.querySelector('.horizontal-reel');
       const gap    = parseInt(getComputedStyle(track).gap) || 24;
-      const speed  = 0.5;           // px per frame
+      const speed  = 0.2;          //  << slower scroll
       let offset   = 0;
 
-      const original = track.innerHTML;
-      const originalW = track.scrollWidth;
+      /* duplicate minimal sets */
+      const original   = track.innerHTML;
+      const originalW  = track.scrollWidth;
       while (track.scrollWidth < reel.offsetWidth + originalW &&
              track.children.length < 30) {
         track.insertAdjacentHTML('beforeend', original);
@@ -117,10 +117,11 @@
 
       function step() {
         offset -= speed;
-        const first = track.children[0];
-        const firstW = first.getBoundingClientRect().width + gap;
+        const first   = track.children[0];
+        const firstW  = first.getBoundingClientRect().width + gap;
+
         if (-offset >= firstW) {
-          offset += firstW;
+          offset += firstW;        // snap track
           track.appendChild(first);
         }
         track.style.transform = `translateX(${offset}px)`;
