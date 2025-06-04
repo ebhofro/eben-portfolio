@@ -1,14 +1,22 @@
-/* RESET + BASE */
-*,
-*::before,
-*::after{box-sizing:border-box;}
-html,body{margin:0;padding:0;width:100%;height:100%;overflow-x:hidden;
-          font-family:'Space Grotesk',sans-serif;}
+/* ========== RESET & GLOBAL ========== */
+*,*::before,*::after{box-sizing:border-box;}
+html,body{
+  margin:0;padding:0;width:100%;height:100%;
+  overflow-x:hidden;
+  font-family:'Space Grotesk',sans-serif;
+}
 
-/* ░░ SIDEBAR ░░
-   ─ Banner: fixed 200 px area, full image (no zoom)
-   ─ Link list: sticky and visible as soon as it scrolls to the top
-*/
+/* ========== TOP BANNER ========== */
+.top-banner img{display:block;width:100%;height:auto;}
+
+/* ========== PAGE LAYOUT ========== */
+.page{
+  display:flex;
+  min-height:100vh;
+}
+.page>*{min-width:0;}   /* prevent sidebar flex-stretch overflow */
+
+/* ========== SIDEBAR ========== */
 .sidebar{
   flex:0 0 300px;
   background:#114221;
@@ -17,26 +25,29 @@ html,body{margin:0;padding:0;width:100%;height:100%;overflow-x:hidden;
   overflow:hidden;
 }
 
-/* banner sits at the very top of sidebar */
+/* 1) banner sits at very top of sidebar */
 .sidebar-banner-wrapper{
-  height:200px;                 /* fixed height you want visible */
+  height:200px;                 /* exact height you want visible */
   overflow:hidden;
 }
 .sidebar-banner-img{
   width:100%;
   height:100%;
-  object-fit:cover;             /* show whole banner, no zoom crop */
+  object-fit:cover;             /* fill width, keep aspect, no zoom crop */
+  display:block;
 }
 
-/* sticky nav list */
+/* 2) sticky link list directly after banner */
 .sidebar-content{
   position:sticky;
   top:0;                        /* sticks to viewport top */
-  margin-top:200px;             /* start _below_ the banner */
+  padding-top:200px;            /* pushes list below the banner */
 }
-
-/* nav list styling (unchanged) */
-.sidebar ul{list-style:none;margin:0;padding:0 0 2rem;}
+.sidebar ul{
+  list-style:none;
+  margin:0;
+  padding:0 0 2rem;
+}
 .sidebar li+li{margin-top:.75rem;}
 .sidebar a{
   display:block;
@@ -49,41 +60,115 @@ html,body{margin:0;padding:0;width:100%;height:100%;overflow-x:hidden;
   text-decoration:none;
   transition:background .3s,color .3s;
 }
-.sidebar a:hover{background:#1e4228;color:#ffcb47;}
+.sidebar a:hover{
+  background:#1e4228;
+  color:#ffcb47;
+}
 
+/* ========== MAIN COLUMN ========== */
+main{
+  flex:1;
+  overflow-x:hidden;
+}
 
-/* MAIN */
-main{flex:1;overflow-x:hidden;}
-
-/* HORIZONTAL REEL */
-.horizontal-reel{margin:20px 0;height:140px;background:#fdfdf9;
-                 box-shadow:0 2px 6px rgb(0 0 0/.1);overflow:hidden;}
-.horizontal-track{display:flex;align-items:center;gap:24px;will-change:transform;}
-.horizontal-track img{height:100px;width:auto;border-radius:6px;
-                      box-shadow:0 2px 6px rgb(0 0 0/.1);transition:transform .3s;}
+/* ========== HORIZONTAL REEL ========== */
+.horizontal-reel{
+  margin:20px 0;
+  height:140px;
+  background:#fdfdf9;
+  overflow:hidden;
+  box-shadow:0 2px 6px rgb(0 0 0/.1);
+}
+.horizontal-track{
+  display:flex;
+  align-items:center;
+  gap:24px;                    /* same gap used in JS */
+  will-change:transform;
+}
+.horizontal-track img{
+  height:100px;
+  width:auto;
+  border-radius:6px;
+  box-shadow:0 2px 6px rgb(0 0 0/.1);
+  transition:transform .3s;
+}
 .horizontal-track img:hover{transform:scale(1.05);}
 
-/* SECTION BANNERS & TITLES */
-.section-banner{display:block;margin:50px auto 30px;max-width:600px;height:auto;}
-.section-title{margin:50px auto 30px;max-width:600px;text-align:center;
-               font-family:'Geo',sans-serif;font-size:1.75rem;
-               text-transform:uppercase;color:#333;}
+/* ========== SECTION TITLES / BANNERS ========== */
+.section-banner{
+  display:block;
+  margin:50px auto 30px;
+  max-width:600px;
+  height:auto;
+}
+.section-title{
+  margin:50px auto 30px;
+  max-width:600px;
+  text-align:center;
+  font-family:'Geo',sans-serif;
+  font-size:1.75rem;
+  text-transform:uppercase;
+  color:#333;
+}
 
-/* VIDEO GRID */
-.video-gallery{padding:0 32px;display:grid;grid-template-columns:repeat(4,1fr);
-               gap:32px;margin-bottom:40px;}
-.video-thumb{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:16/9;}
-.video-thumb img{width:100%;height:100%;object-fit:cover;border-radius:10px;transition:opacity .3s;}
-.video-thumb .overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-                      background:rgba(0,0,0,.55);color:#fff;font-size:.75rem;text-align:center;
-                      padding:1rem;opacity:0;transition:opacity .3s;}
-.video-thumb:hover img{opacity:.25;} .video-thumb:hover .overlay{opacity:1;}
+/* ========== VIDEO GRID (4-column) ========== */
+.video-gallery{
+  padding:0 32px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:32px;
+  margin-bottom:40px;
+}
+.video-thumb{
+  position:relative;
+  border-radius:10px;
+  overflow:hidden;
+  aspect-ratio:16/9;
+}
+.video-thumb img{
+  width:100%;height:100%;
+  object-fit:cover;
+  border-radius:10px;
+  transition:opacity .3s;
+}
+.video-thumb .overlay{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(0,0,0,.55);
+  color:#fff;font-size:.75rem;text-align:center;
+  padding:1rem;
+  opacity:0;transition:opacity .3s;
+}
+.video-thumb:hover img{opacity:.25;}
+.video-thumb:hover .overlay{opacity:1;}
 
-/* PHOTO GRID */
-.photo-gallery{padding:0 32px;display:grid;grid-template-columns:repeat(7,1fr);
-               gap:24px;margin-bottom:60px;}
-.photo-thumb{display:block;aspect-ratio:1/1;overflow:hidden;}
-.photo-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
-@media (max-width:1200px){.photo-gallery{grid-template-columns:repeat(5,1fr);} }
-@media (max-width:900px) {.photo-gallery{grid-template-columns:repeat(3,1fr);} }
-@media (max-width:600px) {.photo-gallery{grid-template-columns:repeat(2,1fr);} }
+/* ========== PHOTO GRID (7-column) ========== */
+.photo-gallery{
+  padding:0 32px;
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:24px;
+  margin-bottom:60px;
+}
+.photo-thumb{
+  display:block;
+  aspect-ratio:1/1;
+  overflow:hidden;
+}
+.photo-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* responsive columns for photo grid */
+@media (max-width:1200px){
+  .photo-gallery{grid-template-columns:repeat(5,1fr);}
+}
+@media (max-width:900px){
+  .photo-gallery{grid-template-columns:repeat(3,1fr);}
+}
+@media (max-width:600px){
+  .photo-gallery{grid-template-columns:repeat(2,1fr);}
+}
