@@ -19,13 +19,19 @@ html,body{
 .page{display:flex;min-height:100vh;}
 .page>*{min-width:0;}
 
-/* ========== SIDEBAR ========== */
-.sidebar{
-  flex:0 0 300px;
-  background:#114221 url("sidebarmk1.jpg") top/cover no-repeat;
-  color:#fdfdf9;
-  padding-top:160px;
+/* ========== SIDEBAR (make it sticky) ========== */
+.sidebar {
+  position: sticky;
+  top: 0;                   /* stick to viewport top */
+  align-self: flex-start;   /* prevent stretching in flex */
+  flex: 0 0 300px;
+  height: 100vh;            /* full viewport height */
+  overflow-y: auto;         /* scroll internally if needed */
+  background: #114221 url("sidebarmk1.jpg") top/cover no-repeat;
+  color: #fdfdf9;
+  padding-top: 160px;
 }
+
 .sidebar ul{list-style:none;margin:0;padding:0 0 2rem;}
 .sidebar li+li{margin-top:.75rem;}
 .sidebar a{display:block;padding:.75rem 1rem;text-align:center;
