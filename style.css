@@ -43,29 +43,33 @@ main{flex:1;overflow-x:hidden;}
 }
 
 .horizontal-reel {
-  margin: 20px 0;
-  height: 140px;
+  /* spacing & visual style */
+  margin: 20px 0 -20px;         /* pull bottom up by the scrollbar height */
   background: #fdfdf9;
   box-shadow: 0 2px 6px rgb(0 0 0 / .1);
-  padding-top: 20px;
 
-  /* allow hover-scale to overflow vertically, still scrollable horizontally */
-  overflow-x: auto;
-  overflow-y: visible;
+  /* sizing and room for hover */
+  min-height: 140px;            /* ensure it’s at least your old 140px */
+  padding: 20px 0 20px;         /* top & bottom padding for hover room */
 
-  /* hide scrollbar in Firefox */
+  /* scrolling */
+  overflow-x: auto;             /* still scroll horizontally */
+  overflow-y: visible;          /* allow hover pop-out vertically */
+
+  /* hide native scrollbar in FF & IE */
   scrollbar-width: none;
-  /* hide scrollbar in IE10+ */
   -ms-overflow-style: none;
 }
 
+/* hide WebKit scrollbar (Chrome, Safari, Edge) */
 .horizontal-reel::-webkit-scrollbar {
-  display: none; /* hide scrollbar in Chrome, Safari, Opera */
+  width: 0;
+  height: 0;
 }
 
 .horizontal-track {
   display: flex;
-  align-items: flex-start; /* align imgs to top of padded area */
+  align-items: flex-start;      /* shove imgs down into that top padding */
   gap: var(--reel-gap);
   will-change: transform;
 }
@@ -76,7 +80,7 @@ main{flex:1;overflow-x:hidden;}
   border-radius: 6px;
   box-shadow: 0 2px 6px rgb(0 0 0 / .1);
   transition: transform .3s;
-  transform-origin: center top; /* scale downward */
+  transform-origin: center top;  /* grow downward */
 }
 
 .horizontal-track img:hover {
