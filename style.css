@@ -143,3 +143,26 @@ main{flex:1;overflow-x:hidden;}
 @media (max-width:600px){
   .photo-gallery{grid-template-columns:repeat(2,1fr);}
 }
+
+/* ========== DIGITAL ART GRID (5 across) ========== */
+#digital .photo-gallery {
+  /* override the default 7-col layout */
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  #digital .photo-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  #digital .photo-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  #digital .photo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
