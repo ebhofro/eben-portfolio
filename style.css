@@ -37,30 +37,45 @@ html,body{
 main{flex:1;overflow-x:hidden;}
 .content{padding:2rem;}
 
-/* ========== HORIZONTAL REEL ========== */
-:root{--reel-gap:24px;}
+/* ========== HORIZONTAL REEL (updated) ========== */
+:root { --reel-gap: 24px; }
 
-.horizontal-reel{
-  margin:20px 0;
-  height:140px;
-  background:#fdfdf9;
-  box-shadow:0 2px 6px rgb(0 0 0 / .1);
-  overflow:hidden;
+.horizontal-reel {
+  margin: 20px 0;
+  height: 140px;              /* keep your original height */
+  background: #fdfdf9;
+  box-shadow: 0 2px 6px rgb(0 0 0 / .1);
+
+  /* allow the hover growth to show beyond the container */
+  overflow-x: auto;
+  overflow-y: visible;
+
+  /* push the images down so there's room above when they scale */
+  padding-top: 20px;
 }
-.horizontal-track{
-  display:flex;
-  align-items:center;
-  gap:var(--reel-gap);
-  will-change:transform;
+
+.horizontal-track {
+  display: flex;
+  align-items: flex-start;    /* align all imgs at top of padded area */
+  gap: var(--reel-gap);
+  will-change: transform;
 }
-.horizontal-track img{
-  height:100px;
-  width:auto;
-  border-radius:6px;
-  box-shadow:0 2px 6px rgb(0 0 0 / .1);
-  transition:transform .3s;
+
+.horizontal-track img {
+  height: 100px;
+  width: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / .1);
+  transition: transform .3s;
+
+  /* grow downward from top edge */
+  transform-origin: center top;
 }
-.horizontal-track img:hover{transform:scale(1.05);}
+
+.horizontal-track img:hover {
+  transform: scale(1.05);
+}
+
 
 /* ========== SECTION BANNERS / TITLES ========== */
 .section-banner{display:block;margin:50px auto 30px;max-width:600px;height:auto;}
