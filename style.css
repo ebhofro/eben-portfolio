@@ -19,17 +19,16 @@ html,body{
 .page{display:flex;min-height:100vh;}
 .page>*{min-width:0;}
 
-/* ========== SIDEBAR (simple, full-image) ========== */
+/* ========== SIDEBAR (full-height image, original look) ========== */
 .sidebar {
-  flex: 0 0 300px;                       /* fixed 300-px column */
-  height: 100vh;                         /* full viewport height */
-  overflow-y: auto;                      /* sidebar can scroll if needed */
+  flex: 0 0 300px;                         /* fixed 300-px column */
+  height: 100vh;                           /* fill the viewport */
+  overflow-y: auto;                        /* own scrollbar if links overflow */
   background: #114221 url("sidebarmk1.jpg") top/cover no-repeat;
   color: #fdfdf9;
-  padding-top: 160px;                    /* pushes nav down below hero area */
+  padding-top: 160px;                      /* pushes first link down under banner area */
 }
 
-/* original link styling */
 .sidebar nav ul {
   list-style: none;
   margin: 0;
@@ -54,6 +53,7 @@ html,body{
   background: #1e4228;
   color: #ffcb47;
 }
+
 
 
 
