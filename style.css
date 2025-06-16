@@ -19,19 +19,51 @@ html,body{
 .page{display:flex;min-height:100vh;}
 .page>*{min-width:0;}
 
-/* ========== SIDEBAR ========== */
+/* ========== SIDEBAR (full image + sticky nav) ========== */
 .sidebar{
-  flex:0 0 300px;
-  background:#114221 url("sidebarmk1.jpg") top/cover no-repeat;
-  color:#fdfdf9;
-  padding-top:160px;
+  flex: 0 0 300px;                                /* fixed 300-px column   */
+  background: #114221 url("sidebarmk1.jpg") top/cover no-repeat;
+  color: #fdfdf9;
+  /* NO height:100vh here so the image can extend as far as needed */
 }
-.sidebar ul{list-style:none;margin:0;padding:0 0 2rem;}
-.sidebar li+li{margin-top:.75rem;}
-.sidebar a{display:block;padding:.75rem 1rem;text-align:center;
-  font-family:'Geo',sans-serif;text-transform:uppercase;font-weight:bold;
-  color:#fdfdf9;text-decoration:none;transition:background .3s,color .3s;}
-.sidebar a:hover{background:#1e4228;color:#ffcb47;}
+
+/* 160-px hero spacer that scrolls away */
+.sidebar-banner{
+  height: 160px;
+}
+
+/* sticky link list */
+.sidebar-nav{
+  position: sticky;
+  top: 0;                                         /* pins it to viewport top */
+  background: #114221;                            /* solid bg for readability */
+  z-index: 1;
+}
+
+.sidebar-nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0 0 2rem;
+}
+
+.sidebar-nav li + li{ margin-top: .75rem; }
+
+.sidebar-nav a{
+  display: block;
+  padding: .75rem 1rem;
+  text-align: center;
+  font-family: 'Geo', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fdfdf9;
+  text-decoration: none;
+  transition: background .3s, color .3s;
+}
+
+.sidebar-nav a:hover{
+  background: #1e4228;
+  color: #ffcb47;
+}
 
 
 
