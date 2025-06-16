@@ -21,30 +21,32 @@ html,body{
 
 /* ========== SIDEBAR BASE ========= */
 .sidebar {
-  flex: 0 0 300px;
-  height: 100vh;           /* full viewport height */
-  overflow-y: auto;        /* allow banner + nav to scroll internally */
-  background: #114221;     /* fallback color */
+  /* fixed 300px width + full-height scroll container */
+  width: 300px;
+  flex: none;
+  height: 100vh;
+  overflow-y: auto;
+  background: #114221;     /* fallback color behind banner/nav */
 }
 
 /* ======== SCROLLING BANNER ======== */
 .sidebar-banner {
-  height: 160px;           /* same as your old padding-top */
+  height: 160px;           /* banner height */
   background: url("sidebarmk1.jpg") top/cover no-repeat;
 }
 
 /* ======== STICKY NAV ========= */
 .sidebar-nav {
   position: sticky;
-  top: 0;                  /* pins it at viewport top */
-  background: #114221;     /* solid bg behind links */
-  z-index: 1;              /* stay above banner as it scrolls */
+  top: 0;                  /* pins the nav at the top */
+  background: #114221;     /* solid bg so links remain legible */
+  z-index: 1;
 }
 
 .sidebar-nav ul {
   list-style: none;
   margin: 0;
-  padding: 0 0 2rem;
+  padding: 1rem 0 2rem;    /* adjust spacing as needed */
 }
 
 .sidebar-nav li + li {
