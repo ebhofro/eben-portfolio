@@ -36,7 +36,6 @@ html,body{
 .sidebar-nav{
   position: sticky;
   top: 0;                                         /* pins it to viewport top */
-  background: #114221;                            /* solid bg for readability */
   z-index: 1;
 }
 
