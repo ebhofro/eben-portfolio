@@ -19,33 +19,26 @@ html,body{
 .page{display:flex;min-height:100vh;}
 .page>*{min-width:0;}
 
-/* ========== SIDEBAR (full-height bg + sticky nav) ========== */
+/* ========== SIDEBAR (simple, full-image) ========== */
 .sidebar {
-  flex: 0 0 300px;  
-  width: 300px;              
-  height: 100vh;             
-  overflow-y: auto;          
+  flex: 0 0 300px;                       /* fixed 300-px column */
+  height: 100vh;                         /* full viewport height */
+  overflow-y: auto;                      /* sidebar can scroll if needed */
   background: #114221 url("sidebarmk1.jpg") top/cover no-repeat;
+  color: #fdfdf9;
+  padding-top: 160px;                    /* pushes nav down below hero area */
 }
 
-.sidebar-nav {
-  position: sticky;
-  top: 0;                        
-  background: rgba(17, 66, 33, 0.85); /* semi-opaque so text stays legible */
-  z-index: 1;
-}
-
-.sidebar-nav ul {
+/* original link styling */
+.sidebar nav ul {
   list-style: none;
   margin: 0;
-  padding: 2rem 0;     /* space above & below links */
+  padding: 0 0 2rem;
 }
 
-.sidebar-nav li + li {
-  margin-top: .75rem;
-}
+.sidebar nav li + li { margin-top: .75rem; }
 
-.sidebar-nav a {
+.sidebar nav a {
   display: block;
   padding: .75rem 1rem;
   text-align: center;
@@ -57,10 +50,11 @@ html,body{
   transition: background .3s, color .3s;
 }
 
-.sidebar-nav a:hover {
+.sidebar nav a:hover {
   background: #1e4228;
   color: #ffcb47;
 }
+
 
 
 /* ========== MAIN COLUMN ========== */
