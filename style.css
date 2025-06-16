@@ -20,14 +20,17 @@ html,body{
 .page>*{min-width:0;}
 
 /* ========== SIDEBAR (full-height image, original look) ========== */
-.sidebar {
-  flex: 0 0 300px;                         /* fixed 300-px column */
-  height: 100vh;                           /* fill the viewport */
-  overflow-y: auto;                        /* own scrollbar if links overflow */
-  background: #114221 url("sidebarmk1.jpg") top/cover no-repeat;
-  color: #fdfdf9;
-  padding-top: 160px;                      /* pushes first link down under banner area */
+/* ========== SIDEBAR (show whole background image) ========== */
+.sidebar{
+  flex: 0 0 300px;
+  height: 100vh;                /* sidebar equals viewport height */
+  overflow-y: auto;             /* scroll links if they exceed 100 vh */
+  background: #114221 url("sidebarmk1.jpg") top center / contain no-repeat;
+  /*            ^ fallback colour         ^^^^^^^^^^  show full photo */
+  color:#fdfdf9;
+  padding-top:160px;            /* keeps first link below “hero” part */
 }
+
 
 .sidebar nav ul {
   list-style: none;
