@@ -254,5 +254,18 @@ main{flex:1;overflow-x:hidden;}
   .sidebar-nav {
     position: static;
   }
+
+  /* Horizontal reel GPU boost (mobile) */
+  .horizontal-reel {
+    will-change: transform;
+    transform: translateZ(0);
+  }
 }
+
+/* OPTIONAL: Also apply GPU boost globally outside media query */
+.horizontal-reel {
+  transform: translateZ(0);
+}
+
+
 
