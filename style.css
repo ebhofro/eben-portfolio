@@ -1,101 +1,98 @@
-e/* ========== RESET & GLOBAL ========== */
 *,
 *::before,
-*::after{box-sizing:border-box;}
-
-html,body{
-  margin:0;
-  padding:0;
-  width:100%;
-  height:100%;
-  overflow-x:hidden;
-  font-family:'Space Grotesk',sans-serif;
+*::after {
+  box-sizing: border-box;
 }
 
-/* ========== TOP BANNER ========== */
-.top-banner img{display:block;width:100%;height:auto;}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Space Grotesk', sans-serif;
+}
 
-/* ========== PAGE LAYOUT ========== */
-.page{display:flex;min-height:100vh;}
-.page>*{min-width:0;}
+.top-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
-/* ========== SIDEBAR (full image + sticky nav) ========== */
-.sidebar{
-  flex: 0 0 300px;                                /* fixed 300-px column   */
+.page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.page > * {
+  min-width: 0;
+}
+
+.sidebar {
+  flex: 0 0 300px;
   background: #114221 url("sidebarmk1.jpg") top/cover no-repeat;
   color: #fdfdf9;
-  /* NO height:100vh here so the image can extend as far as needed */
 }
 
-/* 160-px hero spacer that scrolls away */
-.sidebar-banner{
+.sidebar-banner {
   height: 160px;
 }
 
-/* sticky link list */
-.sidebar-nav{
+.sidebar-nav {
   position: sticky;
-  top: 0;                                         /* pins it to viewport top */
+  top: 0;
   z-index: 1;
 }
 
-.sidebar-nav ul{
+.sidebar-nav ul {
   list-style: none;
   margin: 0;
   padding: 0 0 2rem;
 }
 
-.sidebar-nav li + li{ margin-top: .75rem; }
+.sidebar-nav li + li {
+  margin-top: 0.75rem;
+}
 
-.sidebar-nav a{
+.sidebar-nav a {
   display: block;
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
   text-align: center;
   font-family: 'Geo', sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   color: #fdfdf9;
   text-decoration: none;
-  transition: background .3s, color .3s;
+  transition: background 0.3s, color 0.3s;
 }
 
-.sidebar-nav a:hover{
+.sidebar-nav a:hover {
   background: #1e4228;
   color: #ffcb47;
 }
 
+main {
+  flex: 1;
+  overflow-x: hidden;
+}
 
-
-
-/* ========== MAIN COLUMN ========== */
-main{flex:1;overflow-x:hidden;}
-.content{padding:2rem;}
-
-/* ========== HORIZONTAL REEL ========== */
 :root {
   --reel-gap: 24px;
 }
 
 .horizontal-reel {
-  /* spacing & visual style */
-  margin: 20px 0 -20px;         /* pull bottom up by the scrollbar height */
+  margin: 20px 0 -20px;
   background: #fdfdf9;
-  box-shadow: 0 2px 6px rgb(0 0 0 / .1);
-
-  /* sizing and room for hover */
-  min-height: 140px;            /* ensure it’s at least your old 140px */
-  padding: 20px 0 20px;         /* top & bottom padding for hover room */
-
-  /* scrolling */
-  overflow-x: auto;             /* still scroll horizontally */
-  overflow-y: visible;          /* allow hover pop-out vertically */
-
-  /* hide native scrollbar in FF & IE */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  min-height: 140px;
+  padding: 20px 0;
+  overflow-x: auto;
+  overflow-y: visible;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  transform: translateZ(0);
 }
 
-/* hide WebKit scrollbar (Chrome, Safari, Edge) */
 .horizontal-reel::-webkit-scrollbar {
   width: 0;
   height: 0;
@@ -103,7 +100,7 @@ main{flex:1;overflow-x:hidden;}
 
 .horizontal-track {
   display: flex;
-  align-items: flex-start;      /* shove imgs down into that top padding */
+  align-items: flex-start;
   gap: var(--reel-gap);
   will-change: transform;
 }
@@ -112,160 +109,76 @@ main{flex:1;overflow-x:hidden;}
   height: 100px;
   width: auto;
   border-radius: 6px;
-  box-shadow: 0 2px 6px rgb(0 0 0 / .1);
-  transition: transform .3s;
-  transform-origin: center top;  /* grow downward */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  transform-origin: center top;
 }
 
 .horizontal-track img:hover {
   transform: scale(1.05);
 }
 
-
-
-/* ========== SECTION BANNERS / TITLES ========== */
-.section-banner{display:block;margin:50px auto 30px;max-width:600px;height:auto;}
-.section-title{
-  margin:50px auto 30px;
-  max-width:600px;
-  text-align:center;
-  font-family:'Geo',sans-serif;
-  font-size:1.75rem;
-  letter-spacing:.05em;
-  text-transform:uppercase;
-  color:#333;
+.section-banner {
+  display: block;
+  margin: 50px auto 30px;
+  max-width: 600px;
+  height: auto;
 }
 
-/* ========== 4-COLUMN VIDEO GRID ========== */
-.video-gallery{
-  padding:0 32px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:32px;
-  margin-bottom:40px;
-}
-.video-thumb{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:16/9;}
-.video-thumb img{width:100%;height:100%;object-fit:cover;border-radius:10px;transition:opacity .3s;}
-.video-thumb .overlay{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  background:rgb(0 0 0 / .55);color:#fff;font-size:.75rem;text-align:center;
-  padding:1rem;opacity:0;transition:opacity .3s;border-radius:10px;
-}
-.video-thumb:hover img{opacity:.25;}
-.video-thumb:hover .overlay{opacity:1;}
-
-/* ========== PHOTOGRAPHY GRID ========== */
-.photo-gallery{
-  padding:0 32px;
-  display:grid;
-  grid-template-columns:repeat(7,1fr);
-  gap:24px;
-  margin-bottom:60px;
-}
-.photo-thumb{display:block;aspect-ratio:1/1;overflow:hidden;}
-.photo-thumb img{
-  width:100%;height:100%;object-fit:cover;display:block;
+.section-title {
+  margin: 50px auto 30px;
+  max-width: 600px;
+  text-align: center;
+  font-family: 'Geo', sans-serif;
+  font-size: 1.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #333;
 }
 
-/* responsive fallback: fewer columns on smaller screens */
-@media (max-width:1200px){
-  .photo-gallery{grid-template-columns:repeat(5,1fr);}
-}
-@media (max-width:900px){
-  .photo-gallery{grid-template-columns:repeat(3,1fr);}
-}
-@media (max-width:600px){
-  .photo-gallery{grid-template-columns:repeat(2,1fr);}
+.video-gallery {
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-bottom: 40px;
 }
 
-/* ========== DIGITAL ART GRID (5 across) ========== */
-#digital .photo-gallery {
-  /* override the default 7-col layout */
-  grid-template-columns: repeat(5, 1fr);
-  gap: 24px;
+.video-thumb {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
 }
 
-@media (max-width: 1200px) {
-  #digital .photo-gallery {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media (max-width: 900px) {
-  #digital .photo-gallery {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media (max-width: 600px) {
-  #digital .photo-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: opacity 0.3s;
 }
 
-@media (max-width: 768px) {
-  /* Mobile banner override */
-  .top-banner img {
-    content: url('mobilebanner.jpg');
-    height: auto;
-    width: 100%;
-  }
-
-  /* Sidebar slither mode */
-  .sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 30px;
-    z-index: 1000;
-    transition: width 0.3s ease;
-    overflow: hidden;
-  }
-
-  .sidebar.expanded {
-    width: 250px; /* change as needed */
-  }
-
-  /* Page shift when sidebar opens */
-  .page {
-    transition: margin-left 0.3s ease;
-    margin-left: 30px;
-  }
-
-  .page.shifted {
-    margin-left: 250px;
-  }
-
-  /* Sidebar toggle button */
-  .sidebar-toggle {
-    position: fixed;
-    top: 1rem;
-    left: 35px;
-    z-index: 1001;
-    background: #e57822;
-    color: white;
-    padding: 0.5rem 0.75rem;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 0 6px 6px 0;
-    cursor: pointer;
-  }
-
-  /* Optional: hide sticky nav if it glitches */
-  .sidebar-nav {
-    position: static;
-  }
-
-  /* Horizontal reel GPU boost (mobile) */
-  .horizontal-reel {
-    will-change: transform;
-    transform: translateZ(0);
-  }
+.video-thumb .overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 10px;
 }
 
-/* OPTIONAL: Also apply GPU boost globally outside media query */
-.horizontal-reel {
-  transform: translateZ(0);
+.video-thumb:hover img {
+  opacity: 0.25;
 }
 
-
-
+.video-thumb:hover .overlay {
+  opacity: 1;
+}
