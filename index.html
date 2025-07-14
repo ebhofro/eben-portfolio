@@ -137,15 +137,19 @@
   lightbox.on('open', () => savedScroll = window.scrollY || window.pageYOffset);
   lightbox.on('close', () => window.scrollTo({ top: savedScroll, behavior: 'instant' }));
 
-  // 2. Smooth reel (speed 0.2 px / frame)
+  // 2. Fixed Smooth Reel (cross-device + mobile-safe)
   window.addEventListener('load', () => {
     const track = document.querySelector('.horizontal-track');
-    const reel  = document.querySelector('.horizontal-reel');
-    const gap   = parseInt(getComputedStyle(track).gap) || 24;
+    const reel = document.querySelector('.horizontal-reel');
+    if (!track || !reel) return;
+
+    const gap = parseInt(getComputedStyle(track).gap) || 24;
     const speed = 0.2;
-    let offset  = 0;
+    let offset = 0;
     const original = track.innerHTML;
-    while (track.scrollWidth < reel.offsetWidth + track.scrollWidth && track.children.length < 30) {
+
+    // Clone enough items to ensure overflow and seamless scroll
+    while (track.scrollWidth < reel.clientWidth * 2 && track.children.length < 50) {
       track.insertAdjacentHTML('beforeend', original);
     }
 
