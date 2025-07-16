@@ -178,6 +178,8 @@ main{flex:1;overflow-x:hidden;}
   .photo-gallery{grid-template-columns:repeat(2,1fr);}
 }
 
+
+
 /* ========== DIGITAL ART GRID (5 across) ========== */
 #digital .photo-gallery {
   /* override the default 7-col layout */
@@ -200,6 +202,13 @@ main{flex:1;overflow-x:hidden;}
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media (min-width: 769px) {
+  .sidebar-toggle {
+    display: none;
+  }
+}
+
 
 /* ========== MOBILE SIDEBAR TOGGLE (safe zone) ========== */
 
