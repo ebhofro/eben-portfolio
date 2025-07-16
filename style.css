@@ -1,98 +1,101 @@
+/* ========== RESET & GLOBAL ========== */
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
+*::after{box-sizing:border-box;}
+
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  overflow-x:hidden;
+  font-family:'Space Grotesk',sans-serif;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  font-family: 'Space Grotesk', sans-serif;
-}
+/* ========== TOP BANNER ========== */
+.top-banner img{display:block;width:100%;height:auto;}
 
-.top-banner img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
+/* ========== PAGE LAYOUT ========== */
+.page{display:flex;min-height:100vh;}
+.page>*{min-width:0;}
 
-.page {
-  display: flex;
-  min-height: 100vh;
-}
-
-.page > * {
-  min-width: 0;
-}
-
-.sidebar {
-  flex: 0 0 300px;
+/* ========== SIDEBAR (full image + sticky nav) ========== */
+.sidebar{
+  flex: 0 0 300px;                                /* fixed 300-px column   */
   background: #114221 url("sidebarmk1.jpg") top/cover no-repeat;
   color: #fdfdf9;
+  /* NO height:100vh here so the image can extend as far as needed */
 }
 
-.sidebar-banner {
+/* 160-px hero spacer that scrolls away */
+.sidebar-banner{
   height: 160px;
 }
 
-.sidebar-nav {
+/* sticky link list */
+.sidebar-nav{
   position: sticky;
-  top: 0;
+  top: 0;                                         /* pins it to viewport top */
   z-index: 1;
 }
 
-.sidebar-nav ul {
+.sidebar-nav ul{
   list-style: none;
   margin: 0;
   padding: 0 0 2rem;
 }
 
-.sidebar-nav li + li {
-  margin-top: 0.75rem;
-}
+.sidebar-nav li + li{ margin-top: .75rem; }
 
-.sidebar-nav a {
+.sidebar-nav a{
   display: block;
-  padding: 0.75rem 1rem;
+  padding: .75rem 1rem;
   text-align: center;
   font-family: 'Geo', sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   color: #fdfdf9;
   text-decoration: none;
-  transition: background 0.3s, color 0.3s;
+  transition: background .3s, color .3s;
 }
 
-.sidebar-nav a:hover {
+.sidebar-nav a:hover{
   background: #1e4228;
   color: #ffcb47;
 }
 
-main {
-  flex: 1;
-  overflow-x: hidden;
-}
 
+
+
+/* ========== MAIN COLUMN ========== */
+main{flex:1;overflow-x:hidden;}
+.content{padding:2rem;}
+
+/* ========== HORIZONTAL REEL ========== */
 :root {
   --reel-gap: 24px;
 }
 
 .horizontal-reel {
-  margin: 20px 0 -20px;
+  /* spacing & visual style */
+  margin: 20px 0 -20px;         /* pull bottom up by the scrollbar height */
   background: #fdfdf9;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  min-height: 140px;
-  padding: 20px 0;
-  overflow-x: auto;
-  overflow-y: visible;
+  box-shadow: 0 2px 6px rgb(0 0 0 / .1);
+
+  /* sizing and room for hover */
+  min-height: 140px;            /* ensure it’s at least your old 140px */
+  padding: 20px 0 20px;         /* top & bottom padding for hover room */
+
+  /* scrolling */
+  overflow-x: auto;             /* still scroll horizontally */
+  overflow-y: visible;          /* allow hover pop-out vertically */
+
+  /* hide native scrollbar in FF & IE */
   scrollbar-width: none;
   -ms-overflow-style: none;
-  transform: translateZ(0);
 }
 
+/* hide WebKit scrollbar (Chrome, Safari, Edge) */
 .horizontal-reel::-webkit-scrollbar {
   width: 0;
   height: 0;
@@ -100,7 +103,7 @@ main {
 
 .horizontal-track {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-start;      /* shove imgs down into that top padding */
   gap: var(--reel-gap);
   will-change: transform;
 }
@@ -109,24 +112,91 @@ main {
   height: 100px;
   width: auto;
   border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-  transform-origin: center top;
+  box-shadow: 0 2px 6px rgb(0 0 0 / .1);
+  transition: transform .3s;
+  transform-origin: center top;  /* grow downward */
 }
 
 .horizontal-track img:hover {
   transform: scale(1.05);
 }
 
-.section-banner {
-  display: block;
-  margin: 50px auto 30px;
-  max-width: 600px;
-  height: auto;
+
+
+/* ========== SECTION BANNERS / TITLES ========== */
+.section-banner{display:block;margin:50px auto 30px;max-width:600px;height:auto;}
+.section-title{
+  margin:50px auto 30px;
+  max-width:600px;
+  text-align:center;
+  font-family:'Geo',sans-serif;
+  font-size:1.75rem;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:#333;
 }
 
-.section-title {
-  margin: 50px auto 30px;
-  max-width: 600px;
-  text-align: center;
-  font-
+/* ========== 4-COLUMN VIDEO GRID ========== */
+.video-gallery{
+  padding:0 32px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:32px;
+  margin-bottom:40px;
+}
+.video-thumb{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:16/9;}
+.video-thumb img{width:100%;height:100%;object-fit:cover;border-radius:10px;transition:opacity .3s;}
+.video-thumb .overlay{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgb(0 0 0 / .55);color:#fff;font-size:.75rem;text-align:center;
+  padding:1rem;opacity:0;transition:opacity .3s;border-radius:10px;
+}
+.video-thumb:hover img{opacity:.25;}
+.video-thumb:hover .overlay{opacity:1;}
+
+/* ========== PHOTOGRAPHY GRID ========== */
+.photo-gallery{
+  padding:0 32px;
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:24px;
+  margin-bottom:60px;
+}
+.photo-thumb{display:block;aspect-ratio:1/1;overflow:hidden;}
+.photo-thumb img{
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+
+/* responsive fallback: fewer columns on smaller screens */
+@media (max-width:1200px){
+  .photo-gallery{grid-template-columns:repeat(5,1fr);}
+}
+@media (max-width:900px){
+  .photo-gallery{grid-template-columns:repeat(3,1fr);}
+}
+@media (max-width:600px){
+  .photo-gallery{grid-template-columns:repeat(2,1fr);}
+}
+
+/* ========== DIGITAL ART GRID (5 across) ========== */
+#digital .photo-gallery {
+  /* override the default 7-col layout */
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  #digital .photo-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  #digital .photo-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  #digital .photo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
