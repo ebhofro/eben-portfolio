@@ -15,16 +15,13 @@
 </head>
 
 <body>
-
   <button id="sidebarToggle" class="sidebar-toggle">☰</button>
-
 
   <!-- Top banner -->
   <header class="top-banner">
     <img src="topbannermk1.jpg" alt="Site banner" />
   </header>
 
-  <!-- Page wrapper -->
   <div class="page">
 
     <!-- Sidebar -->
@@ -45,8 +42,6 @@
 
     <!-- Main content -->
     <main id="home">
-
-      <!-- Horizontal reel -->
       <section class="horizontal-reel" aria-label="Featured images">
         <div class="horizontal-track">
           <a class="glightbox" data-gallery="reel" href="nzhouse.jpg"><img src="nzhouse.jpg" alt="NZ House" /></a>
@@ -57,7 +52,6 @@
         </div>
       </section>
 
-      <!-- Natural Shorts -->
       <section id="natural">
         <img class="section-banner" src="microban.png" alt="Natural Micro Shorts" />
         <div class="video-gallery">
@@ -72,7 +66,6 @@
         </div>
       </section>
 
-      <!-- Contact -->
       <section id="contact">
         <h2 class="section-title">Contact</h2>
         <!-- Your contact info -->
@@ -80,23 +73,21 @@
     </main>
   </div>
 
-  <!-- GLightbox + Reel Script -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
-    // GLightbox scroll memory
     const lightbox = GLightbox({ selector: '.glightbox' });
     let savedScroll = 0;
     lightbox.on('open', () => savedScroll = window.scrollY || window.pageYOffset);
     lightbox.on('close', () => window.scrollTo({ top: savedScroll, behavior: 'instant' }));
 
-    // Horizontal reel
     window.addEventListener('load', () => {
       const track = document.querySelector('.horizontal-track');
-      const reel  = document.querySelector('.horizontal-reel');
+      const reel = document.querySelector('.horizontal-reel');
       if (!track || !reel) return;
-      const gap   = parseInt(getComputedStyle(track).gap) || 24;
+      const gap = parseInt(getComputedStyle(track).gap) || 24;
       const speed = 0.2;
-      let offset  = 0;
+      let offset = 0;
       const original = track.innerHTML;
       while (track.scrollWidth < reel.clientWidth * 2 && track.children.length < 50) {
         track.insertAdjacentHTML('beforeend', original);
@@ -114,15 +105,12 @@
       }
       requestAnimationFrame(step);
     });
+
+    const toggleBtn = document.getElementById('sidebarToggle');
+    const sidebar = document.querySelector('.sidebar');
+    toggleBtn?.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
   </script>
-  <script>
-  const toggleBtn = document.getElementById('sidebarToggle');
-  const sidebar = document.querySelector('.sidebar');
-
-  toggleBtn?.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-  });
-</script>
-
 </body>
 </html>
