@@ -187,12 +187,12 @@ main{flex:1;overflow-x:hidden;}
 }
 
 .top-banner img {
-  display: block;
   width: 100%;
   height: auto;
   margin: 0;
   padding: 0;
 }
+
 
 /* Show desktop banner by default */
 .desktop-banner {
