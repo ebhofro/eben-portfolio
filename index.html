@@ -129,42 +129,51 @@
     </main>
   </div> <!-- .page -->
 
-  <!-- GLightbox + Smooth Reel -->
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-  <script>
-    /* 1. GLightbox with scroll memory */
-    const lightbox = GLightbox({ selector: '.glightbox' });
-    let savedScroll = 0;
-    lightbox.on('open', () => savedScroll = window.scrollY || window.pageYOffset);
-    lightbox.on('close', () => window.scrollTo({ top: savedScroll, behavior: 'instant' }));
+<!-- GLightbox + Smooth Reel -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  // 1. GLightbox with scroll memory
+  const lightbox = GLightbox({ selector: '.glightbox' });
+  let savedScroll = 0;
+  lightbox.on('open', () => savedScroll = window.scrollY || window.pageYOffset);
+  lightbox.on('close', () => window.scrollTo({ top: savedScroll, behavior: 'instant' }));
 
- window.addEventListener('load', () => {
-  const track = document.querySelector('.horizontal-track');
-  const reel  = document.querySelector('.horizontal-reel');
-  const gap   = parseInt(getComputedStyle(track).gap) || 24;
-  const speed = 0.2;
-  let offset  = 0;
-  const original = track.innerHTML;
+  // 2. Horizontal reel animation
+  window.addEventListener('load', () => {
+    const track = document.querySelector('.horizontal-track');
+    const reel  = document.querySelector('.horizontal-reel');
+    const gap   = parseInt(getComputedStyle(track).gap) || 24;
+    const speed = 0.2;
+    let offset  = 0;
+    const original = track.innerHTML;
 
-  while (track.scrollWidth < reel.offsetWidth + track.scrollWidth && track.children.length < 30) {
-    track.insertAdjacentHTML('beforeend', original);
-  }
-
-  function step() {
-    offset -= speed;
-    const first = track.children[0];
-    const firstW = first.getBoundingClientRect().width + gap;
-    if (-offset >= firstW) {
-      offset += firstW;
-      track.appendChild(first);
+    while (track.scrollWidth < reel.offsetWidth + track.scrollWidth && track.children.length < 30) {
+      track.insertAdjacentHTML('beforeend', original);
     }
-    track.style.transform = `translateX(${offset}px)`;
+
+    function step() {
+      offset -= speed;
+      const first = track.children[0];
+      const firstW = first.getBoundingClientRect().width + gap;
+      if (-offset >= firstW) {
+        offset += firstW;
+        track.appendChild(first);
+      }
+      track.style.transform = `translateX(${offset}px)`;
+      requestAnimationFrame(step);
+    }
+
     requestAnimationFrame(step);
-  }
+  });
 
-  requestAnimationFrame(step); // ✅ this line was missing!
-});
+  // 3. Sidebar toggle for mobile
+  const toggleBtn = document.getElementById('sidebarToggle');
+  const sidebar = document.querySelector('.sidebar');
 
-  </script>
+  toggleBtn?.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>     
