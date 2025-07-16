@@ -138,30 +138,33 @@
     lightbox.on('open', () => savedScroll = window.scrollY || window.pageYOffset);
     lightbox.on('close', () => window.scrollTo({ top: savedScroll, behavior: 'instant' }));
 
-    /* 2. Smooth reel (speed 0.2 px / frame) */
-    window.addEventListener('load', () => {
-      const track = document.querySelector('.horizontal-track');
-      const reel  = document.querySelector('.horizontal-reel');
-      const gap   = parseInt(getComputedStyle(track).gap) || 24;
-      const speed = 0.2;
-      let offset  = 0;
-      const original = track.innerHTML;
-      while (track.scrollWidth < reel.offsetWidth + track.scrollWidth && track.children.length < 30) {
-        track.insertAdjacentHTML('beforeend', original);
-      }
-      function step() {
-        offset -= speed;
-        const first = track.children[0];
-        const firstW = first.getBoundingClientRect().width + gap;
-        if (-offset >= firstW) {
-          offset += firstW;
-          track.appendChild(first);
-        }
-        track.style.transform = translateX(${offset}px);
-        requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    });
+ window.addEventListener('load', () => {
+  const track = document.querySelector('.horizontal-track');
+  const reel  = document.querySelector('.horizontal-reel');
+  const gap   = parseInt(getComputedStyle(track).gap) || 24;
+  const speed = 0.2;
+  let offset  = 0;
+  const original = track.innerHTML;
+
+  while (track.scrollWidth < reel.offsetWidth + track.scrollWidth && track.children.length < 30) {
+    track.insertAdjacentHTML('beforeend', original);
+  }
+
+  function step() {
+    offset -= speed;
+    const first = track.children[0];
+    const firstW = first.getBoundingClientRect().width + gap;
+    if (-offset >= firstW) {
+      offset += firstW;
+      track.appendChild(first);
+    }
+    track.style.transform = `translateX(${offset}px)`;
+    requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step); // ✅ this line was missing!
+});
+
   </script>
 </body>
 </html>     
