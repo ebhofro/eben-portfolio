@@ -178,6 +178,28 @@ main{flex:1;overflow-x:hidden;}
   .photo-gallery{grid-template-columns:repeat(2,1fr);}
 }
 
+/* Default: desktop image shown */
+.desktop-banner {
+  display: block;
+}
+.mobile-banner {
+  display: none;
+}
+
+/* Mobile: swap which one is visible */
+@media (max-width: 600px) {
+  .desktop-banner {
+    display: none !important;
+  }
+  .mobile-banner {
+    display: block !important;
+    margin: 0 auto;
+    max-width: 90%;
+    height: auto;
+  }
+}
+
+
 
 
 /* ========== DIGITAL ART GRID (5 across) ========== */
