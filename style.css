@@ -203,6 +203,15 @@ main{flex:1;overflow-x:hidden;}
   }
 }
 
+@media (max-width: 600px) {
+  .section-banner {
+    max-width: 90%;
+    display: block;
+    margin: 40px auto 20px;
+  }
+}
+
+
 @media (min-width: 769px) {
   .sidebar-toggle {
     display: none;
