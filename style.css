@@ -38,23 +38,23 @@ html, body {
   height: 160px;
 }
 
-.sidebar-nav {
+.-nav {
   position: sticky;
   top: 0;
   z-index: 1;
 }
 
-.sidebar-nav ul {
+.-nav ul {
   list-style: none;
   margin: 0;
   padding: 0 0 2rem;
 }
 
-.sidebar-nav li + li {
+.-nav li + li {
   margin-top: 0.75rem;
 }
 
-.sidebar-nav a {
+.-nav a {
   display: block;
   padding: 0.75rem 1rem;
   text-align: center;
@@ -66,7 +66,7 @@ html, body {
   transition: background 0.3s, color 0.3s;
 }
 
-.sidebar-nav a:hover {
+.-nav a:hover {
   background: #1e4228;
   color: #ffcb47;
 }
