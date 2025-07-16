@@ -200,3 +200,45 @@ main{flex:1;overflow-x:hidden;}
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ========== MOBILE SIDEBAR TOGGLE (safe zone) ========== */
+
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
+    background: #e57822;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #114221 url("sidebarmk1.jpg") top/cover no-repeat;
+    color: #fdfdf9;
+    z-index: 1090;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .sidebar-nav {
+    position: relative;
+    top: 0;
+  }
+}
+
