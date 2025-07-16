@@ -16,6 +16,9 @@
 
 <body>
 
+  <button id="sidebarToggle" class="sidebar-toggle">☰</button>
+
+
   <!-- Top banner -->
   <header class="top-banner">
     <img src="topbannermk1.jpg" alt="Site banner" />
@@ -112,5 +115,14 @@
       requestAnimationFrame(step);
     });
   </script>
+  <script>
+  const toggleBtn = document.getElementById('sidebarToggle');
+  const sidebar = document.querySelector('.sidebar');
+
+  toggleBtn?.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
