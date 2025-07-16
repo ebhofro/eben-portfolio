@@ -184,7 +184,7 @@ main {
 }
 
 /* Hide toggle button by default (desktop) */
-.sidebar-toggle {
+.-toggle {
   display: none;
 }
 
