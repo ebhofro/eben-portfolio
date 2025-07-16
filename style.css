@@ -178,7 +178,7 @@ main{flex:1;overflow-x:hidden;}
   .photo-gallery{grid-template-columns:repeat(2,1fr);}
 }
 
-/* Default: desktop image shown */
+/* Default: desktop banner shown */
 .desktop-banner {
   display: block;
 }
@@ -186,7 +186,7 @@ main{flex:1;overflow-x:hidden;}
   display: none;
 }
 
-/* Mobile: swap which one is visible */
+/* Mobile: hide desktop, show mobile */
 @media (max-width: 600px) {
   .desktop-banner {
     display: none !important;
@@ -194,14 +194,19 @@ main{flex:1;overflow-x:hidden;}
 
   .mobile-banner {
     display: block !important;
-    width: 100vw;            /* full viewport width */
-    max-width: 100vw;        /* override any image maxing */
-    margin: 0;               /* no auto margins */
-    padding: 0;              /* no padding */
-    display: block;
+    width: 100vw;
+    max-width: 100vw;
     height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .top-banner {
+    margin: 0;
+    padding: 0;
   }
 }
+
 
 
 
