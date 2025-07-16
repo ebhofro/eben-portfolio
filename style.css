@@ -191,13 +191,18 @@ main{flex:1;overflow-x:hidden;}
   .desktop-banner {
     display: none !important;
   }
+
   .mobile-banner {
     display: block !important;
-    margin: 0 auto;
-    max-width: 90%;
+    width: 100vw;            /* full viewport width */
+    max-width: 100vw;        /* override any image maxing */
+    margin: 0;               /* no auto margins */
+    padding: 0;              /* no padding */
+    display: block;
     height: auto;
   }
 }
+
 
 
 
