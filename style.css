@@ -182,3 +182,53 @@ main {
 .video-thumb:hover .overlay {
   opacity: 1;
 }
+
+/* Hide toggle button by default (desktop) */
+.sidebar-toggle {
+  display: none;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  /* Toggle button visible on mobile */
+  .sidebar-toggle {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
+    background: #e57822;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+  /* Sidebar slide-in over content */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* hidden offscreen */
+    width: 250px;
+    height: 100%;
+    background: #114221 url("sidebarmk1.jpg") top/cover no-repeat;
+    color: #fdfdf9;
+    z-index: 1090;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+  }
+
+  /* Expanded state */
+  .sidebar.active {
+    left: 0;
+  }
+
+  /* Make nav inside slidebar scroll naturally */
+  .sidebar-nav {
+    position: relative;
+    top: 0;
+  }
+}
+
