@@ -12,8 +12,6 @@ html,body{
   font-family:'Space Grotesk',sans-serif;
 }
 
-/* ========== TOP BANNER ========== */
-.top-banner img{display:block;width:100%;height:auto;}
 
 /* ========== PAGE LAYOUT ========== */
 .page{display:flex;min-height:100vh;}
@@ -178,15 +176,35 @@ main{flex:1;overflow-x:hidden;}
   .photo-gallery{grid-template-columns:repeat(2,1fr);}
 }
 
-/* Default: desktop banner shown */
+/* ========== TOP BANNER ========== */
+.top-banner {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.top-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+/* Show desktop banner by default */
 .desktop-banner {
   display: block;
 }
+
+/* Hide mobile banner by default */
 .mobile-banner {
   display: none;
 }
 
-/* Mobile: hide desktop, show mobile */
+/* On small screens, swap banners */
 @media (max-width: 600px) {
   .desktop-banner {
     display: none !important;
@@ -206,6 +224,7 @@ main{flex:1;overflow-x:hidden;}
     padding: 0;
   }
 }
+
 
 
 
