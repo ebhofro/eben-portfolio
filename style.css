@@ -38,23 +38,23 @@ html, body {
   height: 160px;
 }
 
-.-nav {
+.sidebar-nav {
   position: sticky;
   top: 0;
   z-index: 1;
 }
 
-.-nav ul {
+.sidebar-nav ul {
   list-style: none;
   margin: 0;
   padding: 0 0 2rem;
 }
 
-.-nav li + li {
+.sidebar-nav li + li {
   margin-top: 0.75rem;
 }
 
-.-nav a {
+.sidebar-nav a {
   display: block;
   padding: 0.75rem 1rem;
   text-align: center;
@@ -66,7 +66,7 @@ html, body {
   transition: background 0.3s, color 0.3s;
 }
 
-.-nav a:hover {
+.sidebar-nav a:hover {
   background: #1e4228;
   color: #ffcb47;
 }
@@ -129,106 +129,4 @@ main {
   margin: 50px auto 30px;
   max-width: 600px;
   text-align: center;
-  font-family: 'Geo', sans-serif;
-  font-size: 1.75rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #333;
-}
-
-.video-gallery {
-  padding: 0 32px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-  margin-bottom: 40px;
-}
-
-.video-thumb {
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
-  aspect-ratio: 16/9;
-}
-
-.video-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: opacity 0.3s;
-}
-
-.video-thumb .overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.55);
-  color: white;
-  font-size: 0.75rem;
-  text-align: center;
-  padding: 1rem;
-  opacity: 0;
-  transition: opacity 0.3s;
-  border-radius: 10px;
-}
-
-.video-thumb:hover img {
-  opacity: 0.25;
-}
-
-.video-thumb:hover .overlay {
-  opacity: 1;
-}
-
-/* Hide toggle button by default (desktop) */
-.-toggle {
-  display: none;
-}
-
-/* Mobile layout */
-@media (max-width: 768px) {
-  /* Toggle button visible on mobile */
-  .sidebar-toggle {
-    display: block;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1100;
-    background: #e57822;
-    color: white;
-    padding: 0.5rem 0.75rem;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-  }
-
-  /* Sidebar slide-in over content */
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: -250px; /* hidden offscreen */
-    width: 250px;
-    height: 100%;
-    background: #114221 url("sidebarmk1.jpg") top/cover no-repeat;
-    color: #fdfdf9;
-    z-index: 1090;
-    transition: left 0.3s ease;
-    overflow-y: auto;
-  }
-
-  /* Expanded state */
-  .sidebar.active {
-    left: 0;
-  }
-
-  /* Make nav inside slidebar scroll naturally */
-  .sidebar-nav {
-    position: relative;
-    top: 0;
-  }
-}
-
+  font-
