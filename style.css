@@ -264,7 +264,27 @@ main{flex:1;overflow-x:hidden;}
 
 @media (max-width: 600px) {
   .horizontal-reel {
-    height: 80px; /* or whatever is 15px smaller than your normal size */
+    height: 125px; /* or whatever is 15px smaller than your normal size */
+  }
+}
+
+@media (max-width: 600px) {
+  .horizontal-reel::-webkit-scrollbar {
+    height: 6px; /* 👈 control the visual height of the scrollbar */
+  }
+
+  .horizontal-reel::-webkit-scrollbar-thumb {
+    background: #999; /* 👈 you can change color */
+    border-radius: 10px;
+  }
+
+  .horizontal-reel::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .horizontal-reel {
+    scrollbar-width: thin; /* Firefox support */
+    scrollbar-color: #999 transparent;
   }
 }
 
