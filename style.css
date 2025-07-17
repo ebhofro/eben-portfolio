@@ -289,15 +289,16 @@ main{flex:1;overflow-x:hidden;}
   .sidebar-toggle {
     display: block;
     position: fixed;
-    top: 80px;
-    left: 1rem;
+    top: 50%;
+    left: -20px; /* Half-visible from the left */
+    transform: translateY(-50%);
     z-index: 1100;
     background: #e57822;
     color: white;
     padding: 0.5rem 0.75rem;
     font-size: 1.2rem;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 0 0.5rem 0.5rem 0; /* Rounded on right edge */
     cursor: pointer;
   }
 
@@ -323,4 +324,5 @@ main{flex:1;overflow-x:hidden;}
     top: 0;
   }
 }
+
 
