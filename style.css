@@ -264,7 +264,7 @@ main{flex:1;overflow-x:hidden;}
 
 @media (max-width: 600px) {
   .horizontal-reel {
-    height: 105px; /* or whatever is 15px smaller than your normal size */
+    height: 80px; /* or whatever is 15px smaller than your normal size */
   }
 }
 
