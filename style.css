@@ -31,13 +31,13 @@ html,body{
 }
 
 /* sticky link list */
-.sidebar-nav{
+.-nav{
   position: sticky;
   top: 0;                                         /* pins it to viewport top */
   z-index: 1;
 }
 
-.sidebar-nav ul{
+.-nav ul{
   list-style: none;
   margin: 0;
   padding: 0 0 2rem;
@@ -276,7 +276,7 @@ main{flex:1;overflow-x:hidden;}
   .sidebar-toggle {
     display: block;
     position: fixed;
-    top: 1rem;
+    top: 140px;
     left: 1rem;
     z-index: 1100;
     background: #e57822;
