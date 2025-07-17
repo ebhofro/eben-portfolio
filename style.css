@@ -262,6 +262,13 @@ main{flex:1;overflow-x:hidden;}
   }
 }
 
+@media (max-width: 600px) {
+  .horizontal-reel {
+    height: 125px; /* or whatever is 15px smaller than your normal size */
+  }
+}
+
+
 
 @media (min-width: 769px) {
   .sidebar-toggle {
@@ -276,7 +283,7 @@ main{flex:1;overflow-x:hidden;}
   .sidebar-toggle {
     display: block;
     position: fixed;
-    top: 74px;
+    top: 80px;
     left: 1rem;
     z-index: 1100;
     background: #e57822;
