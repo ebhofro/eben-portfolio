@@ -264,9 +264,16 @@ main{flex:1;overflow-x:hidden;}
 
 @media (max-width: 600px) {
   .horizontal-reel {
-    height: 40px; /* or whatever is 15px smaller than your normal size */
+    height: 90px;
+    min-height: 0;       /* <-- override this too */
+    padding: 10px 0;     /* optionally shrink vertical padding too */
+  }
+
+  .horizontal-track img {
+    height: 60px;        /* shrink the images inside if needed */
   }
 }
+
 
 
 @media (min-width: 769px) {
