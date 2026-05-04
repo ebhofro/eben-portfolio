@@ -12,6 +12,9 @@ html,body{
   font-family:'Space Grotesk',sans-serif;
 }
 
+body.glightbox-open {
+  overflow: hidden;
+}
 
 /* ========== PAGE LAYOUT ========== */
 .page{display:flex;min-height:100vh;}
