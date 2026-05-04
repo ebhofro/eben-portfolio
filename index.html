@@ -1,4 +1,57 @@
-<!DOCTYPE html>
+<!-- GLightbox + Smooth Reel -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  // GLightbox (unchanged behaviour)
+  const lightbox = GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    openEffect: 'fade',
+    closeEffect: 'fade'
+  });
+
+  // Horizontal reel (ONLY ONE VERSION KEPT)
+  window.addEventListener('load', () => {
+    const track = document.querySelector('.horizontal-track');
+    const reel  = document.querySelector('.horizontal-reel');
+
+    const gap = parseInt(getComputedStyle(track).gap) || 24;
+    const speed = 0.2;
+    let offset = 0;
+
+    const original = track.innerHTML;
+
+    // duplicate content for infinite scroll
+    while (track.scrollWidth < reel.offsetWidth + track.scrollWidth && track.children.length < 30) {
+      track.insertAdjacentHTML('beforeend', original);
+    }
+
+    function step() {
+      offset -= speed;
+
+      const first = track.children[0];
+      const firstW = first.getBoundingClientRect().width + gap;
+
+      if (-offset >= firstW) {
+        offset += firstW;
+        track.appendChild(first);
+      }
+
+      track.style.transform = `translateX(${offset}px)`;
+      requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+  });
+
+  // Sidebar toggle (unchanged)
+  const toggleBtn = document.getElementById('sidebarToggle');
+  const sidebar = document.querySelector('.sidebar');
+
+  toggleBtn?.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+  });
+</script><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
