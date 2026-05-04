@@ -162,13 +162,17 @@ const lightbox = GLightbox({
   
 
   // 2. Horizontal reel animation
- window.addEventListener('load', () => {
+window.addEventListener('load', () => {
   setTimeout(() => {
+
     const track = document.querySelector('.horizontal-track');
     const reel  = document.querySelector('.horizontal-reel');
-    const gap   = parseInt(getComputedStyle(track).gap) || 24;
+
+    if (!track || !reel) return;
+
+    const gap = parseInt(getComputedStyle(track).gap) || 24;
     const speed = 0.2;
-    let offset  = 0;
+    let offset = 0;
     const original = track.innerHTML;
 
     while (track.scrollWidth < reel.offsetWidth + track.scrollWidth && track.children.length < 30) {
@@ -179,17 +183,20 @@ const lightbox = GLightbox({
       offset -= speed;
       const first = track.children[0];
       const firstW = first.getBoundingClientRect().width + gap;
+
       if (-offset >= firstW) {
         offset += firstW;
         track.appendChild(first);
       }
+
       track.style.transform = `translateX(${offset}px)`;
       requestAnimationFrame(step);
     }
 
     requestAnimationFrame(step);
-    }, 300);
-  });
+
+  }, 300);
+});
 
   // 3. Sidebar toggle for mobile
   const toggleBtn = document.getElementById('sidebarToggle');
