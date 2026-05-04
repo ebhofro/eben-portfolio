@@ -145,7 +145,7 @@
   const lightbox = GLightbox({ selector: '.glightbox' });
   let savedScroll = 0;
   lightbox.on('open', () => savedScroll = window.scrollY || window.pageYOffset);
-  lightbox.on('close', () => window.scrollTo({ top: savedScroll, behavior: 'instant' }));
+  lightbox.on('close', () => window.scrollTo({ top: savedScroll, behavior: 'auto' }));
 
   // 2. Horizontal reel animation
   window.addEventListener('load', () => {
