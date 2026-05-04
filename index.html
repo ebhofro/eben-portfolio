@@ -143,13 +143,9 @@
 
 <script>
 
-document.addEventListener('click', function (e) {
-  const link = e.target.closest('a.glightbox');
-  if (!link) return;
-
-  e.preventDefault();
-}, true);
-
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
 // 1. GLightbox init
 const lightbox = GLightbox({
   selector: '.glightbox',
