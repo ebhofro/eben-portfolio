@@ -152,9 +152,17 @@ const lightbox = GLightbox({
   touchNavigation: true,
   loop: true,
   openEffect: 'fade',
-  closeEffect: 'fade'
+  closeEffect: 'fade',
+  closeOnOutsideClick: true
 });
 
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('a.glightbox');
+  if (!a) return;
+
+  e.preventDefault();
+  lightbox.open(a);
+}, true);
   
 
   // 2. Horizontal reel animation
