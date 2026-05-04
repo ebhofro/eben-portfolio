@@ -162,7 +162,8 @@ const lightbox = GLightbox({
   
 
   // 2. Horizontal reel animation
-  window.addEventListener('load', () => {
+ window.addEventListener('load', () => {
+  setTimeout(() => {
     const track = document.querySelector('.horizontal-track');
     const reel  = document.querySelector('.horizontal-reel');
     const gap   = parseInt(getComputedStyle(track).gap) || 24;
@@ -187,6 +188,7 @@ const lightbox = GLightbox({
     }
 
     requestAnimationFrame(step);
+    }, 300);
   });
 
   // 3. Sidebar toggle for mobile
