@@ -141,14 +141,15 @@
 <!-- GLightbox + Smooth Reel -->
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script>
-  // 1. GLightbox with scroll memory
- const lightbox = GLightbox({
-  selector: '.glightbox',
-  touchNavigation: true,
-  loop: true,
-  openEffect: 'fade',
-  closeEffect: 'fade'
-});
+document.addEventListener('DOMContentLoaded', () => {
+  GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    openEffect: 'fade',
+    closeEffect: 'fade',
+    preload: false
+  });
 
   
 
