@@ -171,7 +171,6 @@
       const firstW = first.getBoundingClientRect().width + gap;
       if (-offset >= firstW) {
         offset += firstW;
-        track.appendChild(first);
       }
       track.style.transform = `translateX(${offset}px)`;
       requestAnimationFrame(step);
