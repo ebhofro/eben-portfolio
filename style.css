@@ -37,10 +37,10 @@ html,body{
   z-index: 10;
 }
 
-.-nav ul{
+.sidebar-nav ul {
   list-style: none;
   margin: 0;
-  padding: 0 0 2rem;
+  padding: 0;
 }
 
 .sidebar-nav li + li{ margin-top: .75rem; }
