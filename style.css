@@ -173,25 +173,32 @@ main{flex:1;overflow-x:hidden;}
   aspect-ratio: 16 / 9;
 }
 
-/* SHORTS GRID (controlled sizing) */
+/* ========== SHORTS GRID (FIXED SAFE VERSION) ========== */
+
 .shorts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 120px));
   gap: 14px;
-  justify-items: center;
+  padding: 0 32px;
+  justify-content: center; /* IMPORTANT: stops stretching */
 }
 
-/* force ALL video thumbs (shorts) small */
-.shorts-grid .video-thumb {
+/* HARD SIZE LOCK */
+.short-thumb {
+  width: 120px;          /* 👈 THIS is what stops the chaos */
+  height: 214px;         /* 9:16 ratio locked manually */
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* image fill */
+.short-thumb img {
   width: 100%;
-  max-width: 140px;   /* 👈 THIS stops the huge thumbnails */
-  aspect-ratio: 9 / 16;
-}
-
-/* override your global 16:9 rule ONLY inside shorts */
-.shorts-grid .video-thumb img {
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 /* ========== PHOTOGRAPHY GRID ========== */
