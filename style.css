@@ -156,6 +156,23 @@ main{flex:1;overflow-x:hidden;}
 .video-thumb:hover img{opacity:.25;}
 .video-thumb:hover .overlay{opacity:1;}
 
+/* ========== VERTICAL SHORTS GALLERY ========== */
+
+.vertical-gallery {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  justify-items: center;
+}
+
+.vertical-thumb {
+  aspect-ratio: 9 / 16;
+  max-width: 220px;
+  width: 100%;
+}
+
+.vertical-thumb img {
+  object-fit: cover;
+}
+
 /* ========== PHOTOGRAPHY GRID ========== */
 .photo-gallery{
   padding:0 32px;
